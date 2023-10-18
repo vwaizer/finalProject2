@@ -9,13 +9,14 @@ const ItemDetail=styled.div`
 `;
 const ItemBlock=styled.div`
     width:30%;
-    height:100px;   
+    height:150px;  
+    border:2px solid black; 
 `
 ;
 const ItemContainer = (props) => {
   return (
     <ItemBlock >
-        <img src='' alt=''></img>
+        <img src='' alt='' style={{width:"100px",height:"100px"}}></img>
         <ItemDetail>
             <div>{props.title}</div>
             <div>{props.price}</div>
