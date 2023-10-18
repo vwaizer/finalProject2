@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import HandleFooter from "./HandleFooter";
 
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+      <HandleFooter/>
+  );
+};
 
-export default Footer
+export default Footer;

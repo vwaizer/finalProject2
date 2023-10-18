@@ -1,15 +1,11 @@
-import { Routes,Route, BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Home from './Pages/Home';
-import Product from './Pages/Product'
+import Layout from './Components/layout/Layout';
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/Product" element={<Product/>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+    <Layout content="đây là content"/>
+    </>
+      
   )
 }
 
