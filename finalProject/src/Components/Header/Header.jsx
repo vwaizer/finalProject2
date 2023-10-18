@@ -1,8 +1,11 @@
 import React from 'react'
+import HandleHeader from './HandleHeader'
 
 const Header = () => {
   return (
-    <div>Header</div>
+    <div>
+      <HandleHeader/>
+    </div>
   )
 }
 
