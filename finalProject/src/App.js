@@ -1,11 +1,17 @@
 import './App.css';
-import Layout from './Components/layout/Layout';
+import Home from './Pages/Home';
+
+import Product from './pages/Product';
 function App() {
   return (
-    <>
-    <Layout content="đây là content"/>
-    </>
-      
+    <BrowserRouter>
+      <Routes>
+      <Route path="/" element={<Home/>}></Route>
+      <Route path="/Product" element={<Product/>}></Route>
+      </Routes>
+    </BrowserRouter>
+
+
   )
 }
 

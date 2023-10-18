@@ -1,11 +1,12 @@
 import React from 'react'
+
+import Footer from '../footer/Footer'
 import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
-function Layout({content}) {
+function Layout(props) {
   return (
     <div>
         <Header/>
-        {content}
+        {props.children}
         <Footer/>
     </div>
   )
