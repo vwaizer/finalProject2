@@ -1,4 +1,5 @@
 import './App.css';
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import Home from './Pages/Home';
 import Product from './Pages/Product';
 function App() {
@@ -9,8 +10,6 @@ function App() {
         <Route path="/Product" element={<Product />}></Route>
       </Routes>
     </BrowserRouter>
-
-
   )
 }
 
