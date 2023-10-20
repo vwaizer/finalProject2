@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import ItemContainer from "../Components/ItemContainer";
+import ItemContainer from '../component/ItemContainer';
 
-import CarouselItem from "../Components/CarouselItem";
-import Layout from '../Components/layout/Layout'
+import CarouselItem from "../component/CarouselItem";
+import Layout from '../component/layout/Layout'
 
 const ItemArea = styled.div`
   display: flex;
