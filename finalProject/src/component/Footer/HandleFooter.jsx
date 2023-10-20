@@ -37,30 +37,17 @@ function HandleFooter() {
           </div>
           <Col className="col" sm>
             <HelpBox
-              title="Help"
-              textone="FAQs"
-              texttwo="Pricing Plans"
-              textthree="Track"
-              textfour="Your Order"
-              textfive="My Account"
-            />
+            title="Helps"/>
           </Col>
           <Col className="col" sm>
             <AboutUsBox
               title="About Us"
-              textone="Our Story"
-              texttwo="Job Opportunities"
-              textthree="Store Locator"
-              textfour="Contact Us"
             />
           </Col>
           <Orther
             title="Enter your email to receive special offers and more!"
             inputType="email"
             placeholder="Your email address"
-            first="Term & Condition"
-            second="Policy"
-            third="Map"
           />
         </Row>
       </Container>

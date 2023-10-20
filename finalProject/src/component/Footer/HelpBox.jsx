@@ -1,38 +1,20 @@
 import React from "react";
 
+const helpBox = ["FAQs","Pricing Plans","Track","Your Order","My Account"]
+
 function HelpBox(props) {
   return (
     <div>
       <h2 className="h2footer">{props.title}</h2>
-      <li>
+      {helpBox.map((item,index) => {
+        return(
+          <li className="li-footer"  key={index}>
         <a className="link-footer" href="#">
-          {props.textone}
+          {item}
         </a>
       </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.texttwo}
-        </a>
-      </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.textthree}
-        </a>
-      </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.textfour}
-        </a>
-      </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.textfive}
-        </a>
-      </li>
+        )
+      })}
     </div>
   );
 }

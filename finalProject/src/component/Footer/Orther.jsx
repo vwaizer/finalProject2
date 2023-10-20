@@ -1,5 +1,6 @@
 import React from "react";
 
+const other = ["Term & Condition","Policy","Map"]
 function Orther(props) {
   return (
     <>
@@ -11,21 +12,15 @@ function Orther(props) {
           placeholder={props.placeholder}
         />
         <div className="under">
-          <li>
+          {other.map((element,index) => {
+            return(
+              <li key={index}>
             <a className="link-footer" href="#">
-              {props.first}
+              {element}
             </a>
           </li>
-          <li>
-            <a className="link-footer" href="#">
-              {props.second}
-            </a>
-          </li>
-          <li>
-            <a className="link-footer" href="#">
-              {props.third}
-            </a>
-          </li>
+            )
+          })}
         </div>
       </div>
     </>

@@ -1,32 +1,17 @@
 import React from "react";
 
+const aboutUs = ["Our Story","Job Opportunities","Store Locator","Contact Us"]
 function AboutUsBox(props) {
   return (
     <div>
       <h2 className="h2footer">{props.title}</h2>
-      <li>
+      {aboutUs.map((value,index) => {
+        return <li className="li-footer" key={index}>
         <a className="link-footer" href="#">
-          {props.textone}
+          {value}
         </a>
       </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.texttwo}
-        </a>
-      </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.textthree}
-        </a>
-      </li>
-      <br />
-      <li>
-        <a className="link-footer" href="#">
-          {props.textfour}
-        </a>
-      </li>
+      })}
     </div>
   );
 }
