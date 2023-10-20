@@ -1,7 +1,6 @@
 .header {
   list-style: none;
   display: flex;
-  margin: 20px;
   padding: 10px;
   gap: 100px;
   justify-content: center;
@@ -18,5 +17,17 @@
 
 .navlink:hover{
     color: red;
+    cursor: pointer;
+}
+
+.side-login{
+    display: flex;
+    justify-content: space-around;
+    width: 100px;
+    text-decoration: none;
+}
+
+.side-login:hover{
+    color: blue;
     cursor: pointer;
 }

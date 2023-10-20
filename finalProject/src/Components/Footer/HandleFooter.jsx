@@ -64,7 +64,7 @@ function HandleFooter() {
           />
         </Row>
       </Container>
-      <UnderTitle title="Copyright © 2023 C4EGroup2. All Rights Reserved" />
+      <UnderTitle title="Copyright © 2023 Group1-JS88. All Rights Reserved" />
     </div>
   );
 }

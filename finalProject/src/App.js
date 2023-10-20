@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Home from './pages/Home';
-import Product from './pages/Product';
+import Home from './Pages/Home';
+import Product from './Pages/Product';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 function App() {
