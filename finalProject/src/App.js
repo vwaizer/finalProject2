@@ -8,10 +8,14 @@ function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
     async function getData() {
-      const response = await axios.get("https://fakestoreapi.com/products/category/jewelery");
+      const response = await axios.get("https://fakestoreapi.com/products/categories");
       setDataBase(response.data);
     }
-    getData();
+    try{getData();}
+    catch(err){
+      alert(err.message);
+    }
+    
   },[])
   console.log(dataBase);
 
