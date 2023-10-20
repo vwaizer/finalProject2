@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ItemContainer from "../components/ItemContainer";
 
 import CarouselItem from "../components/CarouselItem";
-import Layout from '../Components/layout/Layout'
+import Layout from '../components/layout/Layout'
 
 const ItemArea = styled.div`
   display: flex;
