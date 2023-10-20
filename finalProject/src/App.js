@@ -4,8 +4,8 @@ import Home from './Pages/Home';
 import Product from './Pages/Product';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Cart from './pages/Cart';
-import Detail from './pages/Detail';
+import Cart from './Pages/Cart';
+import Detail from './Pages/Detail';
 function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
