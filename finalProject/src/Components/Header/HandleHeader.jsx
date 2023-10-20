@@ -5,7 +5,7 @@ function HandleHeader() {
   return (
     <div>
       <Nav className="header" as="ul">
-        <img className="img-header" src="http://127.0.0.1:5500/Pictures/logo.png"/>
+        <img className="img-header" src="" alt=""/>
         <Nav.Item as="li">
           <Nav.Link className="navlink" href="/home">Home</Nav.Link>
         </Nav.Item>
