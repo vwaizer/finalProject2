@@ -1,11 +1,11 @@
 import './App.css';
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Home from './Pages/Home';
-import Product from './Pages/Product';
+import Home from './pages/Home';
+import Product from './pages/Product';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Cart from './Pages/Cart';
-import Detail from './Pages/Detail';
+import Cart from './pages/Cart';
+import Detail from './pages/Detail';
 function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
