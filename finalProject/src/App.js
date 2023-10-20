@@ -4,6 +4,8 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Cart from './pages/Cart';
+import Detail from './pages/Detail';
 function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
@@ -24,6 +26,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home data={dataBase}/>}></Route>
         <Route path="/Product" element={<Product />}></Route>
+        <Route path="/Cart" element={<Cart/>}></Route> 
+        <Route path="/Detail" element={<Detail/>}></Route> 
       </Routes>
     </BrowserRouter>
 
