@@ -4,14 +4,20 @@ import Home from './Pages/Home';
 import Product from './Pages/Product';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Cart from './pages/Cart';
+import Detail from './pages/Detail';
 function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
     async function getData() {
-      const response = await axios.get("https://fakestoreapi.com/products/category/jewelery");
+      const response = await axios.get("https://fakestoreapi.com/products/categories");
       setDataBase(response.data);
     }
-    getData();
+    try{getData();}
+    catch(err){
+      alert(err.message);
+    }
+    
   },[])
   console.log(dataBase);
 
@@ -20,6 +26,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home data={dataBase}/>}></Route>
         <Route path="/Product" element={<Product />}></Route>
+        <Route path="/Cart" element={<Cart/>}></Route> 
+        <Route path="/Detail" element={<Detail/>}></Route> 
       </Routes>
     </BrowserRouter>
 
