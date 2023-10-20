@@ -37,35 +37,7 @@ function HandleHeader() {
             </Nav.Item>
           );
         })}
-        {/* <img className="img-header" src="" alt="" />
-        <Nav.Item as="li">
-          <Nav.Link className="navlink" href="/home">
-            Home
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item as="li">
-          <Nav.Link className="navlink" href="/product">
-            Product
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item as="li">
-          <Nav.Link className="navlink" href="/Cart">
-            Cart and Payment
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item as="li">
-          <Nav.Link className="navlink" href="#">
-            Contact
-          </Nav.Link>
-        </Nav.Item>
-        <div className="side-login">
-          <Nav.Item as="li">
-            <Nav.Link className="side-login" href="#">
-              Login
-            </Nav.Link>
-          </Nav.Item>
           <ShoppingCartOutlined />
-        </div> */}
       </Nav>
     </div>
   );
