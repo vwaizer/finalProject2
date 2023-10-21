@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cart from './page/Cart';
 import Detail from './page/Detail';
+import Login from './page/Login'
 function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
@@ -28,6 +29,7 @@ function App() {
         <Route path="/Product" element={<Product />}></Route>
         <Route path="/Cart" element={<Cart/>}></Route> 
         <Route path="/Detail" element={<Detail/>}></Route> 
+        <Route path="/Login" element={<Login/>}></Route>
       </Routes>
     </BrowserRouter>
 

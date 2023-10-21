@@ -1,10 +1,11 @@
-import React from "react";
-import "./header.style.css";
-import Nav from "react-bootstrap/Nav";
 import { ShoppingCartOutlined } from "@ant-design/icons";
+import React from "react";
+import Nav from "react-bootstrap/Nav";
+import "./header.style.css";
+
 const infomation = [
   {
-    href: "/home",
+    href: "#",
     title: "Home",
   },
   {
@@ -16,19 +17,22 @@ const infomation = [
     title: "Cart and Payment",
   },
   {
-    href: "/Contact",
+    href: "#",
     title: "Contact",
   },
-  {
-    href: "/Login",
-    title: "Login",
-  },
+];
+
+const form = [
+  { href: "/login", title: "Login" },
 ];
 function Header() {
   return (
     <div>
+      <div>
+        <img src="" />
+      </div>
       <Nav className="header" as="ul">
-        {infomation.map((item,index) => {
+        {infomation.map((item, index) => {
           return (
             <Nav.Item key={index} as="li">
               <Nav.Link className="navlink" href={item.href}>
@@ -37,7 +41,18 @@ function Header() {
             </Nav.Item>
           );
         })}
+        <div className="side-login">
+          {form.map((value, index) => {
+            return (
+              <Nav.Item as="li">
+                <Nav.Link className="navlink" target="blank" href={value.href}>
+                  {value.title}
+                </Nav.Link>
+              </Nav.Item>
+            );
+          })}
           <ShoppingCartOutlined />
+        </div>
       </Nav>
     </div>
   );
