@@ -5,7 +5,7 @@ import "./header.style.css";
 
 const infomation = [
   {
-    href: "#",
+    href: "/Home",
     title: "Home",
   },
   {
@@ -45,7 +45,7 @@ function Header() {
           {form.map((value, index) => {
             return (
               <Nav.Item as="li">
-                <Nav.Link className="navlink" target="blank" href={value.href}>
+                <Nav.Link className="navlink" href={value.href}>
                   {value.title}
                 </Nav.Link>
               </Nav.Item>

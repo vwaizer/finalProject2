@@ -1,13 +1,14 @@
 import React from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import styled from "styled-components";
+import Home from "./Home";
 
 export const CoverForm = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 50px;
-`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+`;
 
 const onFinish = (values) => {
   console.log("Success:", values);
@@ -17,8 +18,8 @@ const onFinishFailed = (errorInfo) => {
 };
 
 const handleSubmit = () => {
-    
-}
+  window.location = "/";
+};
 const Login = () => (
   <CoverForm>
     <Form
@@ -82,7 +83,7 @@ const Login = () => (
           span: 16,
         }}
       >
-        <Button type="primary" htmlType="submit">
+        <Button onClick={handleSubmit} type="primary" htmlType="submit">
           Submit
         </Button>
       </Form.Item>
