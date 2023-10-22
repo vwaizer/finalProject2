@@ -9,11 +9,17 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  
+  @media (max-width:500px) {
+    display:flex;
+    flex-direction:column;
+    
+  }
   margin: 5px;
 `;
 const Block=styled.div`
   border:2px solid black;
+  border-radius:10px;
+  padding:5px;
   margin-top:10px;
   margin-bottom:10px;
 `;
@@ -22,18 +28,26 @@ const Tittle=styled.div`
   
 `;
 const Home = (props) => {
-  
-  console.log(props.data);
+  const dataBase=props.data;
+  const displayData=dataBase.filter((item,index)=>index<5
+  )
+  console.log(displayData);
   return (
     <Layout>
       <div>
-        <CarouselItem />
+        <CarouselItem data={displayData} />
         <Block>
           <Tittle><h2>Tieu Bieu</h2></Tittle>
         <ItemArea>
+          {/* <ItemContainer title="ban ghe" price="5" />
           <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
+          <ItemContainer title="ban ghe" price="5" /> */}
+          {dataBase.map((item,index)=>{
+              if(index<3){
+                return <ItemContainer key={index} title={item.title} price={item.price} picture={item.images[0]}/>
+              }
+              return <></>
+          })}
         </ItemArea>
         </Block>
 
@@ -42,17 +56,27 @@ const Home = (props) => {
             <h2>Moi Nhat</h2>
           </Tittle>
           <ItemArea>
+          {/* <ItemContainer title="ban ghe" price="5" />
           <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          
+          <ItemContainer title="ban ghe" price="5" /> */}
+          {dataBase.map((item,index)=>{
+              if(index>=3 && index <6){
+                return <ItemContainer key={index} title={item.title} price={item.price} picture={item.images[0]}/>
+              }
+              return <></>
+          })}
           
         </ItemArea>
         <ItemArea>
+          {/* <ItemContainer title="ban ghe" price="5" />
           <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-         
+          <ItemContainer title="ban ghe" price="5" /> */}
+         {dataBase.map((item,index)=>{
+              if(index>=6 && index<9){
+                return <ItemContainer key={index} title={item.title} price={item.price} picture={item.images[0]}/>
+              }
+              return <></>
+          })}
         </ItemArea>
         </Block>
       </div>
