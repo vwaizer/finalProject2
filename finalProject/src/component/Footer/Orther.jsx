@@ -2,6 +2,9 @@ import React from "react";
 
 const other = ["Term & Condition","Policy","Map"]
 function Orther(props) {
+  const handleClick = () => {
+    alert("Your email is sending")
+  }
   return (
     <>
       <div className="orther">
@@ -11,6 +14,7 @@ function Orther(props) {
           type={props.inputType}
           placeholder={props.placeholder}
         />
+        <button onClick={handleClick} className="button-footer">{props.button}</button>
         <div className="under">
           {other.map((element,index) => {
             return(

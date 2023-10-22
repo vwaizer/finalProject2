@@ -39,11 +39,12 @@ import './CarouseItem.css';
 // import required modules
 import { Navigation } from 'swiper/modules';
 
-export default function CarouselItem() {
+export default function CarouselItem(props) {
+  const dataBase=props.data;
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
-        <SwiperSlide>Slide 1</SwiperSlide>
+        {/* <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
@@ -51,7 +52,10 @@ export default function CarouselItem() {
         <SwiperSlide>Slide 6</SwiperSlide>
         <SwiperSlide>Slide 7</SwiperSlide>
         <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide> */}
+        {dataBase.map((item,index)=>{
+          return <SwiperSlide><img src={item.images[0]} alt='' style={{height:"500px"}} ></img></SwiperSlide>
+        })}
       </Swiper>
     </>
   );

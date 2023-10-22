@@ -15,7 +15,6 @@
   color: gray;
 }
 
-
 .footer {
   list-style: none;
   padding: 10px;
@@ -69,7 +68,7 @@
 
 .input-footer {
   width: 250px;
-  height: 50px;
+  height: 30px;
 }
 
 .cover {
@@ -82,4 +81,15 @@
 
 .li-footer {
   padding-top: 20px;
+}
+
+.button-footer {
+  width: 30px;
+  display: flex;
+  position: relative;
+  left: 220px;
+  top: -25px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }

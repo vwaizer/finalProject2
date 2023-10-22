@@ -7,8 +7,8 @@ const ItemDetail = styled.div`
   justify-content: space-between;
 `;
 const ItemBlock = styled.div`
-  width: 310px;
-  height: 500px;
+  width: 30%;
+  height: 150px;
   border: 2px solid black;
 `;
 const ItemContainer = (props) => {
