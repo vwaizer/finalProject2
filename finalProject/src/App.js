@@ -10,7 +10,7 @@ function App() {
   const [dataBase,setDataBase]=useState(null);
   useEffect(()=>{
     async function getData() {
-      const response = await axios.get("https://fakestoreapi.com/products/categories");
+      const response = await axios.get("https://dummyjson.com/products/categories/furniture");
       setDataBase(response.data);
     }
     try{getData();}
@@ -25,7 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home data={dataBase}/>}></Route>
-        <Route path="/Product" element={<Product />}></Route>
+        <Route path="/Product" element={<Product  />}></Route>
         <Route path="/Cart" element={<Cart/>}></Route> 
         <Route path="/Detail" element={<Detail/>}></Route> 
       </Routes>
