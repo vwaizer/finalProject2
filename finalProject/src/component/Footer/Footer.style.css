@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: space-around;
-  gap: 50px;
+  gap: 40px;
   width: 100%;
   background-color: black;
   color: white;
@@ -72,14 +72,14 @@
   height: 50px;
 }
 
-.cover{
-    background-color: black;
-    color: white;
-    height: 500px;
-    width: 100%;
-    border-radius: 10px;
+.cover {
+  background-color: black;
+  color: white;
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
 }
 
-.li-footer{
+.li-footer {
   padding-top: 20px;
 }
