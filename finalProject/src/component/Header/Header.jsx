@@ -5,7 +5,7 @@ import "./header.style.css";
 
 const infomation = [
   {
-    href: "/Home",
+    href: "/",
     title: "Home",
   },
   {
@@ -29,7 +29,7 @@ function Header() {
   return (
     <div>
       <div>
-        <img src="" />
+        <img src="" alt="#" />
       </div>
       <Nav className="header" as="ul">
         {infomation.map((item, index) => {

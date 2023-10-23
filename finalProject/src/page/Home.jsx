@@ -1,35 +1,35 @@
-import React from "react";
-import styled from "styled-components";
-import ItemContainer from "../component/ItemContainer";
+import React from 'react';
+import styled from 'styled-components';
+import ItemContainer from '../component/ItemContainer';
 
-import CarouselItem from "../component/CarouselItem";
-import Layout from "../component/layout/Layout";
+import CarouselItem from '../component/CarouselItem';
+import Layout from '../component/layout/Layout';
 
 const ItemArea = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-evenly;
-@media (max-width:500px) {
-  display:flex;
-  flex-direction:column;
-  
-}
-margin: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+  }
+  margin: 5px;
 `;
-const Block=styled.div`
-border:2px solid black;
-border-radius:10px;
-padding:5px;
-margin-top:10px;
-margin-bottom:10px;
+const Block = styled.div`
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 `;
-const Tittle=styled.div`
-margin:5px;
+const Tittle = styled.div`
+  margin: 5px;
 `;
 const Home = (props) => {
   const dataBase = props.data;
   const displayData = dataBase.filter((item, index) => index < 5);
-  console.log(displayData);
+  console.log(dataBase);
+
   return (
     <Layout>
       <div>
