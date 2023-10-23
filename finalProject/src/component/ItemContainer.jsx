@@ -6,9 +6,10 @@ const ItemDetail = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+
 const ItemBlock = styled.div`
-  width: 30%;
-  height: 200px;
+  width: 310px;
+  height: 500px;
   padding: 10px;
   border: 2px solid black;
   border-radius: 5px;

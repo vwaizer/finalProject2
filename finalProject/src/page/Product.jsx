@@ -3,6 +3,7 @@ import CarouselItem from '../component/CarouselItem';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
+import './Product.css';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -12,33 +13,34 @@ const ItemArea = styled.div`
     flex-direction: column;
   }
   margin: 5px;
+  margin-bottom: 30px;
 `;
 const Block = styled.div`
-  border: 2px solid black;
   border-radius: 10px;
-  padding: 5px;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 `;
 const Tittle = styled.div`
-  margin: 5px;
+  text-align: center;
+  margin-bottom: 4rem;
+  justify-content: space-between;
+  padding-top: 20px;
 `;
+
 const Product = (props) => {
   const dataBase = props.data;
   const productPage = dataBase.filter((item, index) => index < 6);
   console.log(productPage);
   return (
     <Layout>
-      <div>
+      <div className="section_card">
         <CarouselItem data={dataBase} />
         <Block>
           <Tittle>
-            <h2>Tieu Bieu</h2>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
           </Tittle>
           <ItemArea>
-            {/* <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" /> */}
             {dataBase.map((item, index) => {
               if (index < 4) {
                 return (
@@ -57,12 +59,10 @@ const Product = (props) => {
 
         <Block>
           <Tittle>
-            <h2>Moi Nhat</h2>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
           </Tittle>
           <ItemArea>
-            {/* <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" /> */}
             {dataBase.map((item, index) => {
               if (index >= 4 && index < 8) {
                 return (
@@ -78,11 +78,230 @@ const Product = (props) => {
             })}
           </ItemArea>
           <ItemArea>
-            {/* <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" /> */}
             {dataBase.map((item, index) => {
               if (index >= 8 && index < 10) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+        </Block>
+
+        <Block>
+          <Tittle>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
+          </Tittle>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 4 && index < 8) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 8 && index < 12) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+        </Block>
+
+        <Block>
+          <Tittle>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
+          </Tittle>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 4 && index < 8) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 8 && index < 12) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+        </Block>
+
+        <Block>
+          <Tittle>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
+          </Tittle>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 4 && index < 8) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 8 && index < 12) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+        </Block>
+
+        <Block>
+          <Tittle>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
+          </Tittle>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 4 && index < 8) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 8 && index < 12) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+        </Block>
+
+        <Block>
+          <Tittle>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
+          </Tittle>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 4 && index < 8) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 8 && index < 12) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+        </Block>
+
+        <Block>
+          <Tittle>
+            <span>Latest Collection</span>
+            <h2>ESSENTIAL ITEMS</h2>
+          </Tittle>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 4 && index < 8) {
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                  />
+                );
+              }
+              return <></>;
+            })}
+          </ItemArea>
+          <ItemArea>
+            {dataBase.map((item, index) => {
+              if (index >= 8 && index < 12) {
                 return (
                   <ItemContainer
                     key={index}
