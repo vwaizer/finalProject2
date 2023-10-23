@@ -25,14 +25,15 @@ const infomation = [
 const form = [{ href: '/login', title: 'Login' }];
 function Header() {
   return (
-    <div>
+    <div className="cover-header">
+      <div>
+        <img
+          className="img-header"
+          src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png"
+          alt=""
+        />
+      </div>
       <Nav className="header" as="ul">
-        <div>
-          <img
-            className="img-header"
-            src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png"
-          />
-        </div>
         {infomation.map((item, index) => {
           return (
             <Nav.Item key={index} as="li">
