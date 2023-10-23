@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography } from 'antd';
-import axios from 'axios';
 
 const { Text } = Typography;
 
@@ -37,21 +36,21 @@ const Quantity = styled.div`
   align-items: center;
 `;
 const Amount = styled.div`
-width: 40px;
-text-align:center;
-border: 1.5px solid gray;
-height: 23.5px;
-`
+  width: 40px;
+  text-align: center;
+  border: 1.5px solid gray;
+  height: 23.5px;
+`;
 const TitleCart = styled.div`
   display: flex;
   font-weight: 500;
   margin-left: 165px;
-`
+`;
 const NamePage = styled.p`
   font-size: 30px;
   font-weight: 500;
   text-align: center;
-`
+`;
 const info = [
   {
     id: 0,
@@ -105,19 +104,18 @@ const Cart = () => {
   };
   //  console.log(cart)
 
-  // tính tổng tiền 
+  // tính tổng tiền
   const toTalProduct = () => {
     const sum = cart.reduce((total, item) => total + item.price * item.amount, 0);
     return sum;
   };
   const toTalAmount = () => {
-    const sum = cart.reduce((total, item) => total +  item.amount, 0);
+    const sum = cart.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
 
   return (
     <div>
-     
       <Layout>
         {/* nav */}
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
@@ -141,40 +139,38 @@ const Cart = () => {
         {cart.map((item) => {
           const { id, picture, des, price, amount } = item;
           return (
-            <Container
-              key={id}
-              className="container "
-              style={{ marginBottom: '17px' }}
-            >
+            <Container key={id} className="container " style={{ marginBottom: '17px' }}>
               <div style={{ display: 'flex' }}>
                 <ProductImage>{picture}</ProductImage>
                 <Des>{des}</Des>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-around',}}>
+              <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                 <Quantity>
                   <button onClick={() => decreaseQuantity(item)} style={{ height: '25px' }}>
                     -
                   </button>
-                  <Amount>
-                    {amount}
-                  </Amount>
+                  <Amount>{amount}</Amount>
                   <button onClick={() => increaseQuantity(item)} style={{ height: '25px' }}>
                     +
                   </button>
                 </Quantity>
-                <BlockNumber >{'₫' + price}</BlockNumber>
-                <BlockNumber style={{color:'red'}}>{'₫' + amount * price}</BlockNumber>
+                <BlockNumber>{'₫' + price}</BlockNumber>
+                <BlockNumber style={{ color: 'red' }}>{'₫' + amount * price}</BlockNumber>
               </div>
             </Container>
           );
         })}
 
-<div  className="container " style={{display:'flex',backgroundColor:'white',color:'black'}}>
-<h3 style={{display:'inline-block'}}>Tổng thanh toán ({toTalAmount()} sản phẩm) : {toTalProduct()}VND</h3>
-        <button style={{width:'250px',height:'45px'}}>MUA HÀNG</button>
-</div>
-       
+        <div
+          className="container "
+          style={{ display: 'flex', backgroundColor: 'white', color: 'black' }}
+        >
+          <h3 style={{ display: 'inline-block' }}>
+            Tổng thanh toán ({toTalAmount()} sản phẩm) : {toTalProduct()}VND
+          </h3>
+          <button style={{ width: '250px', height: '45px' }}>MUA HÀNG</button>
+        </div>
       </Layout>
     </div>
   );
