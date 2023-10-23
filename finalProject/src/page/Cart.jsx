@@ -1,7 +1,8 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography } from 'antd';
+import axios from 'axios';
 
 const { Text } = Typography;
 
@@ -139,7 +140,7 @@ const Cart = () => {
         {cart.map((item) => {
           const { id, picture, des, price, amount } = item;
           return (
-            <Container key={id} style={{ marginBottom: '17px' }}>
+            <Container key={id} className="container" style={{ marginBottom: '17px' }}>
               <div style={{ display: 'flex' }}>
                 <ProductImage>{picture}</ProductImage>
                 <Des>{des}</Des>
@@ -174,5 +175,5 @@ const Cart = () => {
       </Layout>
     </div>
   );
-}; 
+};
 export default Cart;
