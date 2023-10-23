@@ -1,8 +1,8 @@
-import React from "react";
-import CarouselItem from "../component/CarouselItem";
-import ItemContainer from "../component/ItemContainer";
-import Layout from "../component/layout/Layout";
-import styled from "styled-components";
+import React from 'react';
+import CarouselItem from '../component/CarouselItem';
+import ItemContainer from '../component/ItemContainer';
+import Layout from '../component/layout/Layout';
+import styled from 'styled-components';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -30,7 +30,7 @@ const Product = (props) => {
   return (
     <Layout>
       <div>
-        <CarouselItem data={productPage} />
+        <CarouselItem data={dataBase} />
         <Block>
           <Tittle>
             <h2>Tieu Bieu</h2>
