@@ -8,9 +8,10 @@ const { Text } = Typography;
 
 const Container = styled.div`
   color: black;
+  background-color: white;
 `;
 const ProductImage = styled.div`
-  width: 80px;
+  width: 80px;  
   height: 80px;
   background-color: aqua;
 `;
@@ -21,6 +22,7 @@ const BlockNumber = styled.div`
   margin: auto;
   color: black;
   margin-left: 100px;
+  
 `;
 const Des = styled.p`
   margin: auto;
@@ -45,12 +47,19 @@ const TitleCart = styled.div`
   display: flex;
   font-weight: 500;
   margin-left: 165px;
+  
 `;
 const NamePage = styled.p`
   font-size: 30px;
   font-weight: 500;
   text-align: center;
+  
 `;
+const AmountButton = styled.button`
+  height: '25px'
+  background-color: white;
+
+`
 const info = [
   {
     id: 0,
@@ -117,7 +126,7 @@ const Cart = () => {
   return (
     <div>
       <Layout>
-        {/* nav */}
+       
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
         <Container className="container ">
           <p>Sản phẩm</p>
@@ -134,12 +143,12 @@ const Cart = () => {
           </TitleCart>
         </Container>
 
-        {/* render list product  */}
+      
 
         {cart.map((item) => {
           const { id, picture, des, price, amount } = item;
           return (
-            <Container key={id} className="container" style={{ marginBottom: '17px' }}>
+            <Container key={id} className="container" style={{ marginBottom: '17px'}}>
               <div style={{ display: 'flex' }}>
                 <ProductImage>{picture}</ProductImage>
                 <Des>{des}</Des>
@@ -147,13 +156,13 @@ const Cart = () => {
 
               <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                 <Quantity>
-                  <button onClick={() => decreaseQuantity(item)} style={{ height: '25px' }}>
+                  <AmountButton onClick={() => decreaseQuantity(item)} >
                     -
-                  </button>
+                  </AmountButton>
                   <Amount>{amount}</Amount>
-                  <button onClick={() => increaseQuantity(item)} style={{ height: '25px' }}>
+                  <AmountButton onClick={() => increaseQuantity(item)} >
                     +
-                  </button>
+                  </AmountButton>
                 </Quantity>
                 <BlockNumber>{'₫' + price}</BlockNumber>
                 <BlockNumber style={{ color: 'red' }}>{'₫' + amount * price}</BlockNumber>
