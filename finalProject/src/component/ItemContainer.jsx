@@ -8,20 +8,21 @@ const ItemDetail = styled.div`
 `;
 
 const ItemBlock = styled.div`
-  width: 310px;
+  width: 300px;
   height: 500px;
   padding: 10px;
   border: 2px solid black;
   border-radius: 5px;
   @media (max-width: 600px) {
-    width: 100%;
+    width: fit-content;
     height: fit-content;
+    
   }
 `;
 const ItemContainer = (props) => {
   return (
     <ItemBlock>
-      <img src={props.picture} alt="" style={{ width: '150px', height: '150px' }}></img>
+      <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img>
       <ItemDetail>
         <div>{props.title}</div>
         <div>{props.price}</div>
