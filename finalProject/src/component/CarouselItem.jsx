@@ -57,7 +57,7 @@ export default function CarouselItem(props) {
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide> */}
         {dataBase.map((item,index)=>{
-          return <SwiperSlide><img src={item.images[0]} alt='' style={{height:"500px"}} ></img></SwiperSlide>
+          return <SwiperSlide key={index}><img src={item.images[0]} alt='' style={{height:"500px"}} ></img></SwiperSlide>
         })}
       </Swiper>
     </>

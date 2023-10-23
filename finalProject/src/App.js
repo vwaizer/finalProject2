@@ -11,7 +11,7 @@ function App() {
   const [dataBase,setDataBase]=useState([]);
   useEffect(()=>{
     async function getData() {
-      const response = await axios.get('https://api.escuelajs.co/api/v1/products');
+      const response = await axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3');
       setDataBase(response.data);
     }
     try{getData();}
