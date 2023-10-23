@@ -14,7 +14,8 @@ import ImgFooter from "./ImgFooter";
 import Orther from "./Orther";
 import TitleFooter from "./TitleFooter";
 import UnderTitle from "./UnderTitle";
-function HandleFooter() {
+import {ArrowRightOutlined} from "@ant-design/icons";
+function Footer() {
   return (
     <div className="cover">
       <Container>
@@ -37,36 +38,25 @@ function HandleFooter() {
           </div>
           <Col className="col" sm>
             <HelpBox
-              title="Help"
-              textone="FAQs"
-              texttwo="Pricing Plans"
-              textthree="Track"
-              textfour="Your Order"
-              textfive="My Account"
-            />
+            title="Helps"/>
           </Col>
           <Col className="col" sm>
             <AboutUsBox
               title="About Us"
-              textone="Our Story"
-              texttwo="Job Opportunities"
-              textthree="Store Locator"
-              textfour="Contact Us"
             />
           </Col>
           <Orther
             title="Enter your email to receive special offers and more!"
             inputType="email"
             placeholder="Your email address"
-            first="Term & Condition"
-            second="Policy"
-            third="Map"
+            button={<ArrowRightOutlined />}
           />
         </Row>
       </Container>
-      <UnderTitle title="Copyright © 2023 C4EGroup2. All Rights Reserved" />
+      <UnderTitle title="Copyright © 2023 Group1-JS88. All Rights Reserved" />
     </div>
   );
 }
 
-export default HandleFooter;
+export default Footer;
+

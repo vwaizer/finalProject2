@@ -15,7 +15,6 @@
   color: gray;
 }
 
-
 .footer {
   list-style: none;
   padding: 10px;
@@ -52,7 +51,7 @@
 
 .under-title-footer {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 .orther {
@@ -69,13 +68,28 @@
 
 .input-footer {
   width: 250px;
-  height: 50px;
+  height: 30px;
 }
 
-.cover{
-    background-color: black;
-    color: white;
-    height: 500px;
-    margin: 20px;
-    border-radius: 10px;
+.cover {
+  background-color: black;
+  color: white;
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.li-footer {
+  padding-top: 20px;
+}
+
+.button-footer {
+  width: 30px;
+  display: flex;
+  position: relative;
+  left: 220px;
+  top: -25px;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
