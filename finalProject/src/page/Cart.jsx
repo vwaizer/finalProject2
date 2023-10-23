@@ -7,7 +7,6 @@ import axios from 'axios';
 const { Text } = Typography;
 
 const Container = styled.div`
-  background-color: white;
   color: black;
 `;
 const ProductImage = styled.div`
