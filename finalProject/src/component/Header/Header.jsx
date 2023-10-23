@@ -30,7 +30,7 @@ function Header() {
     <div>
       <Nav className="header" as="ul">
       <div>
-        <img className="img-header" src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png" />
+        <img className="img-header" src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png"  alt=""/>
       </div>
         {infomation.map((item, index) => {
           return (
