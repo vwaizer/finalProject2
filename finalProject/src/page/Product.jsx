@@ -18,7 +18,6 @@ const ItemArea = styled.div`
 const Block = styled.div`
   border-radius: 10px;
   padding-top: 100px;
-  padding-bottom: 100px;
 `;
 const Tittle = styled.div`
   text-align: center;
