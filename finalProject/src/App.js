@@ -35,9 +35,12 @@ function App() {
   console.log(dataBase);
 
   return (
+   <div style={{backgroundColor:"white"}}>
+   {/* {!loading ?? <LoadingBlock><DotLoader color="#36d7b7" /></LoadingBlock> } */}
     <BrowserRouter>
+     
       <Routes>
-        <Route path="/" element={!loading ? <LoadingBlock><DotLoader color="#36d7b7" /></LoadingBlock> :<Home data={dataBase}/>}></Route>
+        <Route path="/" element={<Home data={dataBase}/>}></Route>
         <Route path="/Product" element={<Product data={dataBase} />}></Route>
         <Route path="/Cart" element={<Cart/>}></Route> 
         <Route path="/Detail:productID" element={<Detail/>}></Route> 
@@ -45,7 +48,7 @@ function App() {
       </Routes>
     </BrowserRouter>
 
-
+    </div>
   )
 }
 

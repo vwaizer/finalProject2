@@ -6,11 +6,11 @@ import { Typography } from 'antd';
 const { Text } = Typography;
 
 const Container = styled.div`
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
 `;
 const ProductImage = styled.div`
-  width: 80px;
+  width: 80px;  
   height: 80px;
   background-color: aqua;
 `;
@@ -21,6 +21,7 @@ const BlockNumber = styled.div`
   margin: auto;
   color: black;
   margin-left: 100px;
+  
 `;
 const Des = styled.p`
   margin: auto;
@@ -45,11 +46,13 @@ const TitleCart = styled.div`
   display: flex;
   font-weight: 500;
   margin-left: 165px;
+  
 `;
 const NamePage = styled.p`
   font-size: 30px;
   font-weight: 500;
   text-align: center;
+  
 `;
 const info = [
   {
@@ -117,7 +120,7 @@ const Cart = () => {
   return (
     <div>
       <Layout>
-        {/* nav */}
+       
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
         <Container className="container ">
           <p>Sản phẩm</p>
@@ -134,7 +137,7 @@ const Cart = () => {
           </TitleCart>
         </Container>
 
-        {/* render list product  */}
+      
 
         {cart.map((item) => {
           const { id, picture, des, price, amount } = item;
