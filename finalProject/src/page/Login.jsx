@@ -1,7 +1,7 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import React from "react";
 import styled from "styled-components";
-import Home from "./Home";
+
 
 export const CoverForm = styled.div`
   display: flex;

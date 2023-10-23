@@ -9,14 +9,16 @@ import Detail from './page/Detail';
 import Login from './page/Login'
 function App() {
   const [dataBase,setDataBase]=useState([]);
+  async function getData() {
+    const response = await axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3');
+    console.log(response);
+    setDataBase(response.data);
+  }
   useEffect(()=>{
-    async function getData() {
-      const response = await axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3');
-      setDataBase(response.data);
-    }
+    
     try{getData();}
     catch(err){
-      alert(err.message);
+      alert(err.message); 
     }
     
   },[])
