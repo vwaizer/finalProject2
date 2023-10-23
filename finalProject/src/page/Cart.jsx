@@ -174,5 +174,5 @@ const Cart = () => {
       </Layout>
     </div>
   );
-};
+}; 
 export default Cart;
