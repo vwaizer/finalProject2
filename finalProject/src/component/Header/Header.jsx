@@ -29,7 +29,7 @@ function Header() {
   return (
     <div className="cover-header" style={{backgroundColor:"white"}}>
       <div>
-        <img className="img-header" src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png"  alt=""/>
+        <img className="img-header" src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png" alt=""/>
       </div>
       <Nav className="header" as="ul">
         {infomation.map((item, index) => {
