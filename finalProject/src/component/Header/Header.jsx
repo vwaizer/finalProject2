@@ -25,7 +25,7 @@ const infomation = [
 const form = [{ href: '/login', title: 'Login' }];
 function Header() {
   return (
-    <div className="cover-header">
+    <div className="cover-header" style={{ backgroundColor: 'white' }}>
       <div>
         <img
           className="img-header"

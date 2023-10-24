@@ -6,6 +6,7 @@ import { Typography } from 'antd';
 const { Text } = Typography;
 
 const Container = styled.div`
+  background-color: whitesmoke;
   color: black;
 `;
 const ProductImage = styled.div`
@@ -116,7 +117,6 @@ const Cart = () => {
   return (
     <div>
       <Layout>
-        {/* nav */}
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
         <Container>
           <p>Sản phẩm</p>
@@ -132,8 +132,6 @@ const Cart = () => {
             })}
           </TitleCart>
         </Container>
-
-        {/* render list product  */}
 
         {cart.map((item) => {
           const { id, picture, des, price, amount } = item;
