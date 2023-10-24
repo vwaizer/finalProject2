@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography } from 'antd';
@@ -6,7 +6,6 @@ import { Typography } from 'antd';
 const { Text } = Typography;
 
 const Container = styled.div`
-  background-color: white;
   color: black;
 `;
 const ProductImage = styled.div`
@@ -119,7 +118,7 @@ const Cart = () => {
       <Layout>
         {/* nav */}
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
-        <Container className="container ">
+        <Container>
           <p>Sản phẩm</p>
           <TitleCart>
             {infoCart.map((item) => {
@@ -162,10 +161,7 @@ const Cart = () => {
           );
         })}
 
-        <div
-          className="container "
-          style={{ display: 'flex', backgroundColor: 'white', color: 'black' }}
-        >
+        <div style={{ display: 'flex', color: 'black' }}>
           <h3 style={{ display: 'inline-block' }}>
             Tổng thanh toán ({toTalAmount()} sản phẩm) : {toTalProduct()}VND
           </h3>
@@ -174,5 +170,5 @@ const Cart = () => {
       </Layout>
     </div>
   );
-}; 
+};
 export default Cart;
