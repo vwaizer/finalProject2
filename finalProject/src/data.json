@@ -1,0 +1,337 @@
+[
+    {
+      "title": 1,
+      "name": "HALO LOUNGE CHAIR",
+      "category": "Handmade",
+      "price": "$149.00",
+      "stock": 11,
+      "images": [0]
+    },
+    {
+      "title": 2,
+      "name": "CEILING LAMPS",
+      "category": "Luxury",
+      "price": "$59.00",
+      "stock": 12,
+      "images": [0]
+    },
+    {
+      "title": 3,
+      "name": "DECORATIVE MIRROR",
+      "category": "Handmade",
+      "price": "$69.00",
+      "stock": 13,
+      "images": [0]
+    },
+    {
+      "title": 4,
+      "name": "BEDS IDE TAB",
+      "category": "Wooden",
+      "price": "$99.00",
+      "stock": 14,
+      "images": [0]
+    },
+    {
+      "title": 5,
+      "name": "DINING TABLE",
+      "category": "Handmade",
+      "price": "$949.00",
+      "stock": 15,
+      "images": [0]
+    },
+    {
+      "title": 6,
+      "name": "CLASSIC TABLE LAMP",
+      "category": "Handmade",
+      "price": "$49.00",
+      "stock": 16,
+      "images": [0]
+    },
+    {
+      "title": 7,
+      "name": "LEATHER BED",
+      "category": "Luxury",
+      "price": "$999.00",
+      "stock": 17,
+      "images": [0]
+    },
+    {
+      "title": 8,
+      "name": "LEATHER BED",
+      "category": "Luxury",
+      "price": "$999.00",
+      "stock": 18,
+      "images": [0]
+    },
+    {
+      "title": 9,
+      "name": "WORKING TABLE",
+      "category": "Luxury",
+      "price": "$1199.00",
+      "stock": 19,
+      "images": [0]
+    },
+    {
+      "title": 10,
+      "name": "SHOES CABINET",
+      "category": "Wooden",
+      "price": "$1399.00",
+      "stock": 20,
+      "images": [0]
+    },
+    {
+      "title": 11,
+      "name": "DRESSING TABLE",
+      "category": "Wooden",
+      "price": "$219.00",
+      "stock": 21,
+      "images": [0]
+    },
+    {
+      "title": 12,
+      "name": "BOOKSHELF",
+      "category": "Wooden",
+      "price": "$29.00",
+      "stock": 22,
+      "images": [0]
+    },
+    {
+      "title": 13,
+      "name": "SOFA ANDES",
+      "category": "Handmade",
+      "price": "$399.00",
+      "stock": 53,
+      "images": [0]
+    },
+    {
+      "title": 14,
+      "name": "KITCHEN CABINET",
+      "category": "Wooden",
+      "price": "$199.00",
+      "stock": 4,
+      "images": [0]
+    },
+    {
+      "title": 15,
+      "name": "LAVABO CABINET",
+      "category": "Luxury",
+      "price": "$99.00",
+      "stock": 27,
+      "images": [0]
+    },
+    {
+      "title": 16,
+      "name": "REFRIGERATOR",
+      "category": "Luxury",
+      "price": "$1899.00",
+      "stock": 16,
+      "images": [0]
+    },
+    {
+      "title": 17,
+      "name": "MURAL",
+      "category": "Handmade",
+      "price": "$39.00",
+      "stock": 36,
+      "images": [0]
+    },
+    {
+      "title": 18,
+      "name": "LUXURY BOOKSHELF",
+      "category": "Luxury",
+      "price": "$389.00",
+      "stock": 95,"images": [0]
+
+    },
+    {
+      "title": 19,
+      "name": "FLUFFY RUG",
+      "category": "Handmade",
+      "price": "$49.00",
+      "stock": 22,
+      "images": [0]
+    },
+    {
+      "title": 20,
+      "name": "TABLE LAMP",
+      "category": "Wooden",
+      "price": "$49.00",
+      "stock": 48,
+      "images": [0]
+    },
+    {
+      "title": 21,
+      "name": "SET OF DISHES",
+      "category": "Essentials",
+      "price": "$99.00",
+      "stock": 17,
+      "images": [0]
+    },
+    {
+      "title": 22,
+      "name": "ROUND SOFA TABLE",
+      "category": "Essentials",
+      "price": "$299.00",
+      "stock": 7,
+      "images": [0]
+    },
+    {
+      "title": 23,
+      "name": "SET OF TEA CUPS",
+      "category": "Handmade",
+      "price": "$9.00",
+      "stock": 16,
+      "images": [0]
+    },
+    {
+      "title": 24,
+      "name": "WATER PURIFIER",
+      "category": "Essentials",
+      "price": "$299.00",
+      "stock": 5,
+      "images": [0]
+    },
+    {
+      "title": 25,
+      "name": "WASHING MACHINE",
+      "category": "Essentials",
+      "price": "$899.00",
+      "stock": 15,
+      "images": [0]
+    },
+    {
+      "title": 26,
+      "name": "CERAMIC TEAPOT",
+      "category": "Handmade",
+      "price": "$89.00",
+      "stock": 3,
+      "images": [0]
+    },
+    {
+      "title": 27,
+      "name": "WOOL PUMPKIN SOFA",
+      "category": "Luxury",
+      "price": "$189.00",
+      "stock": 9,
+      "images": [0]
+    },
+    {
+      "title": 28,
+      "name": "CLOUD SOFA",
+      "category": "Luxury",
+      "price": "$359.00",
+      "stock": 17,"images": [0]
+    },
+    {
+      "title": 29,
+      "name": "WOODEN BED",
+      "category": "Wooden",
+      "price": "$299.00",
+      "stock": 24,
+      "images": [0]
+    },
+    {
+      "title": 30,
+      "name": "LEE KINGDOM BED",
+      "category": "Wooden",
+      "price": "$499.00",
+      "stock": 36,
+      "images": [0]
+    },
+    {
+      "title": 31,
+      "name": "ART PAINTING",
+      "category": "Handmade",
+      "price": "$34.00",
+      "stock": 74,
+      "images": [0]
+    },
+    {
+      "title": 32,
+      "name": "FENG SHUI WATERFALL",
+      "category": "Handmade",
+      "price": "$139.00",
+      "stock": 27,
+      "images": [0]
+    },
+    {
+      "title": 33,
+      "name": "FLOWER VASES",
+      "category": "Essentials",
+      "price": "$84.00",
+      "stock": 32,
+      "images": [0]
+    },
+    {
+      "title": 34,
+      "name": "DRESSING TABLE",
+      "category": "Wooden",
+      "price": "$699.00",
+      "stock": 22,
+      "images": [0]
+    },
+    {
+      "title": 35,
+      "name": "CORNER TABLE",
+      "category": "Wooden",
+      "price": "$249.00",
+      "stock": 56,
+      "images": [0]
+    },
+    {
+      "title": 36,
+      "name": "ROUND DINING TABLE",
+      "category": "Luxury",
+      "price": "$759.00",
+      "stock": 23,
+      "images": [0]
+    },
+    {
+      "title": 37,
+      "name": "IKEA DESK",
+      "category": "Essentials",
+      "price": "$89.00",
+      "stock": 94,
+      "images": [0]
+    },
+    {
+      "title": 38,
+      "name": "PORCELAIN VASES",
+      "category": "Essentials",
+      "price": "$29.00",
+      "stock": 12,
+      "images": [0]
+    },
+    {
+      "title": 39,
+      "name": "HIGH-CLASS WARDROBE",
+      "category": "Luxury",
+      "price": "$719.00",
+      "stock": 59,
+      "images": [0]
+    },
+    {
+      "title": 40,
+      "name": "ROCKING CHAIR",
+      "category": "Wooden",
+      "price": "$149.00",
+      "stock": 38,
+      "images": [0]
+    },
+    {
+      "title": 41,
+      "name": "FLOWERPOT",
+      "category": "Handmade",
+      "price": "$59.00",
+      "stock": 24
+      ,"images": [0]
+    },
+    {
+      "title": 42,
+      "name": "DECORATIVE VASES",
+      "category": "Handmade",
+      "price": "$44.00",
+      "stock": 23,
+      "images": [0]
+    }
+  ]

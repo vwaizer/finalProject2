@@ -46,7 +46,7 @@ function Header() {
         <div className="side-login">
           {form.map((value, index) => {
             return (
-              <Nav.Item as="li">
+              <Nav.Item as="li" key={index}>
                 <Nav.Link className="navlink" href={value.href}>
                   {value.title}
                 </Nav.Link>

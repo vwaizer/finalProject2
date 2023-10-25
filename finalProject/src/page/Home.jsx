@@ -51,7 +51,7 @@ const Home = (props) => {
                     key={index}
                     title={item.title}
                     price={item.price}
-                    picture={item.images[0]}
+                    
                   />
                 );
               }
@@ -75,7 +75,7 @@ const Home = (props) => {
                     key={index}
                     title={item.title}
                     price={item.price}
-                    picture={item.images[0]}
+                    
                   />
                 );
               }
@@ -93,7 +93,7 @@ const Home = (props) => {
                     key={index}
                     title={item.title}
                     price={item.price}
-                    picture={item.images[0]}
+                    
                   />
                 );
               }
