@@ -29,14 +29,18 @@
     cursor: pointer;
 }
 
+.login{
+    text-decoration: none;
+    padding-right: 10px;
+}
+
 .side-login{
     display: flex;
     justify-content: flex-end;
     font-size: 15px;
-    gap: 10px;
 }
 
-.side-login:hover{
+.login:hover{
     color: blue;
     cursor: pointer;
 }

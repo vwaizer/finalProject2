@@ -41,14 +41,14 @@ function Header() {
         <div className="side-login">
           {form.map((value, index) => {
             return (
-              <div as="li">
-                <Link className="navlink" to={value.href}>
+              <div key={index} as="li">
+                <Link className="login" to={value.href}>
                   {value.title}
                 </Link>
+                <ShoppingCartOutlined  />
               </div>
             );
           })}
-          <ShoppingCartOutlined  />
         </div>
       </div>
     </div>
