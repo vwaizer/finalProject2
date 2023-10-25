@@ -2,6 +2,7 @@ import { ShoppingCartOutlined } from "@ant-design/icons";
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 import "./header.style.css";
+import { Link } from "react-router-dom";
 
 const infomation = [
   {
@@ -16,10 +17,6 @@ const infomation = [
     href: "/Cart",
     title: "Cart and Payment",
   },
-  {
-    href: "/footer",
-    title: "Contact",
-  },
 ];
 
 const form = [
@@ -31,29 +28,29 @@ function Header() {
       <div>
         <img className="img-header" src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png" />
       </div>
-      <Nav className="header" as="ul">
+      <div className="header" as="ul">
         {infomation.map((item, index) => {
           return (
-            <Nav.Item key={index} as="li">
-              <Nav.Link className="navlink" href={item.href}>
+            <div key={index} as="li">
+              <Link className="navlink" to={item.href}>
                 {item.title}
-              </Nav.Link>
-            </Nav.Item>
+              </Link>
+            </div>
           );
         })}
         <div className="side-login">
           {form.map((value, index) => {
             return (
-              <Nav.Item as="li">
-                <Nav.Link className="navlink" href={value.href}>
+              <div as="li">
+                <Link className="navlink" to={value.href}>
                   {value.title}
-                </Nav.Link>
-              </Nav.Item>
+                </Link>
+              </div>
             );
           })}
           <ShoppingCartOutlined  />
         </div>
-      </Nav>
+      </div>
     </div>
   );
 }
