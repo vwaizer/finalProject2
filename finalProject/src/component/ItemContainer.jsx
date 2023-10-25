@@ -12,15 +12,17 @@ const ItemDetail = styled.div`
 
 
 const ItemContainer = (props) => {
-  const navi=useNavigate();
+  const naPage=useNavigate();
+  const nextPage=props.id;
   const onDetail=()=>{
-    console.log("detail");
-    navi("/Detail")
+    
+    naPage(`${nextPage}`);
+    // console.log(nextPage);
 
   }
   return (
     <Card hoverable onClick={onDetail}>
-      {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
+      <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img>
       <ItemDetail>
         <div><strong>{props.title}</strong></div>
         <div>{props.price}</div>

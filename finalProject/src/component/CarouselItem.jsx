@@ -56,7 +56,7 @@ export default function CarouselItem(props) {
         {dataBase.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              {/* <img src={item.images[0]} alt="" style={{ height: "300px",width:"300px" }}></img> */}
+              <img src={item.images[0]} alt="" style={{ height: "300px",width:"300px" }}></img>
             </SwiperSlide>
           );
         })}

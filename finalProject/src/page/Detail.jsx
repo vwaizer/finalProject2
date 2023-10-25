@@ -2,6 +2,7 @@ import React from 'react';
 import { Descriptions, Image } from 'antd';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
+import { useParams } from 'react-router';
 
 const Container=styled.div`
     display:flex;
@@ -9,7 +10,12 @@ const Container=styled.div`
     justify-content:space-between;
     margin:10px;
 `;
-const Detail = () =>{ 
+const Detail = (props) =>{ 
+  const urlData=useParams();
+  const imgID=urlData.productID;
+  const dataBase=props.data;
+  const imgData=dataBase[imgID].images[0];
+  console.log(imgData);
   const items = [
     {
       key: '1',
@@ -44,9 +50,9 @@ const Detail = () =>{
       <Image
     width={400}
     
-    src="https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png"
+    src={imgData}
     />
-      <div style={{width:"50%"}}> <Descriptions title="User Info" column={3}  layout="vertical" size='middle' items={items} />;</div>
+      <div style={{width:"40%"}}> <Descriptions title="User Info" column={3}  layout="vertical" size='middle' items={items} />;</div>
       </Container>
     </Layout>
   

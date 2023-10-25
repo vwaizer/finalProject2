@@ -1,337 +1,337 @@
 [
     {
-      "title": 1,
-      "name": "HALO LOUNGE CHAIR",
+      "id": 1,
+      "title": "HALO LOUNGE CHAIR",
       "category": "Handmade",
       "price": "$149.00",
-      "stock": 11,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 2,
-      "name": "CEILING LAMPS",
+      "id": 2,
+      "title": "CEILING LAMPS",
       "category": "Luxury",
       "price": "$59.00",
-      "stock": 12,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 3,
-      "name": "DECORATIVE MIRROR",
+      "id": 3,
+      "title": "DECORATIVE MIRROR",
       "category": "Handmade",
       "price": "$69.00",
-      "stock": 13,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 4,
-      "name": "BEDS IDE TAB",
+      "id": 4,
+      "title": "BEDS IDE TAB",
       "category": "Wooden",
       "price": "$99.00",
-      "stock": 14,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 5,
-      "name": "DINING TABLE",
+      "id": 5,
+      "title": "DINING TABLE",
       "category": "Handmade",
       "price": "$949.00",
-      "stock": 15,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 6,
-      "name": "CLASSIC TABLE LAMP",
+      "id": 6,
+      "title": "CLASSIC TABLE LAMP",
       "category": "Handmade",
       "price": "$49.00",
-      "stock": 16,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 7,
-      "name": "LEATHER BED",
+      "id": 7,
+      "title": "LEATHER BED",
       "category": "Luxury",
       "price": "$999.00",
-      "stock": 17,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 8,
-      "name": "LEATHER BED",
+      "id": 8,
+      "title": "LEATHER BED",
       "category": "Luxury",
       "price": "$999.00",
-      "stock": 18,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 9,
-      "name": "WORKING TABLE",
+      "id": 9,
+      "title": "WORKING TABLE",
       "category": "Luxury",
       "price": "$1199.00",
-      "stock": 19,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 10,
-      "name": "SHOES CABINET",
+      "id": 10,
+      "title": "SHOES CABINET",
       "category": "Wooden",
       "price": "$1399.00",
-      "stock": 20,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 11,
-      "name": "DRESSING TABLE",
+      "id": 11,
+      "title": "DRESSING TABLE",
       "category": "Wooden",
       "price": "$219.00",
-      "stock": 21,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 12,
-      "name": "BOOKSHELF",
+      "id": 12,
+      "title": "BOOKSHELF",
       "category": "Wooden",
       "price": "$29.00",
-      "stock": 22,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 13,
-      "name": "SOFA ANDES",
+      "id": 13,
+      "title": "SOFA ANDES",
       "category": "Handmade",
       "price": "$399.00",
-      "stock": 53,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 14,
-      "name": "KITCHEN CABINET",
+      "id": 14,
+      "title": "KITCHEN CABINET",
       "category": "Wooden",
       "price": "$199.00",
-      "stock": 4,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 15,
-      "name": "LAVABO CABINET",
+      "id": 15,
+      "title": "LAVABO CABINET",
       "category": "Luxury",
       "price": "$99.00",
-      "stock": 27,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 16,
-      "name": "REFRIGERATOR",
+      "id": 16,
+      "title": "REFRIGERATOR",
       "category": "Luxury",
       "price": "$1899.00",
-      "stock": 16,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 17,
-      "name": "MURAL",
+      "id": 17,
+      "title": "MURAL",
       "category": "Handmade",
       "price": "$39.00",
-      "stock": 36,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 18,
-      "name": "LUXURY BOOKSHELF",
+      "id": 18,
+      "title": "LUXURY BOOKSHELF",
       "category": "Luxury",
       "price": "$389.00",
-      "stock": 95,"images": [0]
+      "amount": 0,"images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
 
     },
     {
-      "title": 19,
-      "name": "FLUFFY RUG",
+      "id": 19,
+      "title": "FLUFFY RUG",
       "category": "Handmade",
       "price": "$49.00",
-      "stock": 22,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 20,
-      "name": "TABLE LAMP",
+      "id": 20,
+      "title": "TABLE LAMP",
       "category": "Wooden",
       "price": "$49.00",
-      "stock": 48,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 21,
-      "name": "SET OF DISHES",
+      "id": 21,
+      "title": "SET OF DISHES",
       "category": "Essentials",
       "price": "$99.00",
-      "stock": 17,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 22,
-      "name": "ROUND SOFA TABLE",
+      "id": 22,
+      "title": "ROUND SOFA TABLE",
       "category": "Essentials",
       "price": "$299.00",
-      "stock": 7,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 23,
-      "name": "SET OF TEA CUPS",
+      "id": 23,
+      "title": "SET OF TEA CUPS",
       "category": "Handmade",
       "price": "$9.00",
-      "stock": 16,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 24,
-      "name": "WATER PURIFIER",
+      "id": 24,
+      "title": "WATER PURIFIER",
       "category": "Essentials",
       "price": "$299.00",
-      "stock": 5,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 25,
-      "name": "WASHING MACHINE",
+      "id": 25,
+      "title": "WASHING MACHINE",
       "category": "Essentials",
       "price": "$899.00",
-      "stock": 15,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 26,
-      "name": "CERAMIC TEAPOT",
+      "id": 26,
+      "title": "CERAMIC TEAPOT",
       "category": "Handmade",
       "price": "$89.00",
-      "stock": 3,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 27,
-      "name": "WOOL PUMPKIN SOFA",
+      "id": 27,
+      "title": "WOOL PUMPKIN SOFA",
       "category": "Luxury",
       "price": "$189.00",
-      "stock": 9,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 28,
-      "name": "CLOUD SOFA",
+      "id": 28,
+      "title": "CLOUD SOFA",
       "category": "Luxury",
       "price": "$359.00",
-      "stock": 17,"images": [0]
+      "amount": 0,"images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 29,
-      "name": "WOODEN BED",
+      "id": 29,
+      "title": "WOODEN BED",
       "category": "Wooden",
       "price": "$299.00",
-      "stock": 24,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 30,
-      "name": "LEE KINGDOM BED",
+      "id": 30,
+      "title": "LEE KINGDOM BED",
       "category": "Wooden",
       "price": "$499.00",
-      "stock": 36,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 31,
-      "name": "ART PAINTING",
+      "id": 31,
+      "title": "ART PAINTING",
       "category": "Handmade",
       "price": "$34.00",
-      "stock": 74,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 32,
-      "name": "FENG SHUI WATERFALL",
+      "id": 32,
+      "title": "FENG SHUI WATERFALL",
       "category": "Handmade",
       "price": "$139.00",
-      "stock": 27,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 33,
-      "name": "FLOWER VASES",
+      "id": 33,
+      "title": "FLOWER VASES",
       "category": "Essentials",
       "price": "$84.00",
-      "stock": 32,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 34,
-      "name": "DRESSING TABLE",
+      "id": 34,
+      "title": "DRESSING TABLE",
       "category": "Wooden",
       "price": "$699.00",
-      "stock": 22,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 35,
-      "name": "CORNER TABLE",
+      "id": 35,
+      "title": "CORNER TABLE",
       "category": "Wooden",
       "price": "$249.00",
-      "stock": 56,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 36,
-      "name": "ROUND DINING TABLE",
+      "id": 36,
+      "title": "ROUND DINING TABLE",
       "category": "Luxury",
       "price": "$759.00",
-      "stock": 23,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 37,
-      "name": "IKEA DESK",
+      "id": 37,
+      "title": "IKEA DESK",
       "category": "Essentials",
       "price": "$89.00",
-      "stock": 94,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 38,
-      "name": "PORCELAIN VASES",
+      "id": 38,
+      "title": "PORCELAIN VASES",
       "category": "Essentials",
       "price": "$29.00",
-      "stock": 12,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 39,
-      "name": "HIGH-CLASS WARDROBE",
+      "id": 39,
+      "title": "HIGH-CLASS WARDROBE",
       "category": "Luxury",
       "price": "$719.00",
-      "stock": 59,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 40,
-      "name": "ROCKING CHAIR",
+      "id": 40,
+      "title": "ROCKING CHAIR",
       "category": "Wooden",
       "price": "$149.00",
-      "stock": 38,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 41,
-      "name": "FLOWERPOT",
+      "id": 41,
+      "title": "FLOWERPOT",
       "category": "Handmade",
       "price": "$59.00",
-      "stock": 24
-      ,"images": [0]
+      "amount": 0
+      ,"images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     },
     {
-      "title": 42,
-      "name": "DECORATIVE VASES",
+      "id": 42,
+      "title": "DECORATIVE VASES",
       "category": "Handmade",
       "price": "$44.00",
-      "stock": 23,
-      "images": [0]
+      "amount": 0,
+      "images": ["https://www.marchantasianart.com/app/uploads/2021/03/chinese-blue-landscape-e1633450801377.jpg"]
     }
   ]
