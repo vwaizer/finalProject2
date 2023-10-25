@@ -9,6 +9,7 @@ export const CoverLogin = styled.div`
 `;
 export const Title = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
 `;
 export const Tab = styled.div`
