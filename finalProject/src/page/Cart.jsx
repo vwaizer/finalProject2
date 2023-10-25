@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography } from 'antd';
+import { useParams } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 const { Text } = Typography;
 
@@ -83,7 +85,12 @@ const info = [
 ];
 
 const infoCart = ['Số Lượng', 'Số Tiền', 'Thành Tiền'];
-const Cart = () => {
+const Cart = (props) => {
+  //--------------------get id in path----------------------
+  const [urlParam,setUrlParam]=useSearchParams();
+  const itemID=urlParam.get("id");
+  const dataBase=props.data;
+//--------------------------------------------------------
   const [cart, setCart] = useState(info);
   const updateCart = [...cart];
   // tăng số lượng sản phẩm

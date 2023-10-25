@@ -16,7 +16,7 @@ const ItemContainer = (props) => {
   const nextPage=props.id;
   const onDetail=()=>{
     
-    naPage(`${nextPage}`);
+    naPage(`/${nextPage}`);
     // console.log(nextPage);
 
   }
