@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Button, Descriptions, Image } from 'antd';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { useNavigate, useParams } from 'react-router';
+import {  useParams } from 'react-router';
 import { DataContext } from '../App';
 
 const Container=styled.div`
@@ -26,7 +26,7 @@ const DescripBlock=styled.div`
     }
 `;
 const Detail = (props) =>{ 
-  const navigatePage=useNavigate()
+  
   
   const urlData=useParams();
   const itemID=urlData.productID;
@@ -37,7 +37,7 @@ const Detail = (props) =>{
   console.log(cartData.data);
   
   const addToCart=()=>{
-    cartData.method([...cartData.data,itemID])
+    cartData.method([...cartData.data,dataBase[itemID]])
 }
   const items = [
     {
@@ -72,7 +72,7 @@ const Detail = (props) =>{
     src={imgData}
     />
       <DescripBlock> <Descriptions title="Detail " column={3}  layout="vertical" size='middle' items={items} />
-        <Button onClick={addToCart}>Them vao Gio Hang</Button>
+        <Button onClick={addToCart} className='buttonClass'>Them vao Gio Hang</Button>
       </DescripBlock>
       </Container>
     </Layout>
