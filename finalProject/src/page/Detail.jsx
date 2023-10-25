@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Descriptions, Image } from 'antd';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { useNavigate, useParams } from 'react-router';
+import { DataContext } from '../App';
 
 const Container=styled.div`
     display:flex;
@@ -32,9 +33,11 @@ const Detail = (props) =>{
   const dataBase=props.data;
   const imgData=dataBase[itemID].images[0];
   const titleData=dataBase[itemID].title;
-  console.log(imgData);
+  const cartData=useContext(DataContext);
+  console.log(cartData.data);
+  
   const addToCart=()=>{
-    navigatePage(`/Cart?id=${itemID}`)
+    cartData.method([...cartData.data,itemID])
 }
   const items = [
     {
