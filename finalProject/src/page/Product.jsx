@@ -78,7 +78,7 @@ const Product = (props) => {
           </ItemArea>
           <ItemArea>
             {dataBase.map((item, index) => {
-              if (index >= 8 && index < 10) {
+              if (index >= 8 && index < 11) {
                 return (
                   <ItemContainer
                     key={index}
