@@ -9,6 +9,7 @@
   display: flex;
   gap: 100px;
   justify-content: space-around;
+  background-color: aqua;
 }
 
 .img-header{
@@ -32,8 +33,8 @@
 .side-login{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     font-size: 15px;
+    gap: 10px;
 }
 
 .side-login:hover{
