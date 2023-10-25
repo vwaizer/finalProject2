@@ -48,6 +48,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -70,6 +71,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -85,6 +87,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -107,6 +110,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -122,6 +126,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -144,6 +149,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -159,6 +165,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -181,6 +188,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -196,6 +204,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -218,6 +227,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -233,6 +243,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -255,6 +266,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -270,6 +282,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -292,6 +305,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }
@@ -307,6 +321,7 @@ const Product = (props) => {
                     title={item.title}
                     price={item.price}
                     picture={item.images[0]}
+                    id={item.id}
                   />
                 );
               }

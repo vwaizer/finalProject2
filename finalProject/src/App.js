@@ -20,7 +20,7 @@ function App() {
   const [dataBase,setDataBase]=useState([]);
   // const [loading,setLoading]=useState(false);
   async function getData() {
-    const response = await axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3');
+    const response = await axios.get('https://mocki.io/v1/0ef5bcad-ccda-46e4-9364-651e62eb016e');
     // setTimeout(()=>{setLoading(true)},2000)
     setDataBase(response.data);
   }
@@ -41,9 +41,10 @@ function App() {
      
       <Routes>
         <Route path="/" element={<Home data={dataBase}/>}></Route>
-        <Route path="/Product" element={<Product data={dataBase} />}></Route>
-        <Route path="/Cart" element={<Cart/>}></Route> 
-        <Route path="/Detail:productID" element={<Detail/>}></Route> 
+        <Route path="/product" element={<Product data={dataBase} />}></Route>
+        <Route path="/Cart" element={<Cart data={dataBase}/>}></Route> 
+        <Route path="/:productID" element={<Detail data={dataBase}/>}></Route> 
+        <Route path="/product/:productID" element={<Detail data={dataBase}/>}></Route> 
         <Route path="/Login" element={<Login/>}></Route>
       </Routes>
     </BrowserRouter>

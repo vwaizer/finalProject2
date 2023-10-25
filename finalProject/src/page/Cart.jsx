@@ -6,7 +6,7 @@ import { Typography } from 'antd';
 const { Text } = Typography;
 
 const Container = styled.div`
-  background-color: whitesmoke;
+  
   color: black;
 `;
 const ProductImage = styled.div`

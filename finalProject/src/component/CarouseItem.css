@@ -19,7 +19,7 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  width: 500px;
+  width: 100%;
   height: fit-content;
   background: #fff;
  
