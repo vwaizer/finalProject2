@@ -57,8 +57,6 @@ const NamePage = styled.p`
 `;
 const AmountButton = styled.button`
   height: '25px'
-  background-color: white;
-
 `
 const info = [
   {
