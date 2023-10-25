@@ -15,7 +15,7 @@ const ItemArea = styled.div`
     justify-content:center;
     align-items:center;
   }
-  margin: 5px;
+  margin: 10px;
 `;
 const Block = styled.div`
   border: 2px solid black;

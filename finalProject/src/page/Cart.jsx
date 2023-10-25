@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography } from 'antd';
@@ -11,7 +11,7 @@ const Container = styled.div`
   background-color: white;
 `;
 const ProductImage = styled.div`
-  width: 80px;  
+  width: 80px;
   height: 80px;
   background-color: aqua;
 `;
@@ -22,7 +22,6 @@ const BlockNumber = styled.div`
   margin: auto;
   color: black;
   margin-left: 100px;
-  
 `;
 const Des = styled.p`
   margin: auto;
@@ -47,13 +46,11 @@ const TitleCart = styled.div`
   display: flex;
   font-weight: 500;
   margin-left: 165px;
-  
 `;
 const NamePage = styled.p`
   font-size: 30px;
   font-weight: 500;
   text-align: center;
-  
 `;
 const AmountButton = styled.button`
   height: '25px'
@@ -124,9 +121,8 @@ const Cart = () => {
   return (
     <div>
       <Layout>
-       
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
-        <Container className="container ">
+        <Container>
           <p>Sản phẩm</p>
           <TitleCart>
             {infoCart.map((item) => {
@@ -140,8 +136,6 @@ const Cart = () => {
             })}
           </TitleCart>
         </Container>
-
-      
 
         {cart.map((item) => {
           const { id, picture, des, price, amount } = item;
@@ -169,10 +163,7 @@ const Cart = () => {
           );
         })}
 
-        <div
-          className="container "
-          style={{ display: 'flex', backgroundColor: 'white', color: 'black' }}
-        >
+        <div style={{ display: 'flex', color: 'black' }}>
           <h3 style={{ display: 'inline-block' }}>
             Tổng thanh toán ({toTalAmount()} sản phẩm) : {toTalProduct()}VND
           </h3>

@@ -7,21 +7,21 @@ import axios from 'axios';
 import Cart from './page/Cart';
 import Detail from './page/Detail';
 import Login from './page/Login'
-import { DotLoader } from 'react-spinners';
-import styled from 'styled-components';
-const LoadingBlock=styled.div`
-    height:500px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-`;
+// import { DotLoader } from 'react-spinners';
+// import styled from 'styled-components';
+// const LoadingBlock=styled.div`
+//     height:500px;
+//     display:flex;
+//     flex-direction:row;
+//     justify-content:center;
+//     align-items:center;
+// `;
 function App() {
   const [dataBase,setDataBase]=useState([]);
-  const [loading,setLoading]=useState(false);
+  // const [loading,setLoading]=useState(false);
   async function getData() {
     const response = await axios.get('https://api.escuelajs.co/api/v1/products/?categoryId=3');
-    setTimeout(()=>{setLoading(true)},2000)
+    // setTimeout(()=>{setLoading(true)},2000)
     setDataBase(response.data);
   }
   useEffect(()=>{
