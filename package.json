@@ -15,5 +15,8 @@
     "url": "https://github.com/vwaizer/finalProjectLv2/issues"
   },
   "homepage": "https://github.com/vwaizer/finalProjectLv2#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "react-icons": "^4.11.0"
+  }
 }
