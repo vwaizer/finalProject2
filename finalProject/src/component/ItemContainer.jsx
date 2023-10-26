@@ -7,7 +7,7 @@ const ItemDetail = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 310px;
+  width: 300px;
 `;
 
 const ItemContainer = (props) => {
