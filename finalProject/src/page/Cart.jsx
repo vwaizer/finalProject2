@@ -1,12 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Typography, Flex } from 'antd';
+import { Typography,Flex } from 'antd';
+import { useParams } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
+
 const { Text } = Typography;
+
 const Container = styled.div`
-  background-color: white;
+  background-color: whitesmoke;
   color: black;
+  background-color: white;
 `;
 const ProductImage = styled.div`
   width: 80px;
@@ -24,12 +29,11 @@ const BlockNumber = styled.div`
 `;
 const Des = styled.p`
   margin: auto;
-  width: 230px;
+  width: 260px;
   border: 1px solid black;
   height: 40px;
   border-radius: 1.5px;
   margin-left: 20px;
-  margin-right: 50px;
 `;
 
 // const Quantity = styled.div`
@@ -39,6 +43,7 @@ const Des = styled.p`
 const Amount = styled.div`
   width: 40px;
   text-align: center;
+  border: 1.5px solid gray;
   height: 23.5px;
 `;
 const TitleCart = styled.div`
@@ -60,6 +65,9 @@ const BuyButton = styled.button`
   font-family: 'Quicksand', sans-serif;
   margin-top: 10px;
 `;
+const AmountButton = styled.button`
+  height: '25px';
+`
 const info = [
   {
     id: 0,
@@ -92,15 +100,20 @@ const info = [
 ];
 
 const infoCart = ['Số Lượng', 'Số Tiền', 'Thành Tiền'];
-const Cart = () => {
+const Cart = (props) => {
+
+  const [urlParam,setUrlParam]=useSearchParams();
+  const itemID=urlParam.get("id");
+  const dataBase=props.data;
+
   const [cart, setCart] = useState(info);
   const updateCart = [...cart];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
-    // console.log(item)
-    const indexItem = cart.indexOf(item);
+   // console.log(item)  
+   const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    setCart([...updateCart]);
+    setCart([...updateCart]); 
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
@@ -125,10 +138,11 @@ const Cart = () => {
   };
 
   return (
-    <Layout>
-      {/* nav */}
+   
+      <Layout>
+        {/* nav */}
       
-      <Flex wrap="wrap" justify="space-evenly">
+        <Flex wrap="wrap" justify="space-evenly">
         {/* <Flex justify="space-between">
           <p>Sản phẩm</p>
           <TitleCart>
@@ -148,58 +162,60 @@ const Cart = () => {
         
         <div>
         <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
-          {cart.map((item) => {
-            const { id, picture, des, price, amount } = item;
-            return (
-              <div>
-                <Flex
-                  wrap="wrap"
-                  justify="space-evenly"
-                  key={id}
-                  style={{ marginBottom: '17px', backgroundColor: 'white', color: 'black' }}
-                >
-                  <ProductImage>{picture}</ProductImage>
-                  <div style={{ display: 'flex' }}>
-                    <Des>{des}</Des>
+        {cart.map((item) => {
+          const { id, picture, des, price, amount } = item;
+          return (
+            <div>
+            <Flex
+              wrap="wrap"
+              justify="space-evenly"
+              key={id}
+              style={{ marginBottom: '17px', backgroundColor: 'white', color: 'black' }}
+            >
+              <ProductImage>{picture}</ProductImage>
+              <div style={{ display: 'flex' }}>
+                <Des>{des}</Des>
 
-                    {/* <Flex justify='space-around'> */}
+                {/* <Flex justify='space-around'> */}
 
-                    <Flex align="center">
-                      <div style={{border:'1px solid grey', display:'flex'}}>
-                      <button onClick={() => decreaseQuantity(item)} style={{ height: '25px',backgroundColor:'white',border:'none',borderRight:'1px solid grey'}}>
-                        -
-                      </button>
-                      <Amount>{amount}</Amount>
-                      <button onClick={() => increaseQuantity(item)} style={{ height: '25px' ,backgroundColor:'white',border:'none',borderLeft:'1px solid grey'}}>
-                        +
-                      </button>
-                      </div>
-                    </Flex>
+                <Flex align="center">
+                  <div style={{border:'1px solid grey', display:'flex'}}>
+                  <button onClick={() => decreaseQuantity(item)} style={{ height: '25px',backgroundColor:'white',border:'none',borderRight:'1px solid grey'}}>
+                    -
+                  </button>
+                  <Amount>{amount}</Amount>
+                  <button onClick={() => increaseQuantity(item)} style={{ height: '25px' ,backgroundColor:'white',border:'none',borderLeft:'1px solid grey'}}>
+                    +
+                  </button>
                   </div>
-                  <Flex>
-                    <BlockNumber>
-                      <Text>{price}₫</Text>
-                    </BlockNumber>
-
-                    <BlockNumber>
-                      <div>
-                      <Text type="secondary">Thành tiền</Text>
-                      </div>
-                      <span style={{ color: '#a73340', fontWeight: 'bold' }}>
-                        {amount * price}₫
-                      </span>
-                      <div>
-                        <CiTrash></CiTrash>
-                      </div>
-                    </BlockNumber>
-                  </Flex>
-
-                  {/* </Flex> */}
                 </Flex>
               </div>
-            );
-          })}
-        </div>
+              <Flex>
+                <BlockNumber>
+                  <Text>{price}₫</Text>
+                </BlockNumber>
+
+                <BlockNumber>
+                  <div>
+                  <Text type="secondary">Thành tiền</Text>
+                  </div>
+                  <span style={{ color: '#a73340', fontWeight: 'bold' }}>
+                    {amount * price}₫
+                  </span>
+                  <div>
+                    <CiTrash></CiTrash>
+                  </div>
+                </BlockNumber>
+              </Flex>
+
+              {/* </Flex> */}
+            </Flex>           
+               </div>
+         
+          );
+        })}
+
+</div>
         <div style={{ backgroundColor: 'white', color: 'black' }}>
           <Flex justify="space-between">
             <div>
