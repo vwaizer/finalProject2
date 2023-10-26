@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Typography, Flex } from 'antd';
-import { useSearchParams } from 'react-router-dom';
+import { Typography, Flex, Card } from 'antd';
+import { Link, useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { DataContext } from '../App';
@@ -51,14 +51,18 @@ const BuyButton = styled.button`
   margin-top: 10px;
 `;
 const AmountButton = styled.button`
+
   width: 25px;
   height: 25px;
   background-color: white;
   border: none;
   cursor: pointer;
 `;
-const ContinueShopping = styled.button`
+const ContinueShopping = styled.a`
+  padding: 6px 0px;
   text-decoration: none;
+  display: inline-block;
+  border-radius: 90px;
   width: 200px;
   height: 35px;
   background-color: black;
@@ -71,16 +75,15 @@ const ContinueShopping = styled.button`
     border: 2px solid black;
   }
 `;
-const LinkContinue = styled.a`
-  color: white;
-  &:hover{
-    color: black;
-  }
-`
 const Cart = (props) => {
   const cartData = useContext(DataContext);
-
-  console.log(cartData.data);
+  // console.log(props.data)
+  const suggestedItem = [];
+  for (let i = 0; i < 3; i++) {
+    suggestedItem.push(props.data[Math.floor(Math.random() * props.data.length)]);
+  }
+  // console.log(suggestedItem)
+  //   console.log(cartData.data);
   const [urlParam, setUrlParam] = useSearchParams();
   const itemID = urlParam.get('id');
   const dataBase = cartData.data;
@@ -88,7 +91,6 @@ const Cart = (props) => {
   const updateCart = [...cart];
 
   // tăng số lượng sản phẩm
-
   const increaseQuantity = (item) => {
     // console.log(item)
     const indexItem = cart.indexOf(item);
@@ -212,15 +214,36 @@ const Cart = (props) => {
             <p style={{ textAlign: 'center', fontWeight: 'lighter' }}>
               Giỏ hàng của bạn đang trống
             </p>
-            <div style={{ textAlign: 'center', color:'red' }}>
-              <ContinueShopping>
-                <BsFillReplyFill />
-                <LinkContinue href="/Product">
-                  TIẾP TỤC MUA HÀNG
-                </LinkContinue>
+            <div style={{ textAlign: 'center' }}>
+              <ContinueShopping href="/Product">
+                <BsFillReplyFill /> TIẾP TỤC MUA HÀNG
               </ContinueShopping>
             </div>
-            <div></div>
+            <div>
+              <Flex justify="space-between">
+                <div>
+                  <p>CÓ THỂ BẠN SẼ THÍCH</p>
+                </div>
+                <div style={{ marginTop: '12px' }}>
+                  <a>See More</a>
+                </div>
+              </Flex>
+              <Flex style={{ marginBottom: '10px' }} wrap="wrap">
+                {suggestedItem.map((item) => {
+                  const { id, images, title, price } = item;
+                  return (
+                    <Card hoverable key={id} style={{ width: '260px' }}>
+                      <img src={images} style={{ width: '210px', height: '180px' }}></img>
+                      <Flex justify="space-between">
+                        <div>{title}</div>
+                        <div>${price}</div>
+                      </Flex>
+                      <p style={{ textAlign: 'center' }}>About Product</p>
+                    </Card>
+                  );
+                })}
+              </Flex>
+            </div>
           </div>
 
           <div style={{ backgroundColor: 'white', color: 'black' }}>
