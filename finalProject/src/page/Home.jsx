@@ -9,6 +9,7 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
