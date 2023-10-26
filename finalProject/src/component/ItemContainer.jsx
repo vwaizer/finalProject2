@@ -12,21 +12,25 @@ const ItemDetail = styled.div`
 
 const ItemContainer = (props) => {
   const naPage=useNavigate();
-  const nextPage=props.id-1;
+  let nextPage=props.id;
+  if(props.id >0){
+    nextPage--;
+  }
+  
   const onDetail=()=>{
     
     naPage(`/${nextPage}`);
     // console.log(nextPage);
   };
   return (
-    <Card style={{border:"0px",width:"100%"}} hoverable bordered onClick={onDetail}>
+    <Card style={{border:"0px",width:"100%"}} hoverable  onClick={onDetail}>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
       <Image width="100%" height={420} src={props.picture} />
       <ItemDetail>
         <div>
-          <strong>{props.title}</strong>
+          {props.title ? <strong>{props.title}</strong>:<></>}
         </div>
-        <div>${props.price}</div>
+        {props.price?<div>${props.price}</div>:<></>}
       </ItemDetail>
     </Card>
   );
