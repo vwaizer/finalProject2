@@ -1,11 +1,23 @@
+import { Button } from 'antd';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-export const CoverLogin = styled.div`
+export const CoverBox = styled.div`
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+export const Login = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 500px;
+  background-color: grey;
+  color: white;
 `;
 export const Title = styled.div`
   display: flex;
@@ -13,7 +25,14 @@ export const Title = styled.div`
   align-items: center;
 `;
 export const Tab = styled.div`
-  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+export const ButtonTab = styled.div`
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 `;
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -28,8 +47,13 @@ const LoginPage = () => {
     }
   };
 
+  const handleReset = () => {
+    window.location = "/login"
+  }
+
   return (
-    <CoverLogin>
+    <CoverBox>
+        <Login>
       <Title>
         <h2>Đăng nhập</h2>
         <p>{error}</p>
@@ -50,10 +74,12 @@ const LoginPage = () => {
           placeholder="Mật khẩu"
         />
       </Tab>
-      <Tab>
+      <ButtonTab>
         <button onClick={handleLogin}>Đăng nhập</button>
-      </Tab>
-    </CoverLogin>
+        <button onClick={handleReset}>Reset</button>
+      </ButtonTab>
+    </Login>
+    </CoverBox>
   );
 };
 
