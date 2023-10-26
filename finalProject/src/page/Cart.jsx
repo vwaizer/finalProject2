@@ -2,12 +2,10 @@ import React, { useContext, useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography, Flex } from 'antd';
-import { useParams } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { DataContext } from '../App';
-import useHoverButton from '../CustomHooks.jsx/useHoverButton';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -60,7 +58,6 @@ const AmountButton = styled.button`
   cursor: pointer;
 `;
 const ContinueShopping = styled.button`
-  /* font-weight:lighter; */
   text-decoration: none;
   width: 200px;
   height: 35px;
@@ -74,6 +71,12 @@ const ContinueShopping = styled.button`
     border: 2px solid black;
   }
 `;
+const LinkContinue = styled.a`
+  color: white;
+  &:hover{
+    color: black;
+  }
+`
 const Cart = (props) => {
   const cartData = useContext(DataContext);
 
@@ -209,12 +212,12 @@ const Cart = (props) => {
             <p style={{ textAlign: 'center', fontWeight: 'lighter' }}>
               Giỏ hàng của bạn đang trống
             </p>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ textAlign: 'center', color:'red' }}>
               <ContinueShopping>
-                <BsFillReplyFill />{' '}
-                <a style={{color:'white'}} href="/Product">
+                <BsFillReplyFill />
+                <LinkContinue href="/Product">
                   TIẾP TỤC MUA HÀNG
-                </a>
+                </LinkContinue>
               </ContinueShopping>
             </div>
             <div></div>
