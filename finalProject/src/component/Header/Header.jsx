@@ -1,8 +1,8 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
-import React from 'react';
-import Nav from 'react-bootstrap/Nav';
-import './header.style.css';
-import { Link } from 'react-router-dom';
+import { ShoppingCartOutlined } from "@ant-design/icons";
+import React from "react";
+import Nav from "react-bootstrap/Nav";
+import "./header.style.css";
+import { Link } from "react-router-dom";
 
 const infomation = [
   {
