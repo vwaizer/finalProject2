@@ -50,7 +50,8 @@ const Detail = (props) =>{
   const imgData=dataBase[itemID].images[0];
   const titleData=dataBase[itemID].title;
   const cartData=useContext(DataContext);
-  
+  const randomID=[Math.floor(Math.random() * 41),Math.floor(Math.random() * 41),Math.floor(Math.random() * 41)];
+
   console.log(cartData.data);
   
   const addToCart=()=>{
@@ -102,9 +103,9 @@ const Detail = (props) =>{
         {/* <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
         <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
         <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/> */}
-        <ItemContainer picture={dataBase[Math.floor(Math.random() * 41)].images[0]} id={Math.floor(Math.random() * 41)}/>
-        <ItemContainer picture={dataBase[Math.floor(Math.random() * 41)].images[0]} id={Math.floor(Math.random() * 41)}/>
-        <ItemContainer picture={dataBase[Math.floor(Math.random() * 41)].images[0]} id={Math.floor(Math.random() * 41)}/>
+        <ItemContainer picture={dataBase[randomID[0]].images[0]} id={randomID[0]}/>
+        <ItemContainer picture={dataBase[randomID[1]].images[0]} id={randomID[1]}/>
+        <ItemContainer picture={dataBase[randomID[2]].images[0]} id={randomID[2]}/>
       </ImgContainer>
       
     </Layout>
