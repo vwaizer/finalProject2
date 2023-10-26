@@ -1,4 +1,4 @@
-import { ShoppingCartOutlined } from "@ant-design/icons";
+import { ShoppingCartOutlined, UserOutlined } from "@ant-design/icons";
 import React from "react";
 import Nav from "react-bootstrap/Nav";
 import "./header.style.css";
