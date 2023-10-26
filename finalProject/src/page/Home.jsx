@@ -12,8 +12,8 @@ const ItemArea = styled.div`
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
   }
   margin: 10px;
 `;
