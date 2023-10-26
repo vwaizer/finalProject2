@@ -11,7 +11,7 @@ const Context = () => {
     const [dataBase, setDataBase] = useState([]);
     // const [loading,setLoading]=useState(false);
     async function getData() {
-      const response = await axios.get('https://mocki.io/v1/f9ce8ff3-312d-4326-ace3-f9a9951de6d4');
+      const response = await axios.get('https://mocki.io/v1/e2c19c12-e4be-4064-87cb-4682c1edf43f');
       // setTimeout(()=>{setLoading(true)},2000)
       setDataBase(response.data);
     }
