@@ -1,93 +1,60 @@
-import { Button, Checkbox, Form, Input } from "antd";
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
-
-export const CoverForm = styled.div`
+export const CoverLogin = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
 `;
+export const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const Tab = styled.div`
+  margin-top: 20px;
+`;
+const LoginPage = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-const onFinish = (values) => {
-  console.log("Success:", values);
+  const handleLogin = () => {
+    if (username === 'admin' && password === '123456') {
+      window.location = '/';
+    } else {
+      setError('Sai tên đăng nhập hoặc mật khẩu');
+    }
+  };
+
+  return (
+    <CoverLogin>
+      <Title>
+        <h2>Đăng nhập</h2>
+        <p>{error}</p>
+      </Title>
+      <Tab>
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Tên đăng nhập"
+        />
+      </Tab>
+      <Tab>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Mật khẩu"
+        />
+      </Tab>
+      <Tab>
+        <button onClick={handleLogin}>Đăng nhập</button>
+      </Tab>
+    </CoverLogin>
+  );
 };
-const onFinishFailed = (errorInfo) => {
-  console.log("Failed:", errorInfo);
-};
 
-const handleSubmit = () => {
-  window.location = "/";
-};
-const Login = () => (
-  <CoverForm>
-    <Form
-      name="basic"
-      labelCol={{
-        span: 8,
-      }}
-      wrapperCol={{
-        span: 16,
-      }}
-      style={{
-        maxWidth: 600,
-      }}
-      initialValues={{
-        remember: true,
-      }}
-      onFinish={onFinish}
-      onFinishFailed={onFinishFailed}
-      autoComplete="off"
-    >
-      <Form.Item
-        label="Username"
-        name="username"
-        rules={[
-          {
-            required: true,
-            message: "Please input your username!",
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-
-      <Form.Item
-        label="Password"
-        name="password"
-        rules={[
-          {
-            required: true,
-            message: "Please input your password!",
-          },
-        ]}
-      >
-        <Input.Password />
-      </Form.Item>
-
-      <Form.Item
-        name="remember"
-        valuePropName="checked"
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <Checkbox>Remember me</Checkbox>
-      </Form.Item>
-
-      <Form.Item
-        wrapperCol={{
-          offset: 8,
-          span: 16,
-        }}
-      >
-        <Button onClick={handleSubmit} type="primary" htmlType="submit">
-          Submit
-        </Button>
-      </Form.Item>
-    </Form>
-  </CoverForm>
-);
-export default Login;
+export default LoginPage;
