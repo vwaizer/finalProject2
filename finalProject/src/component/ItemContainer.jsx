@@ -7,30 +7,27 @@ const ItemDetail = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 310px;
 `;
 
 const ItemContainer = (props) => {
-  const naPage=useNavigate();
-  let nextPage=props.id;
-  if(props.id >0){
+  const naPage = useNavigate();
+  let nextPage = props.id;
+  if (props.id > 0) {
     nextPage--;
   }
-  
-  const onDetail=()=>{
-    
+
+  const onDetail = () => {
     naPage(`/${nextPage}`);
     // console.log(nextPage);
   };
   return (
-    <Card style={{border:"0px",width:"100%"}} hoverable  onClick={onDetail}>
+    <Card style={{ border: '0px', width: '100%' }} hoverable onClick={onDetail}>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
       <Image width="100%" height={420} src={props.picture} />
       <ItemDetail>
-        <div>
-          {props.title ? <strong>{props.title}</strong>:<></>}
-        </div>
-        {props.price?<div>${props.price}</div>:<></>}
+        <div>{props.title ? <strong>{props.title}</strong> : <></>}</div>
+        {props.price ? <div>${props.price}</div> : <></>}
       </ItemDetail>
     </Card>
   );
