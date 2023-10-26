@@ -2,6 +2,12 @@
     display: flex;
     justify-content: space-between;
     margin: 10px;
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+      }
 }
 
 .header {
@@ -45,4 +51,7 @@
     cursor: pointer;
 }
 
+#user{
+    display: none;
+}
 

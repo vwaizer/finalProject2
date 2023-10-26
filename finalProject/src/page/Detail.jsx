@@ -4,11 +4,27 @@ import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import {  useParams } from 'react-router';
 import { DataContext } from '../App';
+import ItemContainer from '../component/ItemContainer';
+
 
 const Container=styled.div`
     display:flex;
     flex-direction:row;
-    justify-content:space-between;
+    gap:20px;
+    justify-content:center;
+    
+    margin:10px;
+    @media (max-width: 600px) {
+      display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    }
+`;
+const ImgContainer=styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
     margin:10px;
     @media (max-width: 600px) {
       display: flex;
@@ -34,6 +50,8 @@ const Detail = (props) =>{
   const imgData=dataBase[itemID].images[0];
   const titleData=dataBase[itemID].title;
   const cartData=useContext(DataContext);
+  const randomID=[Math.floor(Math.random() * 41),Math.floor(Math.random() * 41),Math.floor(Math.random() * 41)];
+
   console.log(cartData.data);
   
   const addToCart=()=>{
@@ -42,24 +60,29 @@ const Detail = (props) =>{
   const items = [
     {
       key: '1',
-      label: 'UserName',
+      label: 'Name:',
       children: titleData,
     },
     {
       key: '2',
-      label: 'Telephone',
-      children: '1810000000',
+      label: 'ID',
+      children: dataBase[itemID].id,
     },
     {
       key: '3',
-      label: 'Live',
-      children: 'Hangzhou, Zhejiang',
+      label: 'category',
+      children: dataBase[itemID].category,
     },
     {
-      key: '4',
-      label: 'Address',
-      span: 2,
-      children: 'No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China',
+      key:'4',
+      label:'description',
+      span:'screen',
+      children:dataBase[itemID].description,
+    },
+    {
+      key: '5',
+      label: 'price',
+      children: dataBase[itemID].price,
     },
     
   ];
@@ -68,13 +91,23 @@ const Detail = (props) =>{
       <Container>
       <Image
     width={400}
-    
+    height={380}
     src={imgData}
     />
       <DescripBlock> <Descriptions title="Detail " column={3}  layout="vertical" size='middle' items={items} />
-        <Button onClick={addToCart} className='buttonClass'>Them vao Gio Hang</Button>
+        <Button onClick={addToCart} className='buttonClass'>add to cart</Button>
       </DescripBlock>
       </Container>
+      <h2>Related Product</h2>
+      <ImgContainer>
+        {/* <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
+        <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
+        <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/> */}
+        <ItemContainer picture={dataBase[randomID[0]].images[0]} id={randomID[0]}/>
+        <ItemContainer picture={dataBase[randomID[1]].images[0]} id={randomID[1]}/>
+        <ItemContainer picture={dataBase[randomID[2]].images[0]} id={randomID[2]}/>
+      </ImgContainer>
+      
     </Layout>
   
   );

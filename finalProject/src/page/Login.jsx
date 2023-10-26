@@ -1,11 +1,28 @@
+import { Button } from 'antd';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import './Product.css';
 
-export const CoverLogin = styled.div`
+export const Background = styled.div`
+  background-image: url('https://png.pngtree.com/background/20230520/original/pngtree-modern-living-room-with-black-walls-and-furniture-picture-image_2678794.jpg');
+  height: 100vh;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+`;
+
+export const CoverBox = styled.div`
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const Login = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: white;
 `;
 export const Title = styled.div`
   display: flex;
@@ -13,7 +30,13 @@ export const Title = styled.div`
   align-items: center;
 `;
 export const Tab = styled.div`
-  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+export const ButtonTab = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
 `;
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -28,32 +51,45 @@ const LoginPage = () => {
     }
   };
 
+  const handleReset = () => {
+    window.location = '/login';
+  };
+
   return (
-    <CoverLogin>
-      <Title>
-        <h2>Đăng nhập</h2>
-        <p>{error}</p>
-      </Title>
-      <Tab>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Tên đăng nhập"
-        />
-      </Tab>
-      <Tab>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Mật khẩu"
-        />
-      </Tab>
-      <Tab>
-        <button onClick={handleLogin}>Đăng nhập</button>
-      </Tab>
-    </CoverLogin>
+    <Background>
+      <CoverBox>
+        <Login>
+          <h1>Online Login From</h1>
+
+          <Title>
+            <h2>Login Quick</h2>
+            <p>{error}</p>
+          </Title>
+          <Tab>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Tên đăng nhập"
+            />
+          </Tab>
+          <Tab>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Mật khẩu"
+            />
+          </Tab>
+          <ButtonTab>
+            <button onClick={handleLogin}>Login</button>
+          </ButtonTab>
+          <ButtonTab>
+            <button onClick={handleReset}>Reset</button>
+          </ButtonTab>
+        </Login>
+      </CoverBox>
+    </Background>
   );
 };
 

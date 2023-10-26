@@ -16,6 +16,8 @@
   @media (max-width:600px) {
       width: 100%;
   }
+  background-color: green;
+  color: white;
 }
 .App-header {
   background-color: #282c34;
