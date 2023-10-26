@@ -19,7 +19,7 @@ const ItemContainer = (props) => {
     // console.log(nextPage);
   };
   return (
-    <Card hoverable onClick={onDetail}>
+    <Card style={{border:"0px",width:"100%"}} hoverable bordered onClick={onDetail}>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
       <Image width="100%" height={420} src={props.picture} />
       <ItemDetail>

@@ -56,25 +56,20 @@ const Detail = (props) =>{
   const items = [
     {
       key: '1',
-      label: 'UserName',
+      label: 'Name:',
       children: titleData,
     },
     {
       key: '2',
-      label: 'Telephone',
-      children: '1810000000',
+      label: 'ID',
+      children: dataBase[itemID].id,
     },
     {
       key: '3',
-      label: 'Live',
-      children: 'Hangzhou, Zhejiang',
+      label: 'category',
+      children: dataBase[itemID].category,
     },
-    {
-      key: '4',
-      label: 'Address',
-      span: 2,
-      children: 'No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China',
-    },
+    
     
   ];
   return(
@@ -86,7 +81,7 @@ const Detail = (props) =>{
     src={imgData}
     />
       <DescripBlock> <Descriptions title="Detail " column={3}  layout="vertical" size='middle' items={items} />
-        <Button onClick={addToCart} className='buttonClass'>Them vao Gio Hang</Button>
+        <Button onClick={addToCart} className='buttonClass'>add to cart</Button>
       </DescripBlock>
       </Container>
       <h2>Related Product</h2>
