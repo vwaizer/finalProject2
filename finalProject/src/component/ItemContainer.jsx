@@ -7,7 +7,7 @@ const ItemDetail = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 300px;
+  width: 100%;
 `;
 
 const ItemContainer = (props) => {
@@ -26,7 +26,7 @@ const ItemContainer = (props) => {
         <div>
           <strong>{props.title}</strong>
         </div>
-        <div>{props.price}</div>
+        <div>${props.price}</div>
       </ItemDetail>
     </Card>
   );
