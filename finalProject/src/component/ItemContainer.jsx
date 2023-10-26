@@ -20,7 +20,7 @@ const ItemContainer = (props) => {
   return (
     <Card hoverable onClick={onDetail}>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
-      <Image width={300} height={250} src={props.picture} />
+      <Image width="100%" height={420} src={props.picture} />
       <ItemDetail>
         <div>
           <strong>{props.title}</strong>
