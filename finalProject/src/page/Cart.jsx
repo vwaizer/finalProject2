@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Typography,Flex } from 'antd';
-import { useParams } from 'react-router';
+import { Typography, Flex } from 'antd';
+import { useParams } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
-
+import { BsFillReplyFill } from 'react-icons/bs';
+import { DataContext } from '../App';
+import useHoverButton from '../CustomHooks.jsx/useHoverButton';
 const { Text } = Typography;
 
-const ProductImage = styled.div`
-  width: 80px;
+const ProductImage = styled.img`
+  width: 90px;
   height: 80px;
-  background-color: aqua;
 `;
 
 const BlockNumber = styled.div`
@@ -23,13 +24,13 @@ const BlockNumber = styled.div`
   font-size: 13px;
 `;
 const Des = styled.p`
-  width: 260px;
-  border: 1px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
   height: 40px;
   border-radius: 1.5px;
+  padding-top: 20px;
   margin: auto 20px;
 `;
-
 
 const Amount = styled.div`
   width: 30px;
@@ -48,62 +49,48 @@ const BuyButton = styled.button`
   background-color: black;
   color: white;
   font-weight: bold;
-  font-family: 'Quicksand', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin-top: 10px;
 `;
 const AmountButton = styled.button`
-width: 25px;
+  width: 25px;
   height: 25px;
-  background-color:white;
-  border:none;
+  background-color: white;
+  border: none;
   cursor: pointer;
-`
-const info = [
-  {
-    id: 0,
-    picture: 'hi',
-    des: 'ybinh',
-    price: 100000,
-    amount: 1,
-  },
-  {
-    id: 1,
-    picture: 'hu',
-    des: 'yen binh',
-    price: 300000,
-    amount: 1,
-  },
-  {
-    id: 2,
-    picture: 'ha',
-    des: 'binh',
-    price: 150000,
-    amount: 1,
-  },
-  {
-    id: 3,
-    picture: 'há',
-    des: 'binh',
-    price: 400000,
-    amount: 1,
-  },
-];
-
-const infoCart = ['Số Lượng', 'Số Tiền', 'Thành Tiền'];
+`;
+const ContinueShopping = styled.button`
+  /* font-weight:lighter; */
+  text-decoration: none;
+  width: 200px;
+  height: 35px;
+  background-color: black;
+  color: white;
+  border: none;
+  transition: background-color 0.4s linear;
+  &:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }
+`;
 const Cart = (props) => {
+  const cartData = useContext(DataContext);
 
-  const [urlParam,setUrlParam]=useSearchParams();
-  const itemID=urlParam.get("id");
-  const dataBase=props.data;
-
-  const [cart, setCart] = useState(info);
+  console.log(cartData.data);
+  const [urlParam, setUrlParam] = useSearchParams();
+  const itemID = urlParam.get('id');
+  const dataBase = cartData.data;
+  const [cart, setCart] = useState(dataBase);
   const updateCart = [...cart];
+
   // tăng số lượng sản phẩm
+
   const increaseQuantity = (item) => {
-   // console.log(item)  
-   const indexItem = cart.indexOf(item);
+    // console.log(item)
+    const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    setCart([...updateCart]); 
+    setCart([...updateCart]);
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
@@ -128,96 +115,133 @@ const Cart = (props) => {
   };
 
   return (
-   
-      <Layout>
-        {/* nav */}
-      
+    <Layout>
+      {/* nav */}
+      {cart.length > 0 ? (
         <Flex wrap="wrap" justify="space-evenly">
-        {/* <Flex justify="space-between">
-          <p>Sản phẩm</p>
-          <TitleCart>
-            {infoCart.map((item) => {
+          <div>
+            <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
+
+            {cart.map((item) => {
+              const { id, images, title, price, amount } = item;
               return (
-                <ul key={item} style={{ listStyleType: 'none', marginLeft: '90px' }}>
-                  <li>
-                    <Text type="secondary">{item}</Text>
-                  </li>
-                </ul>
+                <div>
+                  <Flex
+                    wrap="wrap"
+                    justify="space-evenly"
+                    key={id}
+                    style={{ marginBottom: '17px', backgroundColor: 'white', color: 'black' }}
+                  >
+                    <ProductImage src={images} alt="" />
+                    <div style={{ display: 'flex' }}>
+                      <Des>{title}</Des>
+
+                      {/* <Flex justify='space-around'> */}
+
+                      <Flex align="center">
+                        <div style={{ border: '1px solid grey', display: 'flex' }}>
+                          <AmountButton
+                            onClick={() => decreaseQuantity(item)}
+                            style={{ borderRight: '1px solid grey' }}
+                          >
+                            -
+                          </AmountButton>
+                          <Amount>{amount}</Amount>
+                          <AmountButton
+                            onClick={() => increaseQuantity(item)}
+                            style={{ borderLeft: '1px solid grey' }}
+                          >
+                            +
+                          </AmountButton>
+                        </div>
+                      </Flex>
+                    </div>
+                    <Flex>
+                      <BlockNumber>
+                        <Text>{price}₫</Text>
+                      </BlockNumber>
+
+                      <BlockNumber>
+                        <div>
+                          <Text type="secondary">Thành tiền</Text>
+                        </div>
+                        <span style={{ color: '#a73340', fontWeight: 'bold' }}>
+                          {amount * price}₫
+                        </span>
+                        <div>
+                          <CiTrash style={{ cursor: 'pointer' }}></CiTrash>
+                        </div>
+                      </BlockNumber>
+                    </Flex>
+
+                    {/* </Flex> */}
+                  </Flex>
+                </div>
               );
             })}
-          </TitleCart>
-        </Flex> */}
+          </div>
 
-        {/* render list product  */}
-        
-        <div>
-        <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
-        {cart.map((item) => {
-          const { id, picture, des, price, amount } = item;
-          return (
-            <div>
-            <Flex
-              wrap="wrap"
-              justify="space-evenly"
-              key={id}
-              style={{ marginBottom: '17px', backgroundColor: 'white', color: 'black' }}
+          <div style={{ backgroundColor: 'white', color: 'black' }}>
+            <p
+              style={{
+                fontSize: '15px',
+                fontWeight: '550',
+                fontFamily: 'Arial, Helvetica, sans-serif',
+              }}
             >
-              <ProductImage>{picture}</ProductImage>
-              <div style={{ display: 'flex' }}>
-                <Des>{des}</Des>
-
-                {/* <Flex justify='space-around'> */}
-
-                <Flex align="center">
-                  <div style={{border:'1px solid grey', display:'flex'}}>
-                  <AmountButton onClick={() => decreaseQuantity(item)} style={{ borderRight:'1px solid grey'}}>
-                    -
-                  </AmountButton>
-                  <Amount>{amount}</Amount>
-                  <AmountButton onClick={() => increaseQuantity(item)} style={{borderLeft:'1px solid grey'}}>
-                    +
-                  </AmountButton>
-                  </div>
-                </Flex>
+              Thông tin đơn hàng
+            </p>
+            <Flex justify="space-between">
+              <div>
+                <b>Tổng tiền ({toTalAmount()}):</b>
               </div>
-              <Flex>
-                <BlockNumber>
-                  <Text>{price}₫</Text>
-                </BlockNumber>
-
-                <BlockNumber>
-                  <div>
-                  <Text type="secondary">Thành tiền</Text>
-                  </div>
-                  <span style={{ color: '#a73340', fontWeight: 'bold' }}>
-                    {amount * price}₫
-                  </span>
-                  <div>
-                    <CiTrash style={{cursor:'pointer'}}></CiTrash>
-                  </div>
-                </BlockNumber>
-              </Flex>
-
-              {/* </Flex> */}
-            </Flex>           
-               </div>
-          
-          );
-        })}
-
-</div>
-        <div style={{ backgroundColor: 'white', color: 'black' }}>
-          <Flex justify="space-between">
-            <div>
-              <b>Tổng tiền ({toTalAmount()}):</b>
+              <div>
+                <b>{toTalProduct()}₫</b>
+              </div>
+            </Flex>
+            <BuyButton>THANH TOÁN</BuyButton>
+          </div>
+        </Flex>
+      ) : (
+        <Flex wrap="wrap" justify="space-evenly">
+          <div style={{ flex: 0.7 }}>
+            <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
+            <p style={{ textAlign: 'center', fontWeight: 'lighter' }}>
+              Giỏ hàng của bạn đang trống
+            </p>
+            <div style={{ textAlign: 'center' }}>
+              <ContinueShopping>
+                <BsFillReplyFill />{' '}
+                <a style={{color:'white'}} href="/Product">
+                  TIẾP TỤC MUA HÀNG
+                </a>
+              </ContinueShopping>
             </div>
-            <div>
-              <b>{toTalProduct()}VND</b>
-            </div>
-          </Flex>
-          <BuyButton>THANH TOÁN</BuyButton>
-        </div>
-      </Flex>
+            <div></div>
+          </div>
+
+          <div style={{ backgroundColor: 'white', color: 'black' }}>
+            <p
+              style={{
+                fontSize: '15px',
+                fontWeight: '550',
+                fontFamily: 'Arial, Helvetica, sans-serif',
+              }}
+            >
+              Thông tin đơn hàng
+            </p>
+            <Flex justify="space-between">
+              <div>
+                <b>Tổng tiền ({toTalAmount()}):</b>
+              </div>
+              <div>
+                <b>{toTalProduct()}₫</b>
+              </div>
+            </Flex>
+            <BuyButton>THANH TOÁN</BuyButton>
+          </div>
+        </Flex>
+      )}
     </Layout>
   );
 };
