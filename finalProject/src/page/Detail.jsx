@@ -1,26 +1,49 @@
-import React from 'react';
-import { Descriptions, Image } from 'antd';
+import React, { useContext } from 'react';
+import { Button, Descriptions, Image } from 'antd';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { useParams } from 'react-router';
+import {  useParams } from 'react-router';
+import { DataContext } from '../App';
 
 const Container=styled.div`
     display:flex;
     flex-direction:row;
     justify-content:space-between;
     margin:10px;
+    @media (max-width: 600px) {
+      display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    }
+`;
+const DescripBlock=styled.div`
+    width:40%;
+    
+    @media (max-width: 600px) {
+      width:100%;
+      margin-top:10px;
+    }
 `;
 const Detail = (props) =>{ 
+  
+  
   const urlData=useParams();
-  const imgID=urlData.productID;
+  const itemID=urlData.productID;
   const dataBase=props.data;
-  const imgData=dataBase[imgID].images[0];
-  console.log(imgData);
+  const imgData=dataBase[itemID].images[0];
+  const titleData=dataBase[itemID].title;
+  const cartData=useContext(DataContext);
+  console.log(cartData.data);
+  
+  const addToCart=()=>{
+    cartData.method([...cartData.data,dataBase[itemID]])
+}
   const items = [
     {
       key: '1',
       label: 'UserName',
-      children: 'Zhou Maomao',
+      children: titleData,
     },
     {
       key: '2',
@@ -38,11 +61,7 @@ const Detail = (props) =>{
       span: 2,
       children: 'No. 18, Wantang Road, Xihu District, Hangzhou, Zhejiang, China',
     },
-    {
-      key: '5',
-      label: 'Remark',
-      children: 'empty',
-    },
+    
   ];
   return(
     <Layout>
@@ -52,7 +71,9 @@ const Detail = (props) =>{
     
     src={imgData}
     />
-      <div style={{width:"40%"}}> <Descriptions title="User Info" column={3}  layout="vertical" size='middle' items={items} />;</div>
+      <DescripBlock> <Descriptions title="Detail " column={3}  layout="vertical" size='middle' items={items} />
+        <Button onClick={addToCart} className='buttonClass'>Them vao Gio Hang</Button>
+      </DescripBlock>
       </Container>
     </Layout>
   
