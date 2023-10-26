@@ -8,11 +8,6 @@ import { CiTrash } from 'react-icons/ci';
 
 const { Text } = Typography;
 
-const Container = styled.div`
-  background-color: whitesmoke;
-  color: black;
-  background-color: white;
-`;
 const ProductImage = styled.div`
   width: 80px;
   height: 80px;
@@ -28,29 +23,20 @@ const BlockNumber = styled.div`
   font-size: 13px;
 `;
 const Des = styled.p`
-  margin: auto;
   width: 260px;
   border: 1px solid black;
   height: 40px;
   border-radius: 1.5px;
-  margin-left: 20px;
+  margin: auto 20px;
 `;
 
-// const Quantity = styled.div`
-//   display: flex;
-//   align-items: center;
-// `;
+
 const Amount = styled.div`
-  width: 40px;
+  width: 30px;
   text-align: center;
-  border: 1.5px solid gray;
   height: 23.5px;
 `;
-const TitleCart = styled.div`
-  display: flex;
-  font-weight: 500;
-  margin-left: 165px;
-`;
+
 const NamePage = styled.p`
   font-size: 30px;
   font-weight: 500;
@@ -66,7 +52,11 @@ const BuyButton = styled.button`
   margin-top: 10px;
 `;
 const AmountButton = styled.button`
-  height: '25px';
+width: 25px;
+  height: 25px;
+  background-color:white;
+  border:none;
+  cursor: pointer;
 `
 const info = [
   {
@@ -180,13 +170,13 @@ const Cart = (props) => {
 
                 <Flex align="center">
                   <div style={{border:'1px solid grey', display:'flex'}}>
-                  <button onClick={() => decreaseQuantity(item)} style={{ height: '25px',backgroundColor:'white',border:'none',borderRight:'1px solid grey'}}>
+                  <AmountButton onClick={() => decreaseQuantity(item)} style={{ borderRight:'1px solid grey'}}>
                     -
-                  </button>
+                  </AmountButton>
                   <Amount>{amount}</Amount>
-                  <button onClick={() => increaseQuantity(item)} style={{ height: '25px' ,backgroundColor:'white',border:'none',borderLeft:'1px solid grey'}}>
+                  <AmountButton onClick={() => increaseQuantity(item)} style={{borderLeft:'1px solid grey'}}>
                     +
-                  </button>
+                  </AmountButton>
                   </div>
                 </Flex>
               </div>
@@ -203,7 +193,7 @@ const Cart = (props) => {
                     {amount * price}₫
                   </span>
                   <div>
-                    <CiTrash></CiTrash>
+                    <CiTrash style={{cursor:'pointer'}}></CiTrash>
                   </div>
                 </BlockNumber>
               </Flex>
