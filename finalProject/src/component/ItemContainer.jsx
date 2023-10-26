@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Card, Image } from 'antd';
 import React from 'react';
 import {  useNavigate } from 'react-router';
 import styled from 'styled-components';
@@ -22,7 +22,12 @@ const ItemContainer = (props) => {
   }
   return (
     <Card hoverable onClick={onDetail}>
-      <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img>
+      {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
+      <Image
+      width={300}
+      height={250}
+    src={props.picture}
+    />
       <ItemDetail>
         <div><strong>{props.title}</strong></div>
         <div>{props.price}</div>

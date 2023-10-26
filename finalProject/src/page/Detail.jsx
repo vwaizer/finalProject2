@@ -5,10 +5,23 @@ import styled from 'styled-components';
 import {  useParams } from 'react-router';
 import { DataContext } from '../App';
 
+
 const Container=styled.div`
     display:flex;
     flex-direction:row;
     justify-content:space-between;
+    margin:10px;
+    @media (max-width: 600px) {
+      display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    }
+`;
+const ImgContainer=styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-evenly;
     margin:10px;
     @media (max-width: 600px) {
       display: flex;
@@ -34,6 +47,7 @@ const Detail = (props) =>{
   const imgData=dataBase[itemID].images[0];
   const titleData=dataBase[itemID].title;
   const cartData=useContext(DataContext);
+  
   console.log(cartData.data);
   
   const addToCart=()=>{
@@ -68,13 +82,20 @@ const Detail = (props) =>{
       <Container>
       <Image
     width={400}
-    
+    height={380}
     src={imgData}
     />
       <DescripBlock> <Descriptions title="Detail " column={3}  layout="vertical" size='middle' items={items} />
         <Button onClick={addToCart} className='buttonClass'>Them vao Gio Hang</Button>
       </DescripBlock>
       </Container>
+      <h2>Related Product</h2>
+      <ImgContainer>
+        <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
+        <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
+        <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
+      </ImgContainer>
+      
     </Layout>
   
   );
