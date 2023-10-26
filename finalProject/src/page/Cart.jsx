@@ -201,7 +201,7 @@ const Cart = (props) => {
               {/* </Flex> */}
             </Flex>           
                </div>
-         
+          
           );
         })}
 
