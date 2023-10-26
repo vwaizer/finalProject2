@@ -51,4 +51,7 @@
     cursor: pointer;
 }
 
+#user{
+    display: none;
+}
 

@@ -41,7 +41,7 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     if (username === 'admin' && password === '123456') {
-      window.location = '/';
+      window.location = '/'
     } else {
       setError('Sai tên đăng nhập hoặc mật khẩu');
     }
