@@ -94,7 +94,7 @@ const Cart = () => {
   const increaseQuantity = (item) => {
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    setCart([...updateCart]);
+    setCart([...updateCart]); 
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
