@@ -6,6 +6,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { DataContext } from '../App';
+import { animateScroll as scroll } from 'react-scroll';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -50,8 +51,8 @@ const BuyButton = styled.button`
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 10px;
 `;
-const AmountButton = styled.button`
-
+const AmountButton = styled.div`
+  text-align: center;
   width: 25px;
   height: 25px;
   background-color: white;
@@ -92,7 +93,6 @@ const Cart = (props) => {
 
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
-    // console.log(item)
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
     setCart([...updateCart]);
@@ -108,7 +108,11 @@ const Cart = (props) => {
     setCart([...updateCart]);
   };
   //  console.log(cart)
-
+  // xóa sp
+  const removeItem = (item) => {
+    const updatedCart = cart.filter((cartItem) => cartItem !== item);
+    setCart(updatedCart);
+  };
   // tính tổng tiền
   const toTalProduct = () => {
     const sum = cart.reduce((total, item) => total + item.price * item.amount, 0);
@@ -163,7 +167,7 @@ const Cart = (props) => {
                     </div>
                     <Flex>
                       <BlockNumber>
-                        <Text>{price}₫</Text>
+                        <Text>${price}</Text>
                       </BlockNumber>
 
                       <BlockNumber>
@@ -171,9 +175,9 @@ const Cart = (props) => {
                           <Text type="secondary">Thành tiền</Text>
                         </div>
                         <span style={{ color: '#a73340', fontWeight: 'bold' }}>
-                          {amount * price}₫
+                          ${amount * price}
                         </span>
-                        <div>
+                        <div onClick={() => removeItem(item)}>
                           <CiTrash style={{ cursor: 'pointer' }}></CiTrash>
                         </div>
                       </BlockNumber>
@@ -220,12 +224,14 @@ const Cart = (props) => {
               </ContinueShopping>
             </div>
             <div>
-              <Flex justify="space-between">
+              <Flex style={{marginTop:'20px'}} justify="space-between">
                 <div>
-                  <p>CÓ THỂ BẠN SẼ THÍCH</p>
+                  <span style={{ fontSize: '20px', fontWeight: 'lighter' }}>
+                    CÓ THỂ BẠN SẼ THÍCH
+                  </span>
                 </div>
-                <div style={{ marginTop: '12px' }}>
-                  <a>See More</a>
+                <div style={{marginTop:'3px'}}>
+                  <Link  to="/product#best">See More</Link>
                 </div>
               </Flex>
               <Flex style={{ marginBottom: '10px' }} wrap="wrap">
@@ -245,26 +251,27 @@ const Cart = (props) => {
               </Flex>
             </div>
           </div>
-
-          <div style={{ backgroundColor: 'white', color: 'black' }}>
-            <p
-              style={{
-                fontSize: '15px',
-                fontWeight: '550',
-                fontFamily: 'Arial, Helvetica, sans-serif',
-              }}
-            >
-              Thông tin đơn hàng
-            </p>
-            <Flex justify="space-between">
-              <div>
-                <b>Tổng tiền ({toTalAmount()}):</b>
-              </div>
-              <div>
-                <b>{toTalProduct()}₫</b>
-              </div>
-            </Flex>
-            <BuyButton>THANH TOÁN</BuyButton>
+          <div style={{ width: 'fit-content'}}>
+  <div style={{ color: 'black', position: 'sticky',top: '32px'}}>
+              <p
+                style={{
+                  fontSize: '15px',
+                  fontWeight: '550',
+                  fontFamily: 'Arial, Helvetica, sans-serif',
+                }}
+              >
+                Thông tin đơn hàng
+              </p>
+              <Flex justify="space-between">
+                <div>
+                  <b>Tổng tiền ({toTalAmount()}):</b>
+                </div>
+                <div>
+                  <b>{toTalProduct()}₫</b>
+                </div>
+              </Flex>
+              <BuyButton>THANH TOÁN</BuyButton>
+          </div>
           </div>
         </Flex>
       )}
