@@ -1,17 +1,16 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Home from './page/Home';
-import Product from './page/Product';
-import {  useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './page/Cart';
 import Detail from './page/Detail';
+import Home from './page/Home';
 import Login from './page/Login';
+import Product from './page/Product';
 const Context = () => {
     const [dataBase, setDataBase] = useState([]);
     // const [loading,setLoading]=useState(false);
     async function getData() {
-      const response = await axios.get('https://mocki.io/v1/f9ce8ff3-312d-4326-ace3-f9a9951de6d4');
+      const response = await axios.get('https://mocki.io/v1/e2c19c12-e4be-4064-87cb-4682c1edf43f');
       // setTimeout(()=>{setLoading(true)},2000)
       setDataBase(response.data);
     }
@@ -39,7 +38,6 @@ const Context = () => {
               <Route path="/Login" element={<Login />}></Route>
             </Routes>
           </BrowserRouter>
-       
       </div>
     );
 }

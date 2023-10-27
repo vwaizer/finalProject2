@@ -39,3 +39,23 @@ body {
   gap: 2rem;
   justify-content: space-evenly;
 }
+
+.scroll-top{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+}
+
+.list-product{
+  border: 2px solid red;
+  position: relative;
+  left: 900px;
+  width: 200px;
+}
+
+.a-navigate:hover{
+  cursor: pointer;
+  background-color: violet;
+}
+
