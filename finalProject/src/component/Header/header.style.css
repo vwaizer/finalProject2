@@ -1,16 +1,33 @@
+.cover-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+      }
+}
+
 .header {
   list-style: none;
   display: flex;
   gap: 100px;
-  justify-content: center;
-  font-size: 18px;  
+  justify-content: space-around;
 }
 
 .img-header{
-    width: 100px;
+    display: flex;
+    justify-content: flex-start;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
 }
 .navlink{
     text-decoration: none;
+    font-size: 15px;
+
 }
 
 .navlink:hover{
@@ -18,17 +35,23 @@
     cursor: pointer;
 }
 
+.login{
+    text-decoration: none;
+    padding-right: 10px;
+}
+
 .side-login{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    position: absolute;
-    left: 1100px; 
-    gap: 20px;
     font-size: 15px;
 }
 
-.side-login:hover{
+.login:hover{
     color: blue;
     cursor: pointer;
 }
+
+#user{
+    display: none;
+}
+

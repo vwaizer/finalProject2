@@ -1,42 +1,26 @@
+import { createContext, useState } from 'react';
 import './App.css';
+import Context from './Context';
 
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import Home from './page/Home';
-import Product from './page/Product';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Cart from './page/Cart';
-import Detail from './page/Detail';
-import Login from './page/Login'
-
+// import { DotLoader } from 'react-spinners';
+// import styled from 'styled-components';
+// const LoadingBlock=styled.div`
+//     height:500px;
+//     display:flex;
+//     flex-direction:row;
+//     justify-content:center;
+//     align-items:center;
+// `;
+export const DataContext=createContext([]);
 function App() {
-  const [dataBase,setDataBase]=useState(null);
-  useEffect(()=>{
-    async function getData() {
-      const response = await axios.get("https://fakestoreapi.com/products/categories");
-      setDataBase(response.data);
-    }
-    try{getData();}
-    catch(err){
-      alert(err.message);
-    }
+    const [cartData,setCartData]=useState([]);
     
-  },[])
-  console.log(dataBase);
-
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home data={dataBase}/>}></Route>
-        <Route path="/Product" element={<Product />}></Route>
-        <Route path="/Cart" element={<Cart/>}></Route> 
-        <Route path="/Detail" element={<Detail/>}></Route> 
-        <Route path="/Login" element={<Login/>}></Route>
-      </Routes>
-    </BrowserRouter>
-
-
-  )
+ return(<DataContext.Provider value={{data:cartData,method:setCartData}}>
+    
+    <Context></Context>
+ 
+ 
+ </DataContext.Provider>)
 }
 
 export default App;

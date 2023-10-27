@@ -50,8 +50,8 @@ const BuyButton = styled.button`
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 10px;
 `;
-const AmountButton = styled.button`
-
+const AmountButton = styled.div`
+text-align: center;
   width: 25px;
   height: 25px;
   background-color: white;
@@ -163,17 +163,17 @@ const Cart = (props) => {
                     </div>
                     <Flex>
                       <BlockNumber>
-                        <Text>{price}₫</Text>
+                        <Text>${price}</Text>
                       </BlockNumber>
 
                       <BlockNumber>
                         <div>
                           <Text type="secondary">Thành tiền</Text>
                         </div>
-                        <span style={{ color: '#a73340', fontWeight: 'bold' }}>
-                          {amount * price}₫
+                        <span style={{ color: '#a73340', fontWeight: 'bold', fontSize:'14px' }}>
+                          ${amount * price}
                         </span>
-                        <div>
+                        <div style={{paddingTop:'5px'}}>
                           <CiTrash style={{ cursor: 'pointer' }}></CiTrash>
                         </div>
                       </BlockNumber>
@@ -201,7 +201,7 @@ const Cart = (props) => {
                 <b>Tổng tiền ({toTalAmount()}):</b>
               </div>
               <div>
-                <b>{toTalProduct()}₫</b>
+                <b>${toTalProduct()}</b>
               </div>
             </Flex>
             <BuyButton>THANH TOÁN</BuyButton>

@@ -1,10 +1,16 @@
 .container {
   display: flex;
   justify-content: space-around;
-  gap: 50px;
+  gap: 40px;
   width: 100%;
   background-color: black;
   color: white;
+  @media (max-width: 400px) {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+  }
 }
 
 .col {
