@@ -13,7 +13,7 @@ const items = [
   {
     key: '2',
     label: (
-      <a className="a-navigate" href="#best">
+      <a className="a-navigate" href="#best seller">
         Best Seller
       </a>
     ),
