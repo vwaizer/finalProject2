@@ -65,7 +65,7 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <h2 id="best seller">BEST SELLER</h2>
+              <h2 id="best">BEST SELLER</h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
