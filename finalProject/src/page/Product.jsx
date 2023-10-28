@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Image } from 'antd';
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
-import { Navigation } from 'swiper/modules';
+import Navigation from '../component/Navigation';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
