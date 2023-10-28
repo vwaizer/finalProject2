@@ -49,7 +49,7 @@ const Product = (props) => {
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -66,13 +66,13 @@ const Product = (props) => {
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
+                if (index > 4 && index < 9) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -82,13 +82,13 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 8 && index < 11) {
+                if (index > 9 && index < 14) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -105,13 +105,13 @@ const Product = (props) => {
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
+                if (index > 14 && index < 19) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -121,7 +121,7 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 8 && index < 12) {
+                if (index > 18 && index < 23) {
                   return (
                     <ItemContainer
                       key={index}
@@ -144,13 +144,13 @@ const Product = (props) => {
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
+                if (index > 23 && index < 28) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -160,13 +160,13 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 8 && index < 12) {
+                if (index > 28 && index < 33) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -183,13 +183,13 @@ const Product = (props) => {
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
+                if (index > 33 && index < 38) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images[0]}
+                      picture={item.images}
                       id={item.id}
                     />
                   );
@@ -199,7 +199,7 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 8 && index < 12) {
+                if (index > 38 && index <= 42) {
                   return (
                     <ItemContainer
                       key={index}
@@ -215,7 +215,7 @@ const Product = (props) => {
             </ItemArea>
           </Block1>
 
-          <Block1>
+          {/* <Block1>
             <Tittle>
               <span>Dining Table Product</span>
               <h2>ESSENTIAL ITEMS</h2>
@@ -330,7 +330,8 @@ const Product = (props) => {
                 return <></>;
               })}
             </ItemArea>
-          </Block1>
+          </Block1> */}
+          <ScrollToTopButton/>
         </div>
       </Layout>
     </div>
