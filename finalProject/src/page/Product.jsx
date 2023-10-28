@@ -3,9 +3,9 @@ import CarouselItem from '../component/CarouselItem';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import './Product.css';
+import { Image } from 'antd';
 import ScrollToTopButton from '../component/ScrollToTop';
-import Navigation from '../component/Navigation';
+import './Product.css';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -40,10 +40,9 @@ const Product = (props) => {
         <div className="section_card contain">
           <CarouselItem data={dataBase} />
           <Block1>
-            <Navigation />
             <Tittle>
-              <h2 id="collection">COLLECTIONS</h2>
-              <span>ESSENTIAL ITEM</span>
+              <span id="collection">Latest Collection</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -62,7 +61,6 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
               <h2 id="best">BEST SELLER</h2>
@@ -101,11 +99,10 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <h2 id="outstanding">BEDDING PRODUCTS</h2>
-              <span>ESSENTIAL ITEMS</span>
+              <span>Sofa Products</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -140,11 +137,10 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <h2 id="Sofa">SOFA PRODUCTS</h2>
-              <span>ESSENTIAL ITEMS</span>
+              <span>Bedding products</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -179,11 +175,10 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <h2 id="Desk">DESK PRODUCTS</h2>
-              <span>ESSENTIAL ITEMS</span>
+              <span>Smart Dressing Table</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -218,15 +213,14 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <h2 id="Dining">DINING TABLE PRODUCTS</h2>
-              <span>ESSENTIAL ITEMS</span>
+              <span>Dining Table Product</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index > 43 && index < 48) {
+                if (index >= 11 && index < 15) {
                   return (
                     <ItemContainer
                       key={index}
@@ -242,7 +236,7 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index > 48 && index < 53) {
+                if (index >= 8 && index < 12) {
                   return (
                     <ItemContainer
                       key={index}
@@ -257,11 +251,10 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <h2 id="Cabinet">SHOE CABINET</h2>
-              <span>ESSENTIAL ITEMS</span>
+              <span>Types Of Wardrobes</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -296,11 +289,10 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <h2 id="Make">MAKEUP TABLE</h2>
-              <span>ESSENTIAL ITEMS</span>
+              <span>Shoe Cabinet</span>
+              <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -334,7 +326,7 @@ const Product = (props) => {
                 return <></>;
               })}
             </ItemArea>
-          </Block1>
+          </Block1>{' '}
           <ScrollToTopButton />
         </div>
       </Layout>
