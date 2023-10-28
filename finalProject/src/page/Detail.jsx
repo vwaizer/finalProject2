@@ -44,7 +44,7 @@ const DescripBlock=styled.div`
 const randomID=[Math.floor(Math.random() * 41),Math.floor(Math.random() * 41),Math.floor(Math.random() * 41)];
 const Detail = (props) =>{ 
   
-  
+  window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   const urlData=useParams();
   const itemID=urlData.productID;
   const dataBase=props.data;
