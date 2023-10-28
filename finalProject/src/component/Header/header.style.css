@@ -1,57 +1,60 @@
-.cover-header{
+.cover-header {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    width: 95%;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
     @media (max-width: 500px) {
         display: flex;
         flex-direction: column;
-        justify-content:center;
-        align-items:center;
-      }
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .header {
-  list-style: none;
-  display: flex;
-  gap: 100px;
-  justify-content: space-around;
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    justify-content: space-around;
+
 }
 
-.img-header{
-    display: flex;
-    justify-content: flex-start;
-    width: 50px;
-    height: 50px;
-    border-radius: 100px;
+.img-header {
+    width: 160px;
 }
-.navlink{
+
+.navlink {
     text-decoration: none;
     font-size: 15px;
-
+    text-transform: uppercase;
 }
 
-.navlink:hover{
+.navlink:hover {
     color: red;
     cursor: pointer;
 }
 
-.login{
+.login {
     text-decoration: none;
     padding-right: 10px;
+    text-transform: uppercase;
 }
 
-.side-login{
+.side-login {
     display: flex;
     justify-content: flex-end;
     font-size: 15px;
 }
 
-.login:hover{
+.login:hover {
     color: blue;
     cursor: pointer;
 }
 
-#user{
+#user {
     display: none;
 }
-

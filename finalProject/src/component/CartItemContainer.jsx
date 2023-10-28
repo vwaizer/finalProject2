@@ -7,10 +7,10 @@ const ItemDetail = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 310px;
+  width: 100%;
 `;
 
-const ItemContainer = (props) => {
+const CartItemContainer = (props) => {
   const naPage = useNavigate();
   let nextPage = props.id;
   if (props.id > 0) {
@@ -24,7 +24,7 @@ const ItemContainer = (props) => {
   return (
     <Card style={{ border: '0px', width: '100%' }} hoverable onClick={onDetail}>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
-      <Image width="100%"  height={420} src={props.picture} />
+      <Image width="100%" height={300} src={props.picture} />
       <ItemDetail>
         <div>{props.title ? <strong>{props.title}</strong> : <></>}</div>
         {props.price ? <div>${props.price}</div> : <></>}
@@ -33,4 +33,4 @@ const ItemContainer = (props) => {
   );
 };
 
-export default ItemContainer;
+export default CartItemContainer;

@@ -4,23 +4,67 @@ import './CarouseItem.css';
 const items = [
   {
     key: '1',
-    label: <a className='a-navigate' href="#collection">Colection</a>,
+    label: (
+      <a className="a-navigate" href="#collection">
+        Colection
+      </a>
+    ),
   },
   {
     key: '2',
-    label: <a className='a-navigate' href="#best">Best Seller</a>,
+    label: (
+      <a className="a-navigate" href="#best">
+        Best Seller
+      </a>
+    ),
   },
   {
     key: '3',
-    label: <a className='a-navigate' href="#outstanding">Outstanding</a>,
+    label: (
+      <a className="a-navigate" href="#outstanding">
+        Bedding Products
+      </a>
+    ),
   },
   {
     key: '4',
-    label: <a className='a-navigate' href="#Favorite">User Favaorite</a>,
+    label: (
+      <a className="a-navigate" href="Sofa">
+        Sofa Products
+      </a>
+    ),
   },
   {
     key: '5',
-    label: <a className='a-navigate' href="#Other">Another</a>,
+    label: (
+      <a className="a-navigate" href="#Desk">
+        Desk Products
+      </a>
+    ),
+  },
+  {
+    key: '6',
+    label: (
+      <a className="a-navigate" href="#Dining">
+        Dining Table Products
+      </a>
+    ),
+  },
+  {
+    key: '7',
+    label: (
+      <a className="a-navigate" href="Cabinet">
+        Shoe Cabinet
+      </a>
+    ),
+  },
+  {
+    key: '8',
+    label: (
+      <a className="a-navigate" href="#Make">
+        Makeup Table
+      </a>
+    ),
   },
 ];
 const Navigation = () => {

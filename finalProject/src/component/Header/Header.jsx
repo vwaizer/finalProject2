@@ -1,8 +1,8 @@
-import { ShoppingCartOutlined } from "@ant-design/icons";
-import React from "react";
-import Nav from "react-bootstrap/Nav";
-import "./header.style.css";
-import { Link } from "react-router-dom";
+import { ShoppingCartOutlined } from '@ant-design/icons';
+import React from 'react';
+import Nav from 'react-bootstrap/Nav';
+import './header.style.css';
+import { Link } from 'react-router-dom';
 
 const infomation = [
   {
@@ -26,7 +26,7 @@ function Header() {
       <div>
         <img
           className="img-header"
-          src="https://sgweb.vn/wp-content/uploads/2022/12/image1463.png"
+          src="https://github.com/Mateo-codeMaxi/Ecomerce-Furniture.github.io/blob/main/TEMPLATE%20-%20FURNITURE%20STORE/img/logo.png?raw=true"
         />
       </div>
       <div className="header" as="ul">
