@@ -5,6 +5,7 @@ import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Image } from 'antd';
 import './Product.css';
+import ScrollToTopButton from '../component/ScrollToTop';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
