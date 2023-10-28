@@ -41,6 +41,7 @@ const DescripBlock=styled.div`
       margin-top:10px;
     }
 `;
+const randomID=[Math.floor(Math.random() * 41),Math.floor(Math.random() * 41),Math.floor(Math.random() * 41)];
 const Detail = (props) =>{ 
   
   
@@ -50,7 +51,7 @@ const Detail = (props) =>{
   const imgData=dataBase[itemID].images[0];
   const titleData=dataBase[itemID].title;
   const cartData=useContext(DataContext);
-  const randomID=[Math.floor(Math.random() * 41),Math.floor(Math.random() * 41),Math.floor(Math.random() * 41)];
+  
 
   console.log(cartData.data);
   

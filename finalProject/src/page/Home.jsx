@@ -39,7 +39,7 @@ const Home = (props) => {
         <CarouselItem data={displayData} />
         <Block>
           <Tittle>
-            <h2>Tieu Bieu</h2>
+            <h2>Sản Phẩm Tiêu Biểu</h2>
           </Tittle>
           <ItemArea>
             {/* <ItemContainer title="ban ghe" price="5" />
@@ -64,7 +64,7 @@ const Home = (props) => {
 
         <Block>
           <Tittle>
-            <h2>Moi Nhat</h2>
+            <h2>Sản Phẩm Mới Nhất </h2>
           </Tittle>
           <ItemArea>
             {/* <ItemContainer title="ban ghe" price="5" />

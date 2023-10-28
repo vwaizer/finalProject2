@@ -4,6 +4,7 @@ import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Image } from 'antd';
+import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 const ItemArea = styled.div`
   display: flex;
