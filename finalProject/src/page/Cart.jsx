@@ -8,7 +8,7 @@ import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
-import ItemContainer from '../component/ItemContainer';
+import CartItemContainer from '../component/CartItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -97,6 +97,7 @@ const ItemArea = styled.div`
   }
   margin: 10px;
   
+  
 `;
 const ContainerTotal = styled.div`
   border: 1px dashed grey;
@@ -108,7 +109,7 @@ const Cart = (props) => {
   const cartData = useContext(DataContext);
   // console.log(props.data)
   const suggestedItem = [];
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 8; i++) {
     suggestedItem.push(props.data[Math.floor(Math.random() * props.data.length)]);
   }
   // console.log(suggestedItem)
@@ -323,7 +324,7 @@ const Cart = (props) => {
               {suggestedItem.map((item, index) => {
                 if(index <=3)
                   return (
-                    <ItemContainer
+                    <CartItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
@@ -339,7 +340,7 @@ const Cart = (props) => {
               {suggestedItem.map((item, index) => {
                 if(index>=4)
                 return (
-                  <ItemContainer
+                  <CartItemContainer
                     key={index}
                     title={item.title}
                     price={item.price}
