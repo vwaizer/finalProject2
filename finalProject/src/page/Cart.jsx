@@ -5,8 +5,9 @@ import { Typography, Flex, Card } from 'antd';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { DataContext } from '../App';
-import { animateScroll as scroll } from 'react-scroll';
+import TextArea from 'antd/es/input/TextArea';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -84,13 +85,17 @@ const Cart = (props) => {
     suggestedItem.push(props.data[Math.floor(Math.random() * props.data.length)]);
   }
   // console.log(suggestedItem)
-  //   console.log(cartData.data);
+  // console.log(cartData.data);
   const [urlParam, setUrlParam] = useSearchParams();
   const itemID = urlParam.get('id');
   const dataBase = cartData.data;
   const [cart, setCart] = useState(dataBase);
   const updateCart = [...cart];
-
+  const ruleBackProduct = [
+    'Sản phẩm được đổi 1 lần duy nhất',
+    'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
+    'Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 07 ngày trên toàn hệ thống',
+  ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
     const indexItem = cart.indexOf(item);
@@ -130,7 +135,6 @@ const Cart = (props) => {
         <Flex wrap="wrap" justify="space-evenly">
           <div>
             <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
-
             {cart.map((item) => {
               const { id, images, title, price, amount } = item;
               return (
@@ -188,27 +192,47 @@ const Cart = (props) => {
                 </div>
               );
             })}
+            <div style={{ marginBottom: '20px' }}>
+              <Flex wrap="wrap" gap="20px">
+                <div>
+                  <p style={{ fontWeight: 'bold' }}>Ghi chú đơn hàng</p>
+                  <TextArea style={{ width: '320px' }} rows={4} placeholder="Ghi chú của bạn" />
+                </div>
+                <div style={{ width: '400px' }}>
+                  <p style={{ fontWeight: 'bold' }}> Chính sách Đổi/Trả</p>
+                  {ruleBackProduct.map((item) => {
+                    return (
+                      <li style={{ listStyleType: 'none', fontWeight: 'lighter' }} key={item}>
+                        <HiOutlineArrowNarrowRight /> {item}
+                      </li>
+                    );
+                  })}
+                </div>
+              </Flex>
+            </div>
           </div>
 
-          <div style={{ backgroundColor: 'white', color: 'black' }}>
-            <p
-              style={{
-                fontSize: '15px',
-                fontWeight: '550',
-                fontFamily: 'Arial, Helvetica, sans-serif',
-              }}
-            >
-              Thông tin đơn hàng
-            </p>
-            <Flex justify="space-between">
-              <div>
-                <b>Tổng tiền ({toTalAmount()}):</b>
-              </div>
-              <div>
-                <b>{toTalProduct()}₫</b>
-              </div>
-            </Flex>
-            <BuyButton>THANH TOÁN</BuyButton>
+          <div >
+            <div style={{ color: 'black', position: 'sticky', top: '32px' }}>
+              <p
+                style={{
+                  fontSize: '15px',
+                  fontWeight: '550',
+                  fontFamily: 'Arial, Helvetica, sans-serif',
+                }}
+              >
+                Thông tin đơn hàng
+              </p>
+              <Flex justify="space-between">
+                <div>
+                  <b>Tổng tiền ({toTalAmount()}):</b>
+                </div>
+                <div>
+                  <b>{toTalProduct()}₫</b>
+                </div>
+              </Flex>
+              <BuyButton>THANH TOÁN</BuyButton>
+            </div>
           </div>
         </Flex>
       ) : (
@@ -224,14 +248,14 @@ const Cart = (props) => {
               </ContinueShopping>
             </div>
             <div>
-              <Flex style={{marginTop:'20px'}} justify="space-between">
+              <Flex style={{ marginTop: '20px' }} justify="space-between">
                 <div>
                   <span style={{ fontSize: '20px', fontWeight: 'lighter' }}>
                     CÓ THỂ BẠN SẼ THÍCH
                   </span>
                 </div>
-                <div style={{marginTop:'3px'}}>
-                  <Link  to="/product#best">See More</Link>
+                <div style={{ marginTop: '3px' }}>
+                  <Link to="/product#best">See More</Link>
                 </div>
               </Flex>
               <Flex style={{ marginBottom: '10px' }} wrap="wrap">
@@ -251,8 +275,8 @@ const Cart = (props) => {
               </Flex>
             </div>
           </div>
-          <div style={{ width: 'fit-content'}}>
-  <div style={{ color: 'black', position: 'sticky',top: '32px'}}>
+          <div style={{ width: 'fit-content' }}>
+            <div style={{ color: 'black', position: 'sticky', top: '32px' }}>
               <p
                 style={{
                   fontSize: '15px',
@@ -271,7 +295,7 @@ const Cart = (props) => {
                 </div>
               </Flex>
               <BuyButton>THANH TOÁN</BuyButton>
-          </div>
+            </div>
           </div>
         </Flex>
       )}

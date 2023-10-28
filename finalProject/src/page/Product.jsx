@@ -5,8 +5,6 @@ import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Image } from 'antd';
 import './Product.css';
-import ScrollToTopButton from '../component/ScrollToTop';
-import Navigation from '../component/Navigation';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -39,9 +37,8 @@ const Product = (props) => {
         <div className="section_card contain">
           <CarouselItem data={dataBase} />
           <Block1>
-          <Navigation/>
             <Tittle>
-              <span id="collection">Collection</span>
+              <span id="collection">Latest Collection</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -103,7 +100,7 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id='outstanding'>Outstanding</span>
+              <span>Sofa Products</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -142,7 +139,7 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id='Favorite'>User Favorite</span>
+              <span>Bedding products</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -181,7 +178,7 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id='Other'>Another</span>
+              <span>Smart Dressing Table</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -220,7 +217,7 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span >Another</span>
+              <span>Dining Table Product</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -259,7 +256,7 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span>Another</span>
+              <span>Types Of Wardrobes</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -298,7 +295,7 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span>Another</span>
+              <span>Shoe Cabinet</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -334,7 +331,6 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-          <ScrollToTopButton/>
         </div>
       </Layout>
     </div>
