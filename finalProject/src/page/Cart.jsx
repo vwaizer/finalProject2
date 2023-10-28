@@ -8,6 +8,7 @@ import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
+import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -83,6 +84,20 @@ const ContinueShopping = styled.a`
     border: 2px solid black;
   }
 `;
+const ItemArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  margin: 10px;
+  
+`;
 const ContainerTotal = styled.div`
   border: 1px dashed grey;
   padding: 15px;
@@ -101,6 +116,7 @@ const Cart = (props) => {
   const [urlParam, setUrlParam] = useSearchParams();
   const itemID = urlParam.get('id');
   const dataBase = cartData.data;
+
   const [cart, setCart] = useState(dataBase);
   const updateCart = [...cart];
   const ruleBackProduct = [
@@ -244,7 +260,7 @@ const Cart = (props) => {
           </div>
         </Flex>
       ) : (
-        // layout giỏ hàng khi không có sp 
+        // layout giỏ hàng khi không có sp
         <div>
           <Flex wrap="wrap" justify="space-evenly">
             <div style={{ flex: 0.95 }}>
@@ -287,7 +303,8 @@ const Cart = (props) => {
                 <Link to="/product#best">See More</Link>
               </div>
             </Flex>
-            <Flex justify="space-around" wrap="wrap">
+
+            {/* <Flex justify="space-around" wrap="wrap">
               {suggestedItem.map((item) => {
                 const { id, images, title, price } = item;
                 return (
@@ -301,7 +318,38 @@ const Cart = (props) => {
                   </Card>
                 );
               })}
-            </Flex>
+            </Flex> */}
+            <ItemArea>
+              {suggestedItem.map((item, index) => {
+                if(index <=3)
+                  return (
+                    <ItemContainer
+                      key={index}
+                      title={item.title}
+                      price={item.price}
+                      picture={item.images[0]}
+                      id={item.id}
+                    />
+                  );
+                return <></>;
+                
+              })}
+            </ItemArea>
+            <ItemArea>
+              {suggestedItem.map((item, index) => {
+                if(index>=4)
+                return (
+                  <ItemContainer
+                    key={index}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                    id={item.id}
+                  />
+                );
+                return <></>;
+              })}
+            </ItemArea>
           </div>
         </div>
       )}
