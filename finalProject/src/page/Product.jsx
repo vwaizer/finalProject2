@@ -11,9 +11,11 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   margin: 5px;
   margin-bottom: 30px;
@@ -39,7 +41,7 @@ const Product = (props) => {
         <div className="section_card contain">
           <CarouselItem data={dataBase} />
           <Block1>
-          <Navigation/>
+            <Navigation />
             <Tittle>
               <span id="collection">Collection</span>
               <h2>ESSENTIAL ITEMS</h2>
@@ -61,11 +63,10 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <span id="best">Best Seller</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="best">BEST SELLER</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -100,10 +101,9 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <span id='outstanding'>Outstanding</span>
+              <span id="outstanding">Outstanding</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -139,10 +139,9 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <span id='Favorite'>User Favorite</span>
+              <span id="Favorite">User Favorite</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -178,10 +177,9 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
-              <span id='Other'>Another</span>
+              <span id="Other">Another</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
@@ -202,7 +200,7 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index > 38 && index <= 42) {
+                if (index > 38 && index < 43) {
                   return (
                     <ItemContainer
                       key={index}
@@ -217,46 +215,6 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
-          {/* <Block1>
-            <Tittle>
-              <span >Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
-            </Tittle>
-            <ItemArea>
-              {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
-                  return (
-                    <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
-                  );
-                }
-                return <></>;
-              })}
-            </ItemArea>
-            <ItemArea>
-              {dataBase.map((item, index) => {
-                if (index >= 8 && index < 12) {
-                  return (
-                    <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
-                  );
-                }
-                return <></>;
-              })}
-            </ItemArea>
-          </Block1>
-
           <Block1>
             <Tittle>
               <span>Another</span>
@@ -295,7 +253,6 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
           <Block1>
             <Tittle>
               <span>Another</span>
@@ -333,8 +290,46 @@ const Product = (props) => {
                 return <></>;
               })}
             </ItemArea>
-          </Block1> */}
-          <ScrollToTopButton/>
+          </Block1>
+          <Block1>
+            <Tittle>
+              <span>Another</span>
+              <h2>ESSENTIAL ITEMS</h2>
+            </Tittle>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index >= 4 && index < 8) {
+                  return (
+                    <ItemContainer
+                      key={index}
+                      title={item.title}
+                      price={item.price}
+                      picture={item.images[0]}
+                      id={item.id}
+                    />
+                  );
+                }
+                return <></>;
+              })}
+            </ItemArea>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index >= 8 && index < 12) {
+                  return (
+                    <ItemContainer
+                      key={index}
+                      title={item.title}
+                      price={item.price}
+                      picture={item.images[0]}
+                      id={item.id}
+                    />
+                  );
+                }
+                return <></>;
+              })}
+            </ItemArea>
+          </Block1>{' '}
+          <ScrollToTopButton />
         </div>
       </Layout>
     </div>

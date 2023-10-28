@@ -6,7 +6,7 @@ const ScrollToTopButton = () => {
 
   useEffect(() => {
     const toggleVisible = () => {
-      setVisible(window.scrollY >= 2000)
+      setVisible(window.scrollY >= 2000);
     };
 
     window.addEventListener('scroll', toggleVisible);
@@ -24,11 +24,14 @@ const ScrollToTopButton = () => {
   };
 
   return (
-    <>{visible && (
-        <button className='scroll-top' onClick={scrollToTop}>{<ArrowUpOutlined />}</button>
-    )}</>
-  )
-
+    <>
+      {visible && (
+        <button className="scroll-top" onClick={scrollToTop}>
+          {<ArrowUpOutlined />}
+        </button>
+      )}
+    </>
+  );
 };
 
 export default ScrollToTopButton;

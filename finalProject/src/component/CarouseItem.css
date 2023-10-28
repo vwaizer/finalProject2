@@ -40,22 +40,21 @@ body {
   justify-content: space-evenly;
 }
 
-.scroll-top{
+.scroll-top {
   position: fixed;
   right: 20px;
   bottom: 20px;
   width: 50px;
 }
 
-.list-product{
-  border: 2px solid red;
+.list-product {
+  border: 2px solid gray;
   position: relative;
-  left: 900px;
+  left: 1125px;
   width: 200px;
 }
 
-.a-navigate:hover{
+.a-navigate:hover {
   cursor: pointer;
-  background-color: violet;
+  background-color: rgb(231, 171, 231);
 }
-
