@@ -4,6 +4,7 @@ import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Image } from 'antd';
+import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import ScrollToTopButton from '../component/ScrollToTop';
 const ItemArea = styled.div`
@@ -223,7 +224,7 @@ const Product = (props) => {
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
+                if (index >= 11 && index < 15) {
                   return (
                     <ItemContainer
                       key={index}
