@@ -93,8 +93,11 @@ const Detail = (props) =>{
     {
       key:'4',
       label:'description',
-      span:'screen',
-      children:dataBase[itemID].description,
+      span:6,
+      children:` Laboris ullamco cillum ut exercitation mollit sit tempor commodo
+      dolor laboris commodo. Laborum mollit veniam consequat sunt
+      nostrud mollit aliquip excepteur est Lorem deserunt. Ullamco sunt
+      id laborum incididunt.`,
     },
     {
       key: '5',
