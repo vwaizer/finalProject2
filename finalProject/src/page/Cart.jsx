@@ -287,7 +287,10 @@ const Cart = (props) => {
                 <Link to="/product#best">See More</Link>
               </div>
             </Flex>
-            <Flex justify="space-around" wrap="wrap">
+
+{/* phần sản phẩm đề xuất */}
+            
+            {/* <Flex justify="space-around" wrap="wrap">
               {suggestedItem.map((item) => {
                 const { id, images, title, price } = item;
                 return (
@@ -301,7 +304,7 @@ const Cart = (props) => {
                   </Card>
                 );
               })}
-            </Flex>
+            </Flex> */}
           </div>
         </div>
       )}
