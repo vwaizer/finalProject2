@@ -3,7 +3,6 @@ import CarouselItem from '../component/CarouselItem';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Image } from 'antd';
 import './Product.css';
 import ScrollToTopButton from '../component/ScrollToTop';
 import Navigation from '../component/Navigation';
@@ -11,9 +10,11 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   margin: 5px;
   margin-bottom: 30px;
@@ -39,10 +40,10 @@ const Product = (props) => {
         <div className="section_card contain">
           <CarouselItem data={dataBase} />
           <Block1>
-          <Navigation/>
+            <Navigation />
             <Tittle>
-              <span id="collection">Collection</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="collection">COLLECTIONS</h2>
+              <span>ESSENTIAL ITEM</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -64,8 +65,8 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id="best">Best Seller</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="best">BEST SELLER</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -103,8 +104,8 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id='outstanding'>Outstanding</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="outstanding">BEDDING PRODUCTS</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -142,8 +143,8 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id='Favorite'>User Favorite</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Sofa">SOFA PRODUCTS</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -181,8 +182,8 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span id='Other'>Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Desk">DESK PRODUCTS</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -202,7 +203,7 @@ const Product = (props) => {
             </ItemArea>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index > 38 && index <= 42) {
+                if (index > 38 && index < 43) {
                   return (
                     <ItemContainer
                       key={index}
@@ -218,10 +219,49 @@ const Product = (props) => {
             </ItemArea>
           </Block1>
 
-          {/* <Block1>
+          <Block1>
             <Tittle>
-              <span >Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Dining">DINING TABLE PRODUCTS</h2>
+              <span>ESSENTIAL ITEMS</span>
+            </Tittle>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 43 && index < 48) {
+                  return (
+                    <ItemContainer
+                      key={index}
+                      title={item.title}
+                      price={item.price}
+                      picture={item.images[0]}
+                      id={item.id}
+                    />
+                  );
+                }
+                return <></>;
+              })}
+            </ItemArea>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 48 && index < 53) {
+                  return (
+                    <ItemContainer
+                      key={index}
+                      title={item.title}
+                      price={item.price}
+                      picture={item.images[0]}
+                      id={item.id}
+                    />
+                  );
+                }
+                return <></>;
+              })}
+            </ItemArea>
+          </Block1>
+
+          <Block1>
+            <Tittle>
+              <h2 id="Cabinet">SHOE CABINET</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -259,8 +299,8 @@ const Product = (props) => {
 
           <Block1>
             <Tittle>
-              <span>Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Make">MAKEUP TABLE</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -295,46 +335,7 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
-
-          <Block1>
-            <Tittle>
-              <span>Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
-            </Tittle>
-            <ItemArea>
-              {dataBase.map((item, index) => {
-                if (index >= 4 && index < 8) {
-                  return (
-                    <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
-                  );
-                }
-                return <></>;
-              })}
-            </ItemArea>
-            <ItemArea>
-              {dataBase.map((item, index) => {
-                if (index >= 8 && index < 12) {
-                  return (
-                    <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
-                  );
-                }
-                return <></>;
-              })}
-            </ItemArea>
-          </Block1> */}
-          <ScrollToTopButton/>
+          <ScrollToTopButton />
         </div>
       </Layout>
     </div>

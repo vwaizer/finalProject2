@@ -3,13 +3,14 @@
   justify-content: space-around;
   gap: 40px;
   width: 100%;
-  background-color: black;
+  background-color: rgb(24, 27, 29);
   color: white;
+
   @media (max-width: 400px) {
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -78,7 +79,7 @@
 }
 
 .cover {
-  background-color: black;
+  background-color: rgb(24, 27, 29);
   color: white;
   height: 500px;
   width: 100%;
