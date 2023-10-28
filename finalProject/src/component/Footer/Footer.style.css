@@ -94,8 +94,9 @@
   display: flex;
   position: relative;
   left: 220px;
-  top: -25px;
+  top: -35px;
   border: none;
   background: none;
   cursor: pointer;
+  color: blue;
 }

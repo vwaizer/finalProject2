@@ -1,12 +1,11 @@
-import React from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import Home from './page/Home';
-import Product from './page/Product';
-import {  useEffect, useState } from 'react';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Cart from './page/Cart';
 import Detail from './page/Detail';
+import Home from './page/Home';
 import Login from './page/Login';
+import Product from './page/Product';
 const Context = () => {
     const [dataBase, setDataBase] = useState([]);
     // const [loading,setLoading]=useState(false);
@@ -39,7 +38,6 @@ const Context = () => {
               <Route path="/Login" element={<Login />}></Route>
             </Routes>
           </BrowserRouter>
-       
       </div>
     );
 }
