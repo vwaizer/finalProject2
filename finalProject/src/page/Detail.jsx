@@ -50,13 +50,29 @@ const Detail = (props) =>{
   const dataBase=props.data;
   const imgData=dataBase[itemID].images[0];
   const titleData=dataBase[itemID].title;
+  let amountData=dataBase[itemID].amount;
   const cartData=useContext(DataContext);
   
-
+  let isExist=false;
+  console.log(itemID);
   console.log(cartData.data);
-  
+  let a=cartData.data.findIndex((item)=>{
+      return item.id === Number(itemID)+1;
+  });
+  if(a >=0){
+    isExist=true;
+  }
+  console.log(a);
   const addToCart=()=>{
-    cartData.method([...cartData.data,dataBase[itemID]])
+    if(isExist){
+      amountData++;
+      cartData.data[a].amount= amountData;
+      
+    }
+    else{
+      cartData.method([...cartData.data,dataBase[itemID]])
+    }
+    
 }
   const items = [
     {

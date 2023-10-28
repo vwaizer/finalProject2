@@ -8,6 +8,7 @@ import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
+import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -83,6 +84,20 @@ const ContinueShopping = styled.a`
     border: 2px solid black;
   }
 `;
+const ItemArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  margin: 10px;
+  
+`;
 const ContainerTotal = styled.div`
   border: 1px dashed grey;
   padding: 15px;
@@ -101,6 +116,7 @@ const Cart = (props) => {
   const [urlParam, setUrlParam] = useSearchParams();
   const itemID = urlParam.get('id');
   const dataBase = cartData.data;
+
   const [cart, setCart] = useState(dataBase);
   const updateCart = [...cart];
   const ruleBackProduct = [
@@ -244,7 +260,7 @@ const Cart = (props) => {
           </div>
         </Flex>
       ) : (
-        // layout giỏ hàng khi không có sp 
+        // layout giỏ hàng khi không có sp
         <div>
           <Flex wrap="wrap" justify="space-evenly">
             <div style={{ flex: 0.95 }}>
@@ -281,15 +297,13 @@ const Cart = (props) => {
           <div>
             <Flex style={{ margin: '0px 20px' }} justify="space-between">
               <div>
-                <span style={{ fontSize: '20px', fontWeight: 'lighter' }}>CÓ THỂ BẠN SẼ THÍCH</span>
+                <span style={{ fontSize: '22px', fontWeight: 'lighter' }}>CÓ THỂ BẠN SẼ THÍCH</span>
               </div>
               <div style={{ marginTop: '3px' }}>
-                <Link to="/product#best">See More</Link>
+                <Link style={{ fontSize: '22px'}} to="/product#best">See More</Link>
               </div>
             </Flex>
 
-{/* phần sản phẩm đề xuất */}
-            
             {/* <Flex justify="space-around" wrap="wrap">
               {suggestedItem.map((item) => {
                 const { id, images, title, price } = item;
@@ -305,6 +319,40 @@ const Cart = (props) => {
                 );
               })}
             </Flex> */}
+            <ItemArea>
+              {suggestedItem.map((item, index) => {
+                if(index <=3)
+                  return (
+              
+    <ItemContainer
+                      key={item.id}
+                      title={item.title}
+                      price={item.price}
+                      picture={item.images[0]}
+                      id={item.id}
+                    />
+               
+                
+                  );
+                return <></>;
+                
+              })}
+            </ItemArea>
+            <ItemArea>
+              {suggestedItem.map((item, index) => {
+                if(index>=4)
+                return (
+                  <ItemContainer
+                    key={item.id}
+                    title={item.title}
+                    price={item.price}
+                    picture={item.images[0]}
+                    id={item.id}
+                  />
+                );
+                return <></>;
+              })}
+            </ItemArea>
           </div>
         </div>
       )}
