@@ -328,7 +328,7 @@ const Product = (props) => {
                 return <></>;
               })}
             </ItemArea>
-          </Block1>{' '}
+          </Block1>
           <ScrollToTopButton />
         </div>
       </Layout>
