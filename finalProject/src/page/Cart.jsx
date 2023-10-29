@@ -6,6 +6,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
+import { HiArrowLongRight } from 'react-icons/hi2';
 import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
 import CartItemContainer from '../component/CartItemContainer';
@@ -17,13 +18,12 @@ const ProductImage = styled.img`
   height: 80px;
 `;
 
-const BlockNumber = styled.div`
-  width: 90px;
-  text-align: center;
-  margin: auto;
+const LinkProduct = styled.a`
+  display: flex;
+  justify-content: right;
   color: black;
-  margin-left: 20px;
-  font-size: 13px;
+  font-weight: lighter;
+  margin-bottom: 5px;
 `;
 const Des = styled.p`
   font-family: Arial, Helvetica, sans-serif;
@@ -37,8 +37,8 @@ const Des = styled.p`
     margin: 0px;
   }
   @media (min-width: 576px) and (max-width: 768px) {
-  padding-top: 12px;
-}
+    padding-top: 12px;
+  }
 `;
 
 const Amount = styled.div`
@@ -106,8 +106,8 @@ const TitleAndAmount = styled.div`
     margin-left: 10px;
   }
   @media (min-width: 576px) and (max-width: 768px) {
-  height: 50px;
-}
+    height: 50px;
+  }
 `;
 const InitPrice = styled.div`
   width: 90px;
@@ -139,7 +139,7 @@ const Notice = styled.div`
   }
   @media (min-width: 576px) and (max-width: 768px) {
     justify-content: space-around;
-}
+  }
 `;
 const NoteContain = styled.div`
   width: 320px;
@@ -148,53 +148,54 @@ const NoteContain = styled.div`
   }
   @media (min-width: 576px) and (max-width: 768px) {
     width: 90% !important;
-}
+  }
 `;
 const CartTotalContainer = styled.div`
-  @media (max-width: 576px){
+  @media (max-width: 576px) {
     width: 82%;
-  
   }
-  @media (min-width: 576px) and (max-width: 768px)  {
-    width: 88% ;
-}
-@media (min-width: 769px) and (max-width: 992px)  {
-    width: 86.5% ;
-}
-@media (min-width: 992px) and (max-width: 1200px)  {
-    width: 74% ;
-}
-`
+  @media (min-width: 576px) and (max-width: 768px) {
+    width: 88%;
+  }
+  @media (min-width: 769px) and (max-width: 992px) {
+    width: 86.5%;
+  }
+  @media (min-width: 992px) and (max-width: 1200px) {
+    width: 74%;
+  }
+`;
 const TotalPrice = styled.div`
-   width: 90px;
+  width: 90px;
   text-align: center;
   margin: auto;
   color: black;
   margin-left: 20px;
   font-size: 13px;
   @media (min-width: 600px) and (max-width: 800px) {
-  display: flex;
-  width: 100%;
-  margin: 0px;
-  justify-content: space-around;
-padding-right: 6px;
-}
-`
+    display: flex;
+    width: 100%;
+    margin: 0px;
+    justify-content: space-around;
+    padding-right: 6px;
+  }
+`;
 const Block = styled.div`
-display: flex;
-@media (min-width: 600px) and (max-width: 800px) {
-  flex-direction: column;
-}
-`
+  display: flex;
+  @media (min-width: 600px) and (max-width: 800px) {
+    flex-direction: column;
+  }
+`;
 const Cart = (props) => {
   const cartData = useContext(DataContext);
   // console.log(props.data)
-  const suggestedItem = [];
-  for (let i = 0; i < 8; i++) {
-    suggestedItem.push(props.data[Math.floor(Math.random() * props.data.length)]);
+  const randomItems = [];
+  let suggestedItem = [];
+  for (let i = 0; suggestedItem.length < 8; i++) {
+    randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
+    suggestedItem = [...new Set(randomItems)];
   }
-  // console.log(suggestedItem)
-  // console.log(cartData.data);
+  console.log(randomItems);
+  console.log(suggestedItem);
   const [urlParam, setUrlParam] = useSearchParams();
   const itemID = urlParam.get('id');
   const dataBase = cartData.data;
@@ -205,6 +206,7 @@ const Cart = (props) => {
     'Sản phẩm được đổi 1 lần duy nhất',
     'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
     'Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 07 ngày trên toàn hệ thống',
+    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.'
   ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
@@ -259,51 +261,49 @@ const Cart = (props) => {
                     >
                       <ProductImage src={images} alt="" />
                       <Block>
-                      <TitleAndAmount>
-                        <Des>{title}</Des>
-                        <InitPrice>
-                          <Text>${price}</Text>
-                        </InitPrice>
-                        <Flex align="center">
-                          <div
-                            style={{
-                              border: '1px solid grey',
-                              display: 'flex',
-                              marginTop: '7px',
-                              marginRight: '35px',
-                            }}
-                          >
-                            <AmountButton
-                              onClick={() => decreaseQuantity(item)}
-                              style={{ borderRight: '1px solid grey' }}
+                        <TitleAndAmount>
+                          <Des>{title}</Des>
+                          <InitPrice>
+                            <Text>${price}</Text>
+                          </InitPrice>
+                          <Flex align="center">
+                            <div
+                              style={{
+                                border: '1px solid grey',
+                                display: 'flex',
+                                marginTop: '7px',
+                                marginRight: '35px',
+                              }}
                             >
-                              -
-                            </AmountButton>
-                            <Amount> {amount}</Amount>
-                            <AmountButton
-                              onClick={() => increaseQuantity(item)}
-                              style={{ borderLeft: '1px solid grey' }}
-                            >
-                              +
-                            </AmountButton>
+                              <AmountButton
+                                onClick={() => decreaseQuantity(item)}
+                                style={{ borderRight: '1px solid grey' }}
+                              >
+                                -
+                              </AmountButton>
+                              <Amount> {amount}</Amount>
+                              <AmountButton
+                                onClick={() => increaseQuantity(item)}
+                                style={{ borderLeft: '1px solid grey' }}
+                              >
+                                +
+                              </AmountButton>
+                            </div>
+                          </Flex>
+                        </TitleAndAmount>
+
+                        <TotalPrice>
+                          <div>
+                            <Text type="secondary">Thành tiền</Text>
                           </div>
-                        </Flex>
-                        
-                      </TitleAndAmount>
-                      
-                      <TotalPrice>
-                        <div>
-                          <Text type="secondary">Thành tiền</Text>
-                        </div>
-                        <span style={{ color: '#a73340', fontWeight: 'bold' }}>
-                          ${amount * price}
-                        </span>
-                        <div onClick={() => removeItem(item)}>
-                          <CiTrash style={{ cursor: 'pointer' }}></CiTrash>
-                        </div>
-                      </TotalPrice>
+                          <span style={{ color: '#a73340', fontWeight: 'bold' }}>
+                            ${amount * price}
+                          </span>
+                          <div onClick={() => removeItem(item)}>
+                            <CiTrash style={{ cursor: 'pointer' }}></CiTrash>
+                          </div>
+                        </TotalPrice>
                       </Block>
-                    
                     </Flex>
                   </ContainerProduct>
                 );
@@ -312,7 +312,7 @@ const Cart = (props) => {
             <Notice>
               <NoteContain>
                 <p style={{ fontWeight: 'bold' }}>Ghi chú đơn hàng</p>
-                <TextArea rows={4} placeholder="Ghi chú của bạn" />
+                <TextArea rows={5} placeholder="Ghi chú của bạn" />
               </NoteContain>
               <NoteContain style={{ width: '400px' }}>
                 <p style={{ fontWeight: 'bold' }}> Chính sách Đổi/Trả</p>
@@ -328,6 +328,10 @@ const Cart = (props) => {
           </div>
 
           <CartTotalContainer>
+            <LinkProduct href="/product">
+              Tiếp tục mua hàng
+              <HiArrowLongRight style={{ marginTop: '5px', marginLeft: '5px' }} />
+            </LinkProduct>
             <CartTotal
               posi="sticky"
               posiTop="32px"
@@ -351,8 +355,8 @@ const Cart = (props) => {
                 </ContinueShopping>
               </div>
             </div>
-            <div style={{width:'330px',height:'160px', marginTop:'15px'}}>
-            <CartTotal sumAmount={toTalAmount} sumProduct={toTalProduct} />
+            <div style={{ width: '330px', height: '160px', marginTop: '15px' }}>
+              <CartTotal sumAmount={toTalAmount} sumProduct={toTalProduct} />
             </div>
           </Flex>
           <div>
