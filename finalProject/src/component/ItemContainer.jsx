@@ -17,7 +17,7 @@ const ItemContainer = (props) => {
     nextPage--;
   }
 
-  const onDetail = () => {
+ const onDetail = () => {
     naPage(`/${nextPage}`);
     // console.log(nextPage);
   };
