@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography, Flex, Card } from 'antd';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
@@ -11,6 +11,7 @@ import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
 import CartItemContainer from '../component/CartItemContainer';
 import CartTotal from '../component/layout/CartTotal';
+import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -186,6 +187,16 @@ const Block = styled.div`
   }
 `;
 const Cart = (props) => {
+  const naPage = useNavigate();
+  let nextPage = props.id;
+  if (props.id > 0) {
+    nextPage--;
+  }
+
+ const onDetail = () => {
+    naPage(`/${nextPage}`);
+    // console.log(nextPage);
+  };
   const cartData = useContext(DataContext);
   // console.log(props.data)
   const randomItems = [];
@@ -206,7 +217,7 @@ const Cart = (props) => {
     'Sản phẩm được đổi 1 lần duy nhất',
     'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
     'Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 07 ngày trên toàn hệ thống',
-    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.'
+    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.',
   ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
@@ -252,14 +263,14 @@ const Cart = (props) => {
               {cart.map((item) => {
                 const { id, images, title, price, amount } = item;
                 return (
-                  <ContainerProduct>
+                  <ContainerProduct onClick={onDetail}>
                     <Flex
                       wrap="wrap"
                       justify="space-evenly"
                       key={id}
                       style={{ marginBottom: '17px' }}
                     >
-                      <ProductImage src={images} alt="" />
+                      <ProductImage  src={images} alt="" />
                       <Block>
                         <TitleAndAmount>
                           <Des>{title}</Des>
@@ -328,10 +339,19 @@ const Cart = (props) => {
           </div>
 
           <CartTotalContainer>
-            <LinkProduct href="/product">
+            <Link
+              style={{
+                display: 'flex',
+                justifyContent: 'right',
+                color: 'black',
+                fontWeight: 'lighter',
+                marginBottom: '5px',
+              }}
+              to="/product"
+            >
               Tiếp tục mua hàng
               <HiArrowLongRight style={{ marginTop: '5px', marginLeft: '5px' }} />
-            </LinkProduct>
+            </Link>
             <CartTotal
               posi="sticky"
               posiTop="32px"
