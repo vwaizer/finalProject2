@@ -11,15 +11,15 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 5px;
+  margin-bottom: 30px;
+  height: 500px;
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  margin: 5px;
-  margin-bottom: 30px;
-  height: 500px;
 `;
 const Block1 = styled.div`
   padding-top: 100px;
