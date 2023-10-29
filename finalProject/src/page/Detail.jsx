@@ -77,7 +77,7 @@ const Detail = (props) =>{
   const items = [
     {
       key: '1',
-      label: 'Name:',
+      label: 'Name',
       children: titleData,
     },
     {
@@ -87,12 +87,12 @@ const Detail = (props) =>{
     },
     {
       key: '3',
-      label: 'category',
+      label: 'Category',
       children: dataBase[itemID].category,
     },
     {
       key:'4',
-      label:'description',
+      label:'Description',
       span:6,
       children:` Laboris ullamco cillum ut exercitation mollit sit tempor commodo
       dolor laboris commodo. Laborum mollit veniam consequat sunt
@@ -101,8 +101,8 @@ const Detail = (props) =>{
     },
     {
       key: '5',
-      label: 'price',
-      children: dataBase[itemID].price,
+      label: 'Price',
+      children: '$'+dataBase[itemID].price,
     },
     
   ];
