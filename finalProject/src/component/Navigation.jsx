@@ -13,7 +13,7 @@ const items = [
   {
     key: '2',
     label: (
-      <a className="a-navigate" href="#best seller">
+      <a className="a-navigate" href="#Best Seller">
         Best Seller
       </a>
     ),
@@ -21,7 +21,7 @@ const items = [
   {
     key: '3',
     label: (
-      <a className="a-navigate" href="#outstanding">
+      <a className="a-navigate" href="#Bedding">
         Bedding Products
       </a>
     ),
@@ -53,7 +53,7 @@ const items = [
   {
     key: '7',
     label: (
-      <a className="a-navigate" href="#Shoe">
+      <a className="a-navigate" href="#Cabinet">
         Shoe Cabinet
       </a>
     ),
@@ -61,7 +61,7 @@ const items = [
   {
     key: '8',
     label: (
-      <a className="a-navigate" href="#Make">
+      <a className="a-navigate" href="#Makeup">
         Makeup Table
       </a>
     ),
