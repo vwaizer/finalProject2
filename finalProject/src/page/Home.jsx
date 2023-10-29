@@ -11,7 +11,7 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  
+
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -29,6 +29,7 @@ const Block = styled.div`
 `;
 const Tittle = styled.div`
   margin: 5px;
+  
 `;
 const Home = (props) => {
 
@@ -42,7 +43,9 @@ const Home = (props) => {
         <CarouselItemHome data={displayData} />
         <Block>
           <Tittle>
+            <hr></hr>
             <h2>Sản Phẩm Tiêu Biểu</h2>
+        
           </Tittle>
           <ItemArea>
            

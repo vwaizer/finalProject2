@@ -11,15 +11,15 @@ const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  margin: 5px;
+  margin-bottom: 30px;
+  height: 500px;
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  margin: 5px;
-  margin-bottom: 30px;
-  height: 500px;
 `;
 const Block1 = styled.div`
   padding-top: 100px;
@@ -49,7 +49,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index < 4) {
-                  return (  
+                  return (
                     <ItemContainer
                       key={index}
                       title={item.title}
@@ -65,7 +65,7 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <h2 id="best">BEST SELLER</h2>
+              <h2 id="Best Seller">BEST SELLER</h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
@@ -73,7 +73,6 @@ const Product = (props) => {
                 if (index > 4 && index < 9) {
                   return (
                     <ItemContainer
-                    
                       key={index}
                       title={item.title}
                       price={item.price}
@@ -104,8 +103,8 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <span id="outstanding">Outstanding</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Bedding">Bedding Products</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -142,8 +141,8 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <span id="Favorite">User Favorite</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Sofa">Sofa Products</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -180,8 +179,8 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <span id="Other">Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Desk">Desk Products</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -218,8 +217,8 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <span>Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Dining">Dining Table Products</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -256,8 +255,8 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <span>Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Cabinet">Shoe Cabinet</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -294,8 +293,8 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <span>Another</span>
-              <h2>ESSENTIAL ITEMS</h2>
+              <h2 id="Makeup">Makeup Table</h2>
+              <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {

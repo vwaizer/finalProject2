@@ -31,10 +31,11 @@
     text-decoration: none;
     font-size: 15px;
     text-transform: uppercase;
+    color: black;
 }
 
 .navlink:hover {
-    color: red;
+    color: #ef5e47;
     cursor: pointer;
 }
 
@@ -42,6 +43,7 @@
     text-decoration: none;
     padding-right: 10px;
     text-transform: uppercase;
+    color: black;
 }
 
 .side-login {
@@ -51,7 +53,7 @@
 }
 
 .login:hover {
-    color: blue;
+    color: #ef5e47;
     cursor: pointer;
 }
 
