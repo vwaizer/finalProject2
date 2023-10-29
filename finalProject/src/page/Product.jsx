@@ -4,8 +4,8 @@ import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Image } from 'antd';
-import './Product.css';
 import ScrollToTopButton from '../component/ScrollToTop';
+import './Product.css';
 import Navigation from '../component/Navigation';
 const ItemArea = styled.div`
   display: flex;
@@ -33,7 +33,7 @@ const Tittle = styled.div`
 
 const Product = (props) => {
   const dataBase = props.data;
-  const productPage = dataBase.filter((item, index) => index < 6);
+  const productPage = dataBase.filter((item, index) => index < 4);
   console.log(productPage);
   return (
     <div>
@@ -43,13 +43,13 @@ const Product = (props) => {
           <Block1>
             <Navigation />
             <Tittle>
-              <span id="collection">Collection</span>
+              <span id="collection">Latest Collection</span>
               <h2>ESSENTIAL ITEMS</h2>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index < 4) {
-                  return (
+                  return (  
                     <ItemContainer
                       key={index}
                       title={item.title}
@@ -65,7 +65,7 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <h2 id="best seller">BEST SELLER</h2>
+              <h2 id="best">BEST SELLER</h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
@@ -73,6 +73,7 @@ const Product = (props) => {
                 if (index > 4 && index < 9) {
                   return (
                     <ItemContainer
+                    
                       key={index}
                       title={item.title}
                       price={item.price}
@@ -328,7 +329,7 @@ const Product = (props) => {
                 return <></>;
               })}
             </ItemArea>
-          </Block1>{' '}
+          </Block1>
           <ScrollToTopButton />
         </div>
       </Layout>

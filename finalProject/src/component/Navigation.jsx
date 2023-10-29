@@ -29,7 +29,7 @@ const items = [
   {
     key: '4',
     label: (
-      <a className="a-navigate" href="Sofa">
+      <a className="a-navigate" href="#Sofa">
         Sofa Products
       </a>
     ),
@@ -53,7 +53,7 @@ const items = [
   {
     key: '7',
     label: (
-      <a className="a-navigate" href="Cabinet">
+      <a className="a-navigate" href="#Shoe">
         Shoe Cabinet
       </a>
     ),

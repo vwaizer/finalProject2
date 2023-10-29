@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import ItemContainer from '../component/ItemContainer';
 
-import CarouselItem from '../component/CarouselItem';
+
 import Layout from '../component/layout/Layout';
+import CarouselItemHome from '../component/CarouseItemHome';
+
 
 const ItemArea = styled.div`
   display: flex;
@@ -29,22 +31,21 @@ const Tittle = styled.div`
   margin: 5px;
 `;
 const Home = (props) => {
-  const dataBase = props.data;
-  const displayData = dataBase.filter((item, index) => index < 5);
-  console.log(dataBase);
 
+  const dataBase = props.data;
+  const displayData = [{images:['./img/banner1.jpg']},{images:['./img/banner2.jpg']},{images:['./img/banner3.jpg']}];
+  
   return (
     <Layout>
       <div>
-        <CarouselItem data={displayData} />
+        
+        <CarouselItemHome data={displayData} />
         <Block>
           <Tittle>
             <h2>Sản Phẩm Tiêu Biểu</h2>
           </Tittle>
           <ItemArea>
-            {/* <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" /> */}
+           
             {dataBase.map((item, index) => {
               if (index < 3) {
                 return (
@@ -67,9 +68,7 @@ const Home = (props) => {
             <h2>Sản Phẩm Mới Nhất </h2>
           </Tittle>
           <ItemArea>
-            {/* <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" /> */}
+            
             {dataBase.map((item, index) => {
               if (index >= 3 && index < 6) {
                 return (
@@ -86,9 +85,7 @@ const Home = (props) => {
             })}
           </ItemArea>
           <ItemArea>
-            {/* <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" />
-          <ItemContainer title="ban ghe" price="5" /> */}
+           
             {dataBase.map((item, index) => {
               if (index >= 6 && index < 9) {
                 return (

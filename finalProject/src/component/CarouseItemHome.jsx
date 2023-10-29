@@ -39,7 +39,7 @@ import './CarouseItem.css';
 // import required modules
 import { Navigation } from 'swiper/modules';
 
-export default function CarouselItem(props) {
+export default function CarouselItemHome(props) {
   const dataBase = props.data;
   return (
     <>
@@ -47,7 +47,7 @@ export default function CarouselItem(props) {
         {dataBase.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <img src={item.images[0]} alt="" style={{width:"400px",height:"400px"}}  ></img>
+              <img src={item.images[0]} alt=""   ></img>
             </SwiperSlide>
           );
         })}
