@@ -114,7 +114,7 @@ const Detail = (props) =>{
     src={imgData}
     />
       <DescripBlock> <Descriptions  labelStyle={{color:"green"}} column={3}  layout="vertical" size='middle' items={items} />
-        <Button onClick={addToCart} className='buttonClass'>add to cart</Button>
+        <Button onClick={addToCart} className='buttonClass'>Add To Cart</Button>
       </DescripBlock>
       </Container>
       <h2>Related Product</h2>

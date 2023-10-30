@@ -47,7 +47,7 @@ const Home = (props) => {
         <Block>
           <Tittle>
             
-            <h2>Sản Phẩm Tiêu Biểu</h2>
+            <h2>Typical Product</h2>
             <Divider/>
           </Tittle>
           <ItemArea>
