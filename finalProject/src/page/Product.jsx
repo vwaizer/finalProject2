@@ -3,7 +3,6 @@ import CarouselItem from '../component/CarouselItem';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Image } from 'antd';
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import Navigation from '../component/Navigation';
@@ -34,6 +33,7 @@ const Tittle = styled.div`
 const Product = (props) => {
   const dataBase = props.data;
   const productPage = dataBase.filter((item, index) => index < 4);
+
   console.log(productPage);
   return (
     <div>
@@ -67,12 +67,12 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <h2 className="section-title" id="Best Seller">
+              <h2  className="section-title" id="Best Seller">
                 BEST SELLER
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
-            <ItemArea>
+            <ItemArea >
               {dataBase.map((item, index) => {
                 if (index > 4 && index < 9) {
                   return (

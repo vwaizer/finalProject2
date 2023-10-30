@@ -52,7 +52,6 @@ const Detail = (props) =>{
   const titleData=dataBase[itemID].title;
   let amountData=dataBase[itemID].amount;
   const cartData=useContext(DataContext);
-  
   let isExist=false;
   console.log(itemID);
   console.log(cartData.data);
