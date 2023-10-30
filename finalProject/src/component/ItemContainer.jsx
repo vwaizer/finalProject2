@@ -11,12 +11,12 @@ const ItemDetail = styled.div`
 `;
 
 const ItemContainer = (props) => {
-  const naPage = useNavigate();
+  
   let nextPage = props.id;
   if (props.id > 0) {
     nextPage--;
   }
-
+  const naPage = useNavigate();
   const onDetail = () => {
     naPage(`/${nextPage}`);
     // console.log(nextPage);

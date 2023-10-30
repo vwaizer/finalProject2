@@ -5,6 +5,8 @@ import ItemContainer from '../component/ItemContainer';
 
 import Layout from '../component/layout/Layout';
 import CarouselItemHome from '../component/CarouseItemHome';
+import CommentArea from '../component/CommentArea';
+import AboutArea from '../component/AboutArea';
 
 
 const ItemArea = styled.div`
@@ -61,13 +63,14 @@ const Home = (props) => {
               return <></>;
             })}
           </ItemArea>
+          
         </Block>
 
         <Block>
           <Tittle>
             <h2>Sản Phẩm Mới Nhất </h2>
           </Tittle>
-          <ItemArea>
+          {/* <ItemArea>
             
             {dataBase.map((item, index) => {
               if (index >= 3 && index < 6) {
@@ -100,7 +103,11 @@ const Home = (props) => {
               }
               return <></>;
             })}
-          </ItemArea>
+          </ItemArea> */}
+          <CommentArea/>
+        </Block>
+        <Block>
+          <AboutArea/>
         </Block>
       </div>
     </Layout>

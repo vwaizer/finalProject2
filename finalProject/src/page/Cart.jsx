@@ -11,6 +11,7 @@ import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
 import CartItemContainer from '../component/CartItemContainer';
 import CartTotal from '../component/layout/CartTotal';
+import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -260,6 +261,7 @@ const Cart = (props) => {
                       style={{ marginBottom: '17px' }}
                     >
                       <ProductImage src={images} alt="" />
+                     
                       <Block>
                         <TitleAndAmount>
                           <Des>{title}</Des>
