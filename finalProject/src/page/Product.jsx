@@ -1,9 +1,9 @@
 import React from 'react';
-import CarouselItem from '../component/CarouselItem';
+import CarouselItemHome from '../component/CarouseItemHome';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Image } from 'antd';
+import { Divider } from 'antd';
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import Navigation from '../component/Navigation';
@@ -33,30 +33,33 @@ const Tittle = styled.div`
 
 const Product = (props) => {
   const dataBase = props.data;
-  const productPage = dataBase.filter((item, index) => index < 4);
-  console.log(productPage);
+  const displayData = [
+    { images: ['./img/banner1.jpg'] },
+    { images: ['./img/banner2.jpg'] },
+    { images: ['./img/banner3.jpg'] },
+  ];
   return (
     <div>
       <Layout>
         <div className="section_card contain">
-          <CarouselItem data={productPage} />
+          <CarouselItemHome data={displayData} />
           <Block1>
-            <Navigation />
             <Tittle>
               <h2 className="section-title" id="collection">
                 Latest Collection
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index < 4) {
+                if (index < 3) {
                   return (
                     <ItemContainer
                       key={index}
                       title={item.title}
                       price={item.price}
-                      picture={item.images}
+                      picture={item.images[0]}
                       id={item.id}
                     />
                   );
