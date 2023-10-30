@@ -1,9 +1,7 @@
-import { ShoppingCartOutlined } from '@ant-design/icons';
+import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import React from 'react';
-import Nav from 'react-bootstrap/Nav';
-import './header.style.css';
 import { Link } from 'react-router-dom';
-import { UserOutlined } from '@ant-design/icons';
+import './header.style.css';
 
 const infomation = [
   {
@@ -20,13 +18,15 @@ const infomation = [
   },
 ];
 
+
+
 function Header() {
   return (
     <div className="cover-header">
       <div>
         <img
           className="img-header"
-          src="https://github.com/Mateo-codeMaxi/Ecomerce-Furniture.github.io/blob/main/TEMPLATE%20-%20FURNITURE%20STORE/img/logo.png?raw=true"
+          src="https://github.com/Mateo-codeMaxi/Ecomerce-Furniture.github.io/blob/main/TEMPLATE%20-%20FURNITURE%20STORE/img/logo.png?raw=true" alt='#'
         />
       </div>
       <div className="header" as="ul">
@@ -43,7 +43,7 @@ function Header() {
           <Link className="login" to="/login">
             <UserOutlined />
           </Link>
-          <ShoppingCartOutlined />
+          <button className='button-header'><ShoppingCartOutlined/></button>
         </div>
       </div>
     </div>

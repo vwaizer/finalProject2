@@ -1,5 +1,5 @@
-import { Flex,Typography } from 'antd'
-import React from 'react'
+import { Flex } from 'antd';
+import React from 'react';
 import styled from 'styled-components';
 const ContainerTotal = styled.div`
   border: 1px dashed grey;
