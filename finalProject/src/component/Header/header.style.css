@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 500px) {
+    @media (max-width: 600px) {
         display: flex;
         flex-direction: column;
         justify-content: center;

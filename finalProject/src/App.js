@@ -17,7 +17,7 @@ function App() {
     
  return(<DataContext.Provider value={{data:cartData,method:setCartData}}>
     
-    <Context></Context>
+      <Context></Context>
  
  
  </DataContext.Provider>)

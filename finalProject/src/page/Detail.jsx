@@ -52,7 +52,6 @@ const Detail = (props) =>{
   const titleData=dataBase[itemID].title;
   let amountData=dataBase[itemID].amount;
   const cartData=useContext(DataContext);
-  
   let isExist=false;
   console.log(itemID);
   console.log(cartData.data);
@@ -64,10 +63,10 @@ const Detail = (props) =>{
   }
   console.log(a);
   const addToCart=()=>{
+    alert("Them gio hang thanh cong")
     if(isExist){
       amountData++;
       cartData.data[a].amount= amountData;
-      
     }
     else{
       cartData.method([...cartData.data,dataBase[itemID]])
@@ -114,7 +113,7 @@ const Detail = (props) =>{
     height={380}
     src={imgData}
     />
-      <DescripBlock> <Descriptions title="Detail " column={3}  layout="vertical" size='middle' items={items} />
+      <DescripBlock> <Descriptions  labelStyle={{color:"green"}} column={3}  layout="vertical" size='middle' items={items} />
         <Button onClick={addToCart} className='buttonClass'>add to cart</Button>
       </DescripBlock>
       </Container>

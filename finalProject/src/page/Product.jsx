@@ -1,12 +1,11 @@
 import React from 'react';
-import CarouselItemHome from '../component/CarouseItemHome';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Divider } from 'antd';
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
-import Navigation from '../component/Navigation';
+import { Divider } from 'antd';
+import CarouselItemHome from '../component/Carouse/CarouseItemHome';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -22,7 +21,7 @@ const ItemArea = styled.div`
   }
 `;
 const Block1 = styled.div`
-  padding-top: 100px;
+  padding-top: 10px;
 `;
 const Tittle = styled.div`
   text-align: center;
@@ -41,8 +40,8 @@ const Product = (props) => {
   return (
     <div>
       <Layout>
+        <CarouselItemHome data={displayData} />
         <div className="section_card contain">
-          <CarouselItemHome data={displayData} />
           <Block1>
             <Tittle>
               <h2 className="section-title" id="collection">

@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Typography, Flex, Card } from 'antd';
-import { Link, useNavigate, useSearchParams } from 'react-router-dom';
+import { Typography, Flex } from 'antd';
+import { Link, useNavigate } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
@@ -11,34 +11,23 @@ import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
 import CartItemContainer from '../component/CartItemContainer';
 import CartTotal from '../component/layout/CartTotal';
-import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
   width: 90px;
   height: 80px;
-`;
-
-const LinkProduct = styled.a`
-  display: flex;
-  justify-content: right;
-  color: black;
-  font-weight: lighter;
-  margin-bottom: 5px;
+  cursor: pointer;
 `;
 const Des = styled.p`
   font-family: Arial, Helvetica, sans-serif;
   width: 180px;
   height: 40px;
   border-radius: 1.5px;
-  padding-top: 20px;
+  padding-top: 13px;
   margin: auto 20px;
+  cursor: pointer;
   @media (max-width: 576px) {
-    padding-top: 5px;
     margin: 0px;
-  }
-  @media (min-width: 576px) and (max-width: 768px) {
-    padding-top: 12px;
   }
 `;
 
@@ -125,7 +114,7 @@ const InitPrice = styled.div`
 const ContainerProduct = styled.div`
   display: flex;
   justify-content: space-around;
-  
+
   @media (max-width: 576px) {
     display: flex;
     justify-content: space-evenly;
@@ -199,7 +188,6 @@ const Cart = (props) => {
     // console.log(nextPage);
   };
   const cartData = useContext(DataContext);
-  // console.log(props.data)
   const randomItems = [];
   let suggestedItem = [];
   for (let i = 0; suggestedItem.length < 8; i++) {
@@ -208,12 +196,14 @@ const Cart = (props) => {
   }
   console.log(randomItems);
   console.log(suggestedItem);
-  const [urlParam, setUrlParam] = useSearchParams();
-  const itemID = urlParam.get('id');
   const dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
-  const updateCart = [...cart];
+  useEffect(()=>{
+    setCart(dataBase)
+  },[dataBase])
+  const cartRef = useRef(cart)
+  const updateCart = [...cartRef.current];
   const ruleBackProduct = [
     'Sản phẩm được đổi 1 lần duy nhất',
     'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
@@ -224,7 +214,7 @@ const Cart = (props) => {
   const increaseQuantity = (item) => {
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    setCart([...updateCart]);
+    cartData.method([...updateCart])
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
@@ -234,24 +224,24 @@ const Cart = (props) => {
     } else {
       updateCart[indexItem].amount = 1;
     }
-    setCart([...updateCart]);
+    cartData.method([...updateCart])
   };
   //  console.log(cart)
   // xóa sp
   const removeItem = (item) => {
-    const updatedCart = cart.filter((cartItem) => cartItem !== item);
-    setCart(updatedCart);
+    const updatedCart = dataBase.filter((cartItem) => cartItem !== item);
+    cartData.method([...updatedCart])
   };
   // tính tổng tiền
   const toTalProduct = () => {
-    const sum = cart.reduce((total, item) => total + item.price * item.amount, 0);
+    const sum = dataBase.reduce((total, item) => total + item.price * item.amount, 0);
     return sum;
   };
   const toTalAmount = () => {
-    const sum = cart.reduce((total, item) => total + item.amount, 0);
+    const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
-
+console.log(dataBase)
   return (
     <Layout>
       {/* nav */}
@@ -265,18 +255,18 @@ const Cart = (props) => {
                 const { id, images, title, price, amount } = item;
 
                 return (
-                  <ContainerProduct >
+                  <ContainerProduct>
                     <Flex
                       wrap="wrap"
                       justify="space-evenly"
                       key={id}
                       style={{ marginBottom: '17px' }}
                     >
-                      <ProductImage src={images} alt="" onClick={() => onDetail(id)}/>
+                      <ProductImage src={images} alt="" onClick={() => onDetail(id)} />
 
                       <Block>
                         <TitleAndAmount>
-                          <Des>{title}</Des>
+                          <Des onClick={() => onDetail(id)}>{title}</Des>
                           <InitPrice>
                             <Text>${price}</Text>
                           </InitPrice>
@@ -388,7 +378,7 @@ const Cart = (props) => {
                 <span style={{ fontSize: '22px', fontWeight: 'lighter' }}>CÓ THỂ BẠN SẼ THÍCH</span>
               </div>
               <div style={{ marginTop: '3px' }}>
-                <Link style={{ fontSize: '22px' }} to="/product#best">
+                <Link style={{ fontSize: '22px' }} to="/product#Best Seller">
                   See More
                 </Link>
               </div>
