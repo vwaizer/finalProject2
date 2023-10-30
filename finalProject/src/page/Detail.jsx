@@ -47,8 +47,12 @@ const Detail = (props) =>{
   window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   const urlData=useParams();
   const itemID=urlData.productID;
+  console.log(itemID);
+ 
   const dataBase=props.data;
+  console.log(props);
   const imgData=dataBase[itemID].images[0];
+  
   const titleData=dataBase[itemID].title;
   let amountData=dataBase[itemID].amount;
   const cartData=useContext(DataContext);
@@ -122,9 +126,9 @@ const Detail = (props) =>{
         {/* <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
         <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/>
         <Image src={dataBase[Math.floor(Math.random() * 41)].images[0]} width={400} height={300}/> */}
-        <ItemContainer picture={dataBase[randomID[0]].images[0]} id={randomID[0]}/>
-        <ItemContainer picture={dataBase[randomID[1]].images[0]} id={randomID[1]}/>
-        <ItemContainer picture={dataBase[randomID[2]].images[0]} id={randomID[2]}/>
+        <ItemContainer data={dataBase[randomID[0]]} key={randomID[0]}/>
+        <ItemContainer data={dataBase[randomID[1]]} key={randomID[1]}/>
+        <ItemContainer data={dataBase[randomID[2]]} key={randomID[2]}/>
       </ImgContainer>
       
     </Layout>
