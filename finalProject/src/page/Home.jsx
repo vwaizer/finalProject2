@@ -72,7 +72,7 @@ const Home = (props) => {
 
         <Block>
           <Tittle>
-            <h2>Sản Phẩm Mới Nhất </h2>
+            <h2>Comment</h2>
           </Tittle>
           {/* <ItemArea>
             

@@ -64,10 +64,10 @@ const Detail = (props) =>{
   }
   console.log(a);
   const addToCart=()=>{
+    alert("Them gio hang thanh cong")
     if(isExist){
       amountData++;
       cartData.data[a].amount= amountData;
-      
     }
     else{
       cartData.method([...cartData.data,dataBase[itemID]])
