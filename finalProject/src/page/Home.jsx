@@ -56,11 +56,8 @@ const Home = (props) => {
               if (index < 4) {
                 return (
                   <ItemContainer
+                    data={item}
                     key={index}
-                    title={item.title}
-                    price={item.price}
-                    picture={item.images[0]}
-                    id={item.id}
                   />
                 );
               }
