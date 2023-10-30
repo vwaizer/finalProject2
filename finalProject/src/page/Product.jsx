@@ -1,12 +1,13 @@
 import React from 'react';
-import CarouselItem from '../component/CarouselItem';
+
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Image } from 'antd';
+
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import Navigation from '../component/Navigation';
+import CarouselItemHome from '../component/Carouse/CarouseItemHome';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -33,13 +34,15 @@ const Tittle = styled.div`
 
 const Product = (props) => {
   const dataBase = props.data;
-  const productPage = dataBase.filter((item, index) => index < 4);
-  console.log(productPage);
+  const displayData = [{images:['./img/banner1.jpg']},{images:['./img/banner2.jpg']},{images:['./img/banner3.jpg']}];
+
+ 
   return (
     <div>
       <Layout>
+      <CarouselItemHome data={displayData} />
         <div className="section_card contain">
-          <CarouselItem data={productPage} />
+        
           <Block1>
             <Navigation />
             <Tittle>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ArrowUpOutlined } from '@ant-design/icons';
-import './CarouseItem.css';
+import './Carouse/CarouseItem.css';
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
 

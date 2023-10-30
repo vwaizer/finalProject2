@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Dropdown } from 'antd';
-import './CarouseItem.css';
+import './Carouse/CarouseItem.css';
 const items = [
   {
     key: '1',

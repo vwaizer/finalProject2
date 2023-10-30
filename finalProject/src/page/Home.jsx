@@ -4,7 +4,7 @@ import ItemContainer from '../component/ItemContainer';
 
 
 import Layout from '../component/layout/Layout';
-import CarouselItemHome from '../component/CarouseItemHome';
+import CarouselItemHome from '../component/Carouse/CarouseItemHome';
 import CommentArea from '../component/CommentArea';
 
 import { Divider } from 'antd';
@@ -53,7 +53,7 @@ const Home = (props) => {
           <ItemArea>
            
             {dataBase.map((item, index) => {
-              if (index < 3) {
+              if (index < 4) {
                 return (
                   <ItemContainer
                     key={index}
