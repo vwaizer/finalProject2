@@ -45,7 +45,7 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="collection">
-                Latest Collection
+                LASTEST COLLECTION
               </h2>
               <span>ESSENTIAL ITEMS</span>
               <Divider />
@@ -110,7 +110,7 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Bedding">
-                Bedding Products
+                BEDDING PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
@@ -190,7 +190,7 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Desk">
-                Desk Products
+                DESK PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
@@ -230,7 +230,7 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Dining">
-                Dining Table Products
+                DINING TABLE PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
@@ -270,7 +270,7 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Cabinet">
-                Shoe Cabinet
+                SHOE CABINET
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
@@ -310,7 +310,7 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Makeup">
-                Makeup Table
+                MAKEUP TABLE
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
