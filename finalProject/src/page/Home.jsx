@@ -6,14 +6,15 @@ import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import CarouselItemHome from '../component/CarouseItemHome';
 import CommentArea from '../component/CommentArea';
-import AboutArea from '../component/AboutArea';
+
+import { Divider } from 'antd';
 
 
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  
+
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -31,6 +32,7 @@ const Block = styled.div`
 `;
 const Tittle = styled.div`
   margin: 5px;
+  
 `;
 const Home = (props) => {
 
@@ -44,7 +46,9 @@ const Home = (props) => {
         <CarouselItemHome data={displayData} />
         <Block>
           <Tittle>
+            
             <h2>Sản Phẩm Tiêu Biểu</h2>
+            <Divider/>
           </Tittle>
           <ItemArea>
            
@@ -106,9 +110,7 @@ const Home = (props) => {
           </ItemArea> */}
           <CommentArea/>
         </Block>
-        <Block>
-          <AboutArea/>
-        </Block>
+        
       </div>
     </Layout>
   );

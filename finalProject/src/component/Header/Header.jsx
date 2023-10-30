@@ -3,6 +3,7 @@ import React from 'react';
 import Nav from 'react-bootstrap/Nav';
 import './header.style.css';
 import { Link } from 'react-router-dom';
+import { UserOutlined } from '@ant-design/icons';
 
 const infomation = [
   {
@@ -19,7 +20,6 @@ const infomation = [
   },
 ];
 
-const form = [{ href: '/login', title: 'Login' }];
 function Header() {
   return (
     <div className="cover-header">
@@ -40,16 +40,10 @@ function Header() {
           );
         })}
         <div className="side-login">
-          {form.map((value, index) => {
-            return (
-              <div key={index} as="li">
-                <Link className="login" to={value.href}>
-                  {value.title}
-                </Link>
-                <ShoppingCartOutlined />
-              </div>
-            );
-          })}
+          <Link className="login" to="/login">
+            <UserOutlined />
+          </Link>
+          <ShoppingCartOutlined />
         </div>
       </div>
     </div>

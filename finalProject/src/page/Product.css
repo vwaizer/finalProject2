@@ -51,3 +51,9 @@ h1 {
   text-transform: uppercase;
   text-shadow: 5px 3px 5px
 }
+
+.section-title {
+  color: #ef5e47;
+  font-size: 1.2rem;
+  font-family: 'Kaushan Script';
+}

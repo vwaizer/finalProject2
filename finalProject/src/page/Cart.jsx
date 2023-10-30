@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
 import { Typography, Flex, Card } from 'antd';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { CiTrash } from 'react-icons/ci';
 import { BsFillReplyFill } from 'react-icons/bs';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
@@ -125,6 +125,7 @@ const InitPrice = styled.div`
 const ContainerProduct = styled.div`
   display: flex;
   justify-content: space-around;
+  
   @media (max-width: 576px) {
     display: flex;
     justify-content: space-evenly;
@@ -187,6 +188,16 @@ const Block = styled.div`
   }
 `;
 const Cart = (props) => {
+  const naPage = useNavigate();
+
+  const onDetail = (item) => {
+    console.log('vao  click' + item);
+    if (item > 0) {
+      item--;
+    }
+    naPage(`/${item}`);
+    // console.log(nextPage);
+  };
   const cartData = useContext(DataContext);
   // console.log(props.data)
   const randomItems = [];
@@ -207,7 +218,7 @@ const Cart = (props) => {
     'Sản phẩm được đổi 1 lần duy nhất',
     'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
     'Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 07 ngày trên toàn hệ thống',
-    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.'
+    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.',
   ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
@@ -252,16 +263,17 @@ const Cart = (props) => {
             <div style={{ marginTop: '25px' }}>
               {cart.map((item) => {
                 const { id, images, title, price, amount } = item;
+
                 return (
-                  <ContainerProduct>
+                  <ContainerProduct >
                     <Flex
                       wrap="wrap"
                       justify="space-evenly"
                       key={id}
                       style={{ marginBottom: '17px' }}
                     >
-                      <ProductImage src={images} alt="" />
-                     
+                      <ProductImage src={images} alt="" onClick={() => onDetail(id)}/>
+
                       <Block>
                         <TitleAndAmount>
                           <Des>{title}</Des>
@@ -330,10 +342,19 @@ const Cart = (props) => {
           </div>
 
           <CartTotalContainer>
-            <LinkProduct href="/product">
+            <Link
+              style={{
+                display: 'flex',
+                justifyContent: 'right',
+                color: 'black',
+                fontWeight: 'lighter',
+                marginBottom: '5px',
+              }}
+              to="/product"
+            >
               Tiếp tục mua hàng
               <HiArrowLongRight style={{ marginTop: '5px', marginLeft: '5px' }} />
-            </LinkProduct>
+            </Link>
             <CartTotal
               posi="sticky"
               posiTop="32px"

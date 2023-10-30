@@ -38,16 +38,29 @@ import 'swiper/css/navigation';
 import './CarouseItem.css';
 // import required modules
 import { Navigation } from 'swiper/modules';
+import { Image } from 'antd';
+import { useNavigate } from 'react-router';
 
 export default function CarouselItem(props) {
   const dataBase = props.data;
+  console.log(dataBase);
+  const naPage = useNavigate();
+
+  const onDetail = (item) => {
+    console.log('vao  click' + item);
+    if (item > 0) {
+      item--;
+    }
+    naPage(`/${item}`);
+    // console.log(nextPage);
+  };
   return (
     <>
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {dataBase.map((item, index) => {
           return (
             <SwiperSlide key={index}>
-              <img src={item.images[0]} alt="" style={{width:"400px",height:"400px"}}  ></img>
+              <Image src={item.images[0]} alt="" width={500} height={500} preview={false}  onClick={()=>onDetail(item.id)}  ></Image>
             </SwiperSlide>
           );
         })}

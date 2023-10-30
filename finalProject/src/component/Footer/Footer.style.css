@@ -1,10 +1,11 @@
 .container {
   display: flex;
   justify-content: space-around;
-  gap: 40px;
   width: 100%;
-  background-color: rgb(24, 27, 29);
+  background-color: rgb(17, 24, 39);
   color: white;
+  padding-bottom: 2.5rem;
+  gap: 2rem;
 
   @media (max-width: 400px) {
     display: flex;
@@ -16,9 +17,11 @@
 
 .col {
   list-style: none;
+
 }
 
 .h2footer {
+  margin-bottom: 1rem;
   color: gray;
 }
 
@@ -34,7 +37,7 @@
 }
 
 .link-footer:hover {
-  color: rgba(255, 255, 0, 0.825);
+  color: rgb(255, 208, 0);
 }
 
 .handle-img {
@@ -58,7 +61,8 @@
 
 .under-title-footer {
   text-align: center;
-  margin-top: 200px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .orther {
@@ -79,11 +83,16 @@
 }
 
 .cover {
-  background-color: rgb(24, 27, 29);
+  padding: 2rem;
+  background-color: rgb(17, 24, 39);
   color: white;
   height: 500px;
   width: 100%;
-  border-radius: 10px;
+}
+
+.under-title {
+  font-size: 1.1rem;
+  color: #797776;
 }
 
 .li-footer {
