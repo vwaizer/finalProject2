@@ -23,7 +23,7 @@ const ItemArea = styled.div`
   }
 `;
 const Block1 = styled.div`
-  padding-top: 100px;
+  padding-top: 10px;
 `;
 const Tittle = styled.div`
   text-align: center;
@@ -42,7 +42,6 @@ const Product = (props) => {
       <Layout>
       <CarouselItemHome data={displayData} />
         <div className="section_card contain">
-        
           <Block1>
             <Navigation />
             <Tittle>
