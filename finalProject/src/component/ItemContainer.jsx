@@ -9,6 +9,8 @@ const ItemDetail = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 310px;
+  margin-top:10px;
+  margin-bottom:10px;
 `;
 
 const ItemContainer = (props) => {
@@ -55,7 +57,7 @@ const ItemContainer = (props) => {
         <div> <strong>{dataBase.title}</strong></div>
          <div>${dataBase.price}</div> 
       </ItemDetail>
-      <Button onClick={addToCart} className='buttonClass'>Add To Cart</Button>
+      <Button onClick={addToCart} className='buttonHome'>Add To Cart</Button>
     </Card>
   );
 };
