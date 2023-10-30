@@ -3,7 +3,7 @@ import React from 'react';
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-import { Image } from 'antd';
+
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import Navigation from '../component/Navigation';
@@ -34,8 +34,9 @@ const Tittle = styled.div`
 
 const Product = (props) => {
   const dataBase = props.data;
-  const productPage = dataBase.filter((item, index) => index < 4);
-  console.log(productPage);
+  const displayData = [{images:['./img/banner1.jpg']},{images:['./img/banner2.jpg']},{images:['./img/banner3.jpg']}];
+
+ 
   return (
     <div>
       <Layout>
