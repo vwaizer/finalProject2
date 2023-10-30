@@ -40,12 +40,7 @@ body {
   justify-content: space-evenly;
 }
 
-.scroll-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 50px;
-}
+
 
 .list-product {
   border: 2px solid gray;
@@ -112,4 +107,11 @@ body {
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
 }
