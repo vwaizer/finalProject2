@@ -15,7 +15,7 @@ export const DataContext=createContext([]);
 function App() {
     const [cartData,setCartData]=useState([]);
     
- return(<DataContext.Provider value={{data:cartData,method:setCartData}}>
+ return(<DataContext.Provider value={{data:cartData, method:setCartData}}>
     
       <Context></Context>
  
