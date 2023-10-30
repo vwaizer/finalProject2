@@ -25,7 +25,7 @@ input {
   letter-spacing: 1px;
 }
 
-button {
+.button-login {
   color: white;
   background: #ea2858;
   border: none;
