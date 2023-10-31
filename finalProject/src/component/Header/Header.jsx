@@ -1,6 +1,7 @@
-import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ModalCart from './ModalCart';
 import './header.style.css';
 
 const infomation = [
@@ -43,7 +44,7 @@ function Header() {
           <Link className="login" to="/login">
             <UserOutlined />
           </Link>
-          <button className='button-header'><ShoppingCartOutlined/></button>
+          <ModalCart/>
         </div>
       </div>
     </div>

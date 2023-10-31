@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
-import Layout from '../component/layout/Layout';
-import styled from 'styled-components';
-import { Typography, Flex } from 'antd';
-import { Link, useNavigate } from 'react-router-dom';
-import { CiTrash } from 'react-icons/ci';
+import { Flex, Typography } from 'antd';
+import TextArea from 'antd/es/input/TextArea';
+import React, { useContext, useEffect, useState } from 'react';
 import { BsFillReplyFill } from 'react-icons/bs';
+import { CiTrash } from 'react-icons/ci';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { HiArrowLongRight } from 'react-icons/hi2';
+import { Link, useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
 import { DataContext } from '../App';
-import TextArea from 'antd/es/input/TextArea';
+import Layout from '../component/layout/Layout';
 
-import CartTotal from '../component/layout/CartTotal';
 import ItemContainer from '../component/ItemContainer';
+import CartTotal from '../component/layout/CartTotal';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
