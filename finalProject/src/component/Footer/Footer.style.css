@@ -79,7 +79,8 @@
 
 .input-footer {
   width: 250px;
-  height: 30px;
+  height: 50px;
+  border-radius: 10px;
 }
 
 .cover {
@@ -104,7 +105,7 @@
   display: flex;
   position: relative;
   left: 220px;
-  top: -35px;
+  top: -30px;
   border: none;
   background: none;
   cursor: pointer;

@@ -62,11 +62,11 @@
 }
 
 .button-header{
-    background-color: none;
+    background-color: white;
+    color: black;
     border: none;
 }
 
 .button-header:hover{
     cursor: pointer;
-    color: #ef5e47;
 }
