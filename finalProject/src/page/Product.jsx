@@ -65,6 +65,7 @@ const Product = (props) => {
                 BEST SELLER
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -89,6 +90,7 @@ const Product = (props) => {
                 BEDDING PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -113,6 +115,7 @@ const Product = (props) => {
                 Sofa Products
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -137,6 +140,7 @@ const Product = (props) => {
                 DESK PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -161,6 +165,7 @@ const Product = (props) => {
                 DINING TABLE PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -185,6 +190,7 @@ const Product = (props) => {
                 SHOE CABINET
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
@@ -209,6 +215,7 @@ const Product = (props) => {
                 MAKEUP TABLE
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
