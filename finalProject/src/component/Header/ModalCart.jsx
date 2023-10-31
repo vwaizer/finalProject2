@@ -8,7 +8,7 @@ const ModalCart = () => {
   const cartData=useContext(DataContext).data;
   
   cartData.forEach((item,index)=>{
-     counting++
+     counting+=item.amount
   })
 
   return (
