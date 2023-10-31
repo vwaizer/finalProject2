@@ -14,7 +14,7 @@ const ItemArea = styled.div`
   justify-content: space-evenly;
   margin: 5px;
   margin-bottom: 30px;
-  height: 500px;
+  height: fit-content;
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;
@@ -56,12 +56,9 @@ const Product = (props) => {
                 if (index < 4) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -80,12 +77,9 @@ const Product = (props) => {
                 if (index > 4 && index < 9) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -96,12 +90,9 @@ const Product = (props) => {
                 if (index > 9 && index < 14) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -120,12 +111,9 @@ const Product = (props) => {
                 if (index > 14 && index < 19) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -136,12 +124,9 @@ const Product = (props) => {
                 if (index > 18 && index < 23) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -160,12 +145,9 @@ const Product = (props) => {
                 if (index > 23 && index < 28) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -176,12 +158,9 @@ const Product = (props) => {
                 if (index > 28 && index < 33) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -200,12 +179,9 @@ const Product = (props) => {
                 if (index > 33 && index < 38) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -216,12 +192,9 @@ const Product = (props) => {
                 if (index > 38 && index < 43) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -240,12 +213,9 @@ const Product = (props) => {
                 if (index > 43 && index < 48) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -256,12 +226,9 @@ const Product = (props) => {
                 if (index > 48 && index < 53) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -280,12 +247,9 @@ const Product = (props) => {
                 if (index > 53 && index < 58) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -296,12 +260,9 @@ const Product = (props) => {
                 if (index > 58 && index < 63) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -320,12 +281,9 @@ const Product = (props) => {
                 if (index > 63 && index < 68) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;
@@ -336,12 +294,9 @@ const Product = (props) => {
                 if (index > 68 && index < 73) {
                   return (
                     <ItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                    data={item}
+                    key={index}
+                  />
                   );
                 }
                 return <></>;

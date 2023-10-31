@@ -24,7 +24,7 @@ const ItemArea = styled.div`
   margin: 10px;
 `;
 const Block = styled.div`
-  border: 2px solid black;
+  border: 0px;
   border-radius: 10px;
   padding: 5px;
   margin-top: 10px;
@@ -47,7 +47,7 @@ const Home = (props) => {
         <Block>
           <Tittle>
             
-            <h2>Sản Phẩm Tiêu Biểu</h2>
+            <h2>Typical Product</h2>
             <Divider/>
           </Tittle>
           <ItemArea>
@@ -56,11 +56,8 @@ const Home = (props) => {
               if (index < 4) {
                 return (
                   <ItemContainer
+                    data={item}
                     key={index}
-                    title={item.title}
-                    price={item.price}
-                    picture={item.images[0]}
-                    id={item.id}
                   />
                 );
               }

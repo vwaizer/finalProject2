@@ -11,6 +11,7 @@ import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
 import CartItemContainer from '../component/CartItemContainer';
 import CartTotal from '../component/layout/CartTotal';
+import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
 
 const ProductImage = styled.img`
@@ -388,13 +389,10 @@ Your shopping cart is empty
               {suggestedItem.map((item, index) => {
                 if (index <= 3)
                   return (
-                    <CartItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                     <ItemContainer
+                    data={item}
+                    key={index}
+                  />
                   );
                 return <></>;
               })}
@@ -403,13 +401,10 @@ Your shopping cart is empty
               {suggestedItem.map((item, index) => {
                 if (index >= 4)
                   return (
-                    <CartItemContainer
-                      key={index}
-                      title={item.title}
-                      price={item.price}
-                      picture={item.images[0]}
-                      id={item.id}
-                    />
+                     <ItemContainer
+                    data={item}
+                    key={index}
+                  />
                   );
                 return <></>;
               })}

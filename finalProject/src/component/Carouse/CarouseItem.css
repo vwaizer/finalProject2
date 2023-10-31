@@ -1,11 +1,13 @@
-body {
 
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reem+Kufi+Ink&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&family=Reem+Kufi+Ink&display=swap");
+ *{
+
+  font-family: "Kaushan Script";
+  font-size: 16px;
 
 }
-
-
 /* .swiper {
   width: 100%;
   height: fit-content;
@@ -38,20 +40,6 @@ body {
   align-items: center;
   gap: 2rem;
   justify-content: space-evenly;
-}
-
-.scroll-top {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 50px;
-}
-
-.list-product {
-  border: 2px solid gray;
-  position: relative;
-  left: 900px;
-  width: 200px;
 }
 
 .a-navigate:hover {
@@ -112,4 +100,22 @@ body {
   stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
+}
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 30px;
+  border-radius: 100px;
+  background-color:#ea2858;
+  color: white;
+}
+
+.list-product {
+  border: 2px solid gray;
+  position: relative;
+  left: 1100px;
+  width: 200px;
 }

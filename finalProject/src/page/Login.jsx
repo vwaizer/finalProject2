@@ -82,10 +82,10 @@ const LoginPage = () => {
             />
           </Tab>
           <ButtonTab>
-            <button onClick={handleLogin}>Login</button>
+            <button className='button-login' onClick={handleLogin}>Login</button>
           </ButtonTab>
           <ButtonTab>
-            <button onClick={handleReset}>Reset</button>
+            <button className='button-login' onClick={handleReset}>Reset</button>
           </ButtonTab>
         </Login>
       </CoverBox>
