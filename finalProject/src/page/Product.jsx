@@ -14,7 +14,7 @@ const ItemArea = styled.div`
   justify-content: space-evenly;
   margin: 5px;
   margin-bottom: 30px;
-  height: 500px;
+  height: fit-content;
   @media (max-width: 600px) {
     display: flex;
     flex-direction: column;

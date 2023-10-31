@@ -55,8 +55,12 @@ const ItemContainer = (props) => {
       <Image width="100%"  height={420} src={dataBase.images[0]} />
       <ItemDetail>
         <div> <strong>{dataBase.title}</strong></div>
-         <div>${dataBase.price}</div> 
+         <div>${dataBase.discount ?<>
+          <span style={{textDecoration:"line-through",marginRight:"5px"}}>{dataBase.price}</span>
+          <span>{dataBase.discount}</span>
+         </>:dataBase.price} </div> 
       </ItemDetail>
+      <div>{dataBase.category}</div>
       <Button onClick={addToCart} className='buttonHome'>Add To Cart</Button>
     </Card>
   );

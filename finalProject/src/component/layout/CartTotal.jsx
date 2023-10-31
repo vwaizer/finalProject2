@@ -6,13 +6,11 @@ const ContainerTotal = styled.div`
   padding: 15px;
   border-radius: 5px;
   margin-bottom: 20px;
-  
 `;
 const Title = styled.h2`
-margin-top: 0px;
-     font-weight: 550;
-        font-family: Arial, Helvetica, sans-serif;
-`
+  margin-top: 0px;
+  font-weight: 550;
+`;
 const BuyButton = styled.div`
   cursor: pointer;
   border-radius: 3px;
@@ -24,35 +22,30 @@ const BuyButton = styled.div`
   background-color: black;
   color: white;
   font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+
   margin-top: 10px;
   @media (max-width: 576px) {
     width: 100%;
   }
   @media (min-width: 576px) and (max-width: 1200px) {
-    width: 100% ;
-}
-
-
+    width: 100%;
+  }
 `;
-const CartTotal = ({posi,posiTop, sumAmount, sumProduct}) => {
+const CartTotal = ({ posi, posiTop, sumAmount, sumProduct }) => {
   return (
     <ContainerTotal style={{ position: posi, top: posiTop }}>
-    <Title
-    >
-      Cart Total
-    </Title>
-    <Flex justify="space-between">
-      <div>
-        <b>Total ({sumAmount()}):</b>
-      </div>
-      <div>
-        <b>${sumProduct()}</b>
-      </div>
-    </Flex>
-    <BuyButton>CHECKOUT</BuyButton>
-  </ContainerTotal>
-  )
-}
+      <Title>Cart Total</Title>
+      <Flex justify="space-between">
+        <div>
+          <b>Total ({sumAmount()}):</b>
+        </div>
+        <div>
+          <b>${sumProduct()}</b>
+        </div>
+      </Flex>
+      <BuyButton>CHECKOUT</BuyButton>
+    </ContainerTotal>
+  );
+};
 
-export default CartTotal
+export default CartTotal;

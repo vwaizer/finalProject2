@@ -14,6 +14,7 @@
     "title": "CEILING LAMPS",
     "category": "Luxury",
     "price": "59.00",
+    "discount":"35.00",
     "amount": 1,
     "images": ["https://xuongdeco.com/wp-content/uploads/2021/04/giuong-ngu-boc-da-deco-gbd24.jpg"]
   },
@@ -320,6 +321,7 @@
     "title": "CORNER TABLE",
     "category": "Wooden",
     "price": "249.00",
+    "discount":"150.00",
     "amount": 1,
     "images": [
       "https://trangtrinha.net/wp-content/uploads/2023/03/ban-lam-viec-mat-da-co-bep-tu-BLS12-trangtrinha-net-4.jpg"
@@ -330,6 +332,7 @@
     "title": "ROUND DINING TABLE",
     "category": "Luxury",
     "price": "759.00",
+    "discount":"600.00",
     "amount": 1,
     "images": ["https://nogifu.com/ckfinder/userfiles/files/ban-lam-viec-lien-gia-sach(1).jpg"]
   },
@@ -410,6 +413,7 @@
     "title": "DECORATIVE VASES",
     "category": "Handmade",
     "price": "44.00",
+    "discount":"25.00",
     "amount": 1,
     "images": [
       "https://dongagroup.vn/upload/tin-tuc-noi-that/ban-an-cao-cap/ban-an-6-ghe/ban-an-6-ghe-018.jpg"
@@ -584,6 +588,7 @@
     "title": "CLOUD SOFA",
     "category": "Luxury",
     "price": "359.00",
+    "discount":"300.00",
     "amount": 1,
     "images": [
       "https://phongkhachdep.org/wp-content/uploads/2021/02/Ke%CC%A3%CC%82-Sa%CC%81ch-Decor-Sang-Tro%CC%A3ng-.jpg"
