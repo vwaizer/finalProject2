@@ -9,36 +9,34 @@ const ItemDetail = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 310px;
-  margin-top:10px;
-  margin-bottom:10px;
+  margin-top: 10px;
+  
 `;
 
 const ItemContainer = (props) => {
-  const dataBase=props.data;
-  const itemID=dataBase.id;
-  let amountData=dataBase.amount;
-  const cartData=useContext(DataContext);
-  let isExist=false;
-  
+  const dataBase = props.data;
+  const itemID = dataBase.id;
+  let amountData = dataBase.amount;
+  const cartData = useContext(DataContext);
+  let isExist = false;
+
   console.log(cartData.data);
-  let a=cartData.data.findIndex((item)=>{
-      return item.id === Number(itemID);
+  let a = cartData.data.findIndex((item) => {
+    return item.id === Number(itemID);
   });
-  if(a >=0){
-    isExist=true;
+  if (a >= 0) {
+    isExist = true;
   }
   console.log(a);
-  const addToCart=()=>{
-    alert("Them gio hang thanh cong")
-    if(isExist){
+  const addToCart = () => {
+    alert('Them gio hang thanh cong');
+    if (isExist) {
       amountData++;
-      cartData.data[a].amount= amountData;
+      cartData.data[a].amount = amountData;
+    } else {
+      cartData.method([...cartData.data, dataBase]);
     }
-    else{
-      cartData.method([...cartData.data,dataBase])
-    }
-    
-}
+  };
   let nextPage = dataBase.id;
   if (props.id > 0) {
     nextPage--;
@@ -52,16 +50,30 @@ const ItemContainer = (props) => {
   return (
     <Card style={{ border: '0px', width: '360px' }} hoverable onClick={onDetail}>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
-      <Image width="100%"  height={420} src={dataBase.images[0]} />
+      <Image width="100%" height={420} src={dataBase.images[0]} />
       <ItemDetail>
-        <div> <strong>{dataBase.title}</strong></div>
-         <div>${dataBase.discount ?<>
-          <span style={{textDecoration:"line-through",marginRight:"5px"}}>{dataBase.price}</span>
-          <span>{dataBase.discount}</span>
-         </>:dataBase.price} </div> 
+        <div>
+          {' '}
+          <strong>{dataBase.title}</strong>
+        </div>
+        <div style={{fontFamily:"Kaushan Script"}} >
+          
+          {dataBase.discount ? (
+            <>
+              <span style={{ textDecoration: 'line-through', marginRight: '5px' }}>
+                ${dataBase.price}
+              </span>
+              <span>${dataBase.discount}</span>
+            </>
+          ) : (
+            <span>${dataBase.price}</span>
+          )}
+        </div>
       </ItemDetail>
-      <div>{dataBase.category}</div>
-      <Button onClick={addToCart} className='buttonHome'>Add To Cart</Button>
+      <div style={{marginBottom:"10px"}}>{dataBase.category}</div>
+      <Button onClick={addToCart} className="buttonHome">
+        Add To Cart
+      </Button>
     </Card>
   );
 };
