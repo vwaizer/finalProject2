@@ -10,7 +10,7 @@ const ModalCart = () => {
   const cartData=useContext(DataContext).data;
   console.log(cartData)
   cartData.forEach((item,index)=>{
-     counting++
+     counting+=item.amount
   })
   const [isModalOpen, setIsModalOpen] = useState(false);
 

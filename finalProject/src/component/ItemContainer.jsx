@@ -20,6 +20,7 @@ const ItemContainer = (props) => {
   let isExist = false;
 
   console.log(cartData.data);
+  
   let a = cartData.data.findIndex((item) => {
     return item.id === Number(itemID);
   });
@@ -29,11 +30,12 @@ const ItemContainer = (props) => {
 
   const addToCart = () => {
     alert("Add To Cart: "+dataBase.title)
+    
     if (isExist) {
-      amountData++;
-      cartData.data[a].amount = amountData;
+      
+      cartData.data[a].amount = amountData+1;
     } else {
-      cartData.method([...cartData.data, dataBase]);
+      cartData.method([...cartData.data, {...dataBase}]);
     }
   };
   let nextPage = dataBase.id;
