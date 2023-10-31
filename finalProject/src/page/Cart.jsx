@@ -9,7 +9,7 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
-import CartItemContainer from '../component/CartItemContainer';
+
 import CartTotal from '../component/layout/CartTotal';
 import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
