@@ -1,5 +1,6 @@
 import { Flex } from 'antd';
 import React from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 const ContainerTotal = styled.div`
   border: 1px dashed grey;
@@ -32,6 +33,11 @@ const BuyButton = styled.div`
   }
 `;
 const CartTotal = ({ posi, posiTop, sumAmount, sumProduct }) => {
+  
+const naPage = useNavigate();
+  const goToPayment=()=>{
+    naPage(`/Payment`);
+  }
   return (
     <ContainerTotal style={{ position: posi, top: posiTop }}>
       <Title>Cart Total</Title>
@@ -43,7 +49,7 @@ const CartTotal = ({ posi, posiTop, sumAmount, sumProduct }) => {
           <b>${sumProduct()}</b>
         </div>
       </Flex>
-      <BuyButton>CHECKOUT</BuyButton>
+      <BuyButton onClick={goToPayment}>CHECKOUT</BuyButton>
     </ContainerTotal>
   );
 };

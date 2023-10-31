@@ -1,4 +1,4 @@
-import { Button, Card, Image } from 'antd';
+import {  Button, Card, Image } from 'antd';
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
@@ -10,7 +10,6 @@ const ItemDetail = styled.div`
   justify-content: space-between;
   width: 310px;
   margin-top: 10px;
-  
 `;
 
 const ItemContainer = (props) => {
@@ -27,9 +26,9 @@ const ItemContainer = (props) => {
   if (a >= 0) {
     isExist = true;
   }
-  console.log(a);
+
   const addToCart = () => {
-    alert('Them gio hang thanh cong');
+    alert("Add To Cart: "+dataBase.title)
     if (isExist) {
       amountData++;
       cartData.data[a].amount = amountData;
@@ -48,16 +47,14 @@ const ItemContainer = (props) => {
     // console.log(nextPage);
   };
   return (
-    <Card style={{ border: '0px', width: '360px' }} hoverable >
+    <Card style={{ border: '0px', width: '360px' }} hoverable>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
-      <Image width="100%" height={420} src={dataBase.images[0]} onClick={onDetail}/>
+      <Image width="100%" height={420} src={dataBase.images[0]} onClick={onDetail} />
       <ItemDetail>
         <div>
-          {' '}
           <strong>{dataBase.title}</strong>
         </div>
-        <div style={{fontFamily:"Kaushan Script"}} >
-          
+        <div style={{ fontFamily: 'Kaushan Script' }}>
           {dataBase.discount ? (
             <>
               <span style={{ textDecoration: 'line-through', marginRight: '5px' }}>
@@ -70,7 +67,7 @@ const ItemContainer = (props) => {
           )}
         </div>
       </ItemDetail>
-      <div style={{marginBottom:"10px"}}>{dataBase.category}</div>
+      <div style={{ marginBottom: '10px' }}>{dataBase.category}</div>
       <Button onClick={addToCart} className="buttonHome">
         Add To Cart
       </Button>

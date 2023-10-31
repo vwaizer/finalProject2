@@ -10,6 +10,8 @@ const CommentContent=styled.div`
         justify-content:center;
         align-items:center;
         flex-wrap:wrap;
+        height:150px;
+        text-align:justify;
        
 `;
 const CommentBlock=styled.div`
@@ -35,29 +37,29 @@ const CommentArea = () => (
   <CommentBlock >
     <CommentItem >
       <Card   hoverable bordered={false} bodyStyle={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} >
-      <MdOutlineMessage />
+      <MdOutlineMessage size={35} />
       <Divider/>
-        <CommentContent>Card cinadsd     adasdassda </CommentContent>
+        <CommentContent>I just received the beautiful walnut coffee table I ordered from this website, and I couldn't be happier! The craftsmanship is top-notch, and it adds a touch of elegance to my living room.Highly recommended! </CommentContent>
         <Divider />
         <div><Avatar size={40} icon={<UserOutlined />} /> User1</div>
       </Card>
     </CommentItem>
     <CommentItem >
     <Card hoverable  bordered={false} bodyStyle={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} >
-      <MdOutlineMessage/>
+    <MdOutlineMessage size={35} />
       <Divider/>
-        <CommentContent>Card cinadsd     adasdassda </CommentContent>
+        <CommentContent>I was a bit skeptical about buying a sofa online, but after reading the glowing reviews, I decided to give it a shot. I'm so glad I did! The sofa is incredibly comfortable, and the fabric feels durable. The color is true to the pictures, and it arrived on time. This website offers great quality and value for money. </CommentContent>
         <Divider/>
-        <div><Avatar size={40} icon={<UserOutlined />} /> User1</div>
+        <div><Avatar size={40} icon={<UserOutlined />} /> User2</div>
       </Card>
     </CommentItem>
     <CommentItem >
     <Card  hoverable bordered={false} bodyStyle={{display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"}} >
-      <MdOutlineMessage/>
+    <MdOutlineMessage size={35} />
       <Divider/>
-        <CommentContent>Card cinadsd     adasdassda </CommentContent>
+        <CommentContent>I needed a new dining set for my home, and I found the perfect one on this website. The design is modern and sleek, and the table and chairs are sturdy. The customer service was also fantastic; they answered all my questions promptly and helped me choose the right set for my space. I'm thrilled with my purchase!</CommentContent>
         <Divider/>
-        <div><Avatar size={40} icon={<UserOutlined />} /> User1</div>
+        <div><Avatar size={40} icon={<UserOutlined />} /> User3</div>
       </Card>
     </CommentItem>
   </CommentBlock>
