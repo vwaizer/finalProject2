@@ -81,7 +81,7 @@ const Detail = (props) =>{
     {
       key: '1',
       label: 'Name',
-      children: titleData,
+      children: <strong>{titleData}</strong> ,
     },
     {
       key: '2',
@@ -105,7 +105,16 @@ const Detail = (props) =>{
     {
       key: '5',
       label: 'Price',
-      children: '$'+dataBase[itemID].price,
+      children: dataBase[itemID].discount ? (
+        <>
+          <span style={{ textDecoration: 'line-through', marginRight: '5px',fontSize:"20px" }}>
+            ${dataBase[itemID].price}
+          </span>
+          <span style={{fontSize:"20px"}}>${dataBase[itemID].discount}</span>
+        </>
+      ) : (
+        <span>${dataBase[itemID].price}</span>
+      ),
     },
     
   ];

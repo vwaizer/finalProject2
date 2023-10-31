@@ -1,6 +1,6 @@
 import { Button, Card, Image } from 'antd';
 import React, { useContext } from 'react';
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { DataContext } from '../App';
 
@@ -38,7 +38,7 @@ const ItemContainer = (props) => {
     }
   };
   let nextPage = dataBase.id;
-  if (props.id > 0) {
+  if (dataBase.id > 0) {
     nextPage--;
   }
   const naPage = useNavigate();
