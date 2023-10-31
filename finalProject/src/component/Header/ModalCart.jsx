@@ -6,6 +6,10 @@ import './header.style.css';
 
 
 const ModalCart = () => {
+  const [appear, setAppear] = useState(false)
+  const handleAppear = () => {
+    setAppear(true)
+  }
   let counting=0
   const cartData=useContext(DataContext).data;
   cartData.forEach((item,index)=>{
@@ -31,9 +35,9 @@ const ModalCart = () => {
       <ShoppingCartOutlined/>
       </Button>
       <Modal title="Your Cart" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        {cartData.map((item, index) => {
-            return(
-                <div className='Cart' key={item.id}>
+        {appear ?  ("") : (cartData.map((item) => {
+          return(
+            <div className='Cart' key={item.id}>
                     <div>
                         <img className='img-cart' src={item.images} alt='#'></img>
                     </div>
@@ -44,9 +48,13 @@ const ModalCart = () => {
                     <div>
                         {item.amount}
                     </div>
+                    <div>
+                      <button onClick={handleAppear}>X</button>
+                    </div>
                 </div>
-            )
-        })}
+          )
+        }))}
+        
       </Modal> 
     </Badge>
     </>
