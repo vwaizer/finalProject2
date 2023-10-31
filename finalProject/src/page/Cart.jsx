@@ -200,21 +200,23 @@ const Cart = (props) => {
   const dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
-  useEffect(()=>{
-    setCart(dataBase)
-  },[dataBase])
-  const cartRef = useRef(cart)
+  useEffect(() => {
+    setCart(dataBase);
+  }, [dataBase]);
+  const cartRef = useRef(cart);
   const updateCart = [...cartRef.current];
+
   const ruleBackProduct = [
     'Products can only be exchanged once',
     'Full price products can be exchanged within 07 days throughout the system',
     'Sale products only support size exchange (if the store has stock) for 07 days throughout the system',
-    'The product still has all tags and has not been used.',  ];
+    'The product still has all tags and has not been used.',
+  ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    cartData.method([...updateCart])
+    cartData.method([...updateCart]);
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
@@ -224,13 +226,13 @@ const Cart = (props) => {
     } else {
       updateCart[indexItem].amount = 1;
     }
-    cartData.method([...updateCart])
+    cartData.method([...updateCart]);
   };
   //  console.log(cart)
   // xóa sp
   const removeItem = (item) => {
     const updatedCart = dataBase.filter((cartItem) => cartItem !== item);
-    cartData.method([...updatedCart])
+    cartData.method([...updatedCart]);
   };
   // tính tổng tiền
   const toTalProduct = () => {
@@ -241,7 +243,29 @@ const Cart = (props) => {
     const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
-console.log(dataBase)
+  const hasDiscount = (item, key) => {
+    if (item.hasOwnProperty(key)) {
+      return (
+        <>
+          <div>
+            <Text delete>${item.price}</Text>
+          </div>
+          <div>
+            {' '}
+            <Text style={{ fontSize: '17px' }}>${item.discount}</Text>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <div>
+          {' '}
+          <Text>${item.price}</Text>
+        </div>
+      );
+    }
+  };
+  console.log(dataBase);
   return (
     <Layout>
       {/* nav */}
@@ -252,7 +276,7 @@ console.log(dataBase)
             <NamePage>YOUR CART</NamePage>
             <div style={{ marginTop: '25px' }}>
               {cart.map((item) => {
-                const { id, images, title, price, amount } = item;
+                const { id, images, title, price, amount, discount } = item;
 
                 return (
                   <ContainerProduct>
@@ -267,9 +291,7 @@ console.log(dataBase)
                       <Block>
                         <TitleAndAmount>
                           <Des onClick={() => onDetail(id)}>{title}</Des>
-                          <InitPrice>
-                            <Text>${price}</Text>
-                          </InitPrice>
+                          <InitPrice>{hasDiscount(item, 'discount')}</InitPrice>
                           <Flex align="center">
                             <div
                               style={{
@@ -315,8 +337,7 @@ console.log(dataBase)
             </div>
             <Notice>
               <NoteContain>
-                <p style={{ fontWeight: 'bold' }}>
-order notes</p>
+                <p style={{ fontWeight: 'bold' }}>Order notes</p>
                 <TextArea rows={5} placeholder="Your notes" />
               </NoteContain>
               <NoteContain style={{ width: '400px' }}>
@@ -343,7 +364,7 @@ order notes</p>
               }}
               to="/product"
             >
-             Continue Shopping
+              Continue Shopping
               <HiArrowLongRight style={{ marginTop: '5px', marginLeft: '5px' }} />
             </Link>
             <CartTotal
@@ -361,12 +382,11 @@ order notes</p>
             <div style={{ flex: 0.95 }}>
               <NamePage>YOUR CART</NamePage>
               <p style={{ textAlign: 'center', fontWeight: 'lighter', fontSize: '17px' }}>
-                
-Your shopping cart is empty
+                Your shopping cart is empty
               </p>
               <div style={{ textAlign: 'center' }}>
                 <ContinueShopping href="/Product">
-                  <BsFillReplyFill />{' '}CONTINUE SHOPPING
+                  <BsFillReplyFill /> CONTINUE SHOPPING
                 </ContinueShopping>
               </div>
             </div>
@@ -387,25 +407,13 @@ Your shopping cart is empty
             </Flex>
             <ItemArea>
               {suggestedItem.map((item, index) => {
-                if (index <= 3)
-                  return (
-                     <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                if (index <= 3) return <ItemContainer data={item} key={index} />;
                 return <></>;
               })}
             </ItemArea>
             <ItemArea>
               {suggestedItem.map((item, index) => {
-                if (index >= 4)
-                  return (
-                     <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                if (index >= 4) return <ItemContainer data={item} key={index} />;
                 return <></>;
               })}
             </ItemArea>
