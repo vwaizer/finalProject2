@@ -236,7 +236,7 @@ const Cart = (props) => {
   //  console.log(cart)
   // xóa sp
   const removeItem = (item) => {
-    console.log(cart);
+
     const updatedCart = dataBase.filter((cartItem) => cartItem !== item);
     cartData.method([...updatedCart]);
   };
@@ -275,7 +275,6 @@ const Cart = (props) => {
     } else {
       return (
         <div>
-          {' '}
           <Text style={{ fontSize: '16px' }}>${item.price}</Text>
         </div>
       );
