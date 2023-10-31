@@ -62,9 +62,9 @@
 }
 
 .button-header{
-    background-color: white;
-    color: black;
+    background-color:none;
     border: none;
+    margin-left: 20px;
 }
 
 .button-header:hover{
