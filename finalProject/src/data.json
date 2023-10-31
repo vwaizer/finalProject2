@@ -14,7 +14,7 @@
     "title": "CEILING LAMPS",
     "category": "Luxury",
     "price": "59.00",
-    "discount":"35.00",
+    "discount": "35.00",
     "amount": 1,
     "images": ["https://xuongdeco.com/wp-content/uploads/2021/04/giuong-ngu-boc-da-deco-gbd24.jpg"]
   },
@@ -214,9 +214,7 @@
     "category": "Handmade",
     "price": "9.00",
     "amount": 1,
-    "images": [
-      "https://file.hstatic.net/1000280551/file/sofa_hien_dai_8850__9__38ac680cb0f54194bc1657a79c2a7768.jpg"
-    ]
+    "images": ["https://xuongdeco.com/wp-content/uploads/2021/04/giuong-ngu-boc-da-deco-gbd24.jpg"]
   },
   {
     "id": 24,
@@ -224,7 +222,9 @@
     "category": "Essentials",
     "price": "299.00",
     "amount": 1,
-    "images": ["https://img.ws.mms.shopee.vn/sg-11134201-22110-21a4806rytjvea"]
+    "images": [
+      "https://file.hstatic.net/1000280551/file/sofa_hien_dai_8850__9__38ac680cb0f54194bc1657a79c2a7768.jpg"
+    ]
   },
   {
     "id": 25,
@@ -232,7 +232,7 @@
     "category": "Essentials",
     "price": "899.00",
     "amount": 1,
-    "images": ["https://zsofa.vn/wp-content/uploads/2023/04/sofa-cao-cao-l61a-4-Copy.jpg"]
+    "images": ["https://img.ws.mms.shopee.vn/sg-11134201-22110-21a4806rytjvea"]
   },
   {
     "id": 26,
@@ -240,7 +240,7 @@
     "category": "Handmade",
     "price": "89.00",
     "amount": 1,
-    "images": ["https://sofanhaviet.com/Images/image/anh%20san%20pham/sofa%20dep/299.png"]
+    "images": ["https://zsofa.vn/wp-content/uploads/2023/04/sofa-cao-cao-l61a-4-Copy.jpg"]
   },
   {
     "id": 27,
@@ -248,7 +248,7 @@
     "category": "Luxury",
     "price": "189.00",
     "amount": 1,
-    "images": ["https://sofanhaviet.com/images/pro/sofa-vang-hien-dai-vg43_11334.png"]
+    "images": ["https://sofanhaviet.com/Images/image/anh%20san%20pham/sofa%20dep/299.png"]
   },
   {
     "id": 28,
@@ -256,9 +256,7 @@
     "category": "Luxury",
     "price": "359.00",
     "amount": 1,
-    "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ghe%CC%82%CC%81-sofa-%C4%91e%CC%A3p-hie%CC%A3%CC%82n-%C4%91a%CC%A3i-.jpg"
-    ]
+    "images": ["https://sofanhaviet.com/images/pro/sofa-vang-hien-dai-vg43_11334.png"]
   },
   {
     "id": 29,
@@ -266,7 +264,9 @@
     "category": "Wooden",
     "price": "299.00",
     "amount": 1,
-    "images": ["https://sofanhaviet.com/Images/image/anh%20catory%20sofa%20phong%20c%C3%A1ch/1.png"]
+    "images": [
+      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ghe%CC%82%CC%81-sofa-%C4%91e%CC%A3p-hie%CC%A3%CC%82n-%C4%91a%CC%A3i-.jpg"
+    ]
   },
   {
     "id": 30,
@@ -274,7 +274,7 @@
     "category": "Wooden",
     "price": "499.00",
     "amount": 1,
-    "images": ["https://noithatkdt.vn/wp-content/uploads/2021/11/mau-ghe-sofa-phong-khach-dep.jpg"]
+    "images": ["https://sofanhaviet.com/Images/image/anh%20catory%20sofa%20phong%20c%C3%A1ch/1.png"]
   },
   {
     "id": 31,
@@ -282,9 +282,7 @@
     "category": "Handmade",
     "price": "34.00",
     "amount": 1,
-    "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-la%CC%80m-vie%CC%A3%CC%82c-sang-tro%CC%A3ng-.jpg"
-    ]
+    "images": ["https://noithatkdt.vn/wp-content/uploads/2021/11/mau-ghe-sofa-phong-khach-dep.jpg"]
   },
   {
     "id": 32,
@@ -293,7 +291,7 @@
     "price": "139.00",
     "amount": 1,
     "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2020/12/Ba%CC%80n-La%CC%80m-Vie%CC%A3%CC%82c-Va%CC%86n-Pho%CC%80ng-%C4%90e%CC%A3p-1.jpg"
+      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-la%CC%80m-vie%CC%A3%CC%82c-sang-tro%CC%A3ng-.jpg"
     ]
   },
   {
@@ -303,7 +301,7 @@
     "price": "84.00",
     "amount": 1,
     "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-la%CC%80m-vie%CC%A3%CC%82c-gia%CC%81m-%C4%91o%CC%82%CC%81c-cao-ca%CC%82%CC%81p-7.jpg"
+      "https://phongkhachdep.org/wp-content/uploads/2020/12/Ba%CC%80n-La%CC%80m-Vie%CC%A3%CC%82c-Va%CC%86n-Pho%CC%80ng-%C4%90e%CC%A3p-1.jpg"
     ]
   },
   {
@@ -313,7 +311,7 @@
     "price": "699.00",
     "amount": 1,
     "images": [
-      "https://trangtrinha.net/wp-content/uploads/2023/03/ban-lam-viec-ket-hop-ban-tra-bep-tu-BLS11-trangtrinha-net-5.jpg"
+      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-la%CC%80m-vie%CC%A3%CC%82c-gia%CC%81m-%C4%91o%CC%82%CC%81c-cao-ca%CC%82%CC%81p-7.jpg"
     ]
   },
   {
@@ -321,10 +319,10 @@
     "title": "CORNER TABLE",
     "category": "Wooden",
     "price": "249.00",
-    "discount":"150.00",
+    "discount": "150.00",
     "amount": 1,
     "images": [
-      "https://trangtrinha.net/wp-content/uploads/2023/03/ban-lam-viec-mat-da-co-bep-tu-BLS12-trangtrinha-net-4.jpg"
+      "https://trangtrinha.net/wp-content/uploads/2023/03/ban-lam-viec-ket-hop-ban-tra-bep-tu-BLS11-trangtrinha-net-5.jpg"
     ]
   },
   {
@@ -332,9 +330,11 @@
     "title": "ROUND DINING TABLE",
     "category": "Luxury",
     "price": "759.00",
-    "discount":"600.00",
+    "discount": "600.00",
     "amount": 1,
-    "images": ["https://nogifu.com/ckfinder/userfiles/files/ban-lam-viec-lien-gia-sach(1).jpg"]
+    "images": [
+      "https://trangtrinha.net/wp-content/uploads/2023/03/ban-lam-viec-mat-da-co-bep-tu-BLS12-trangtrinha-net-4.jpg"
+    ]
   },
   {
     "id": 37,
@@ -342,9 +342,7 @@
     "category": "Essentials",
     "price": "89.00",
     "amount": 1,
-    "images": [
-      "https://noithatthienhoaloi.com/wp-content/uploads/2021/04/banlamviec54-300x300-1.jpg"
-    ]
+    "images": ["https://nogifu.com/ckfinder/userfiles/files/ban-lam-viec-lien-gia-sach(1).jpg"]
   },
   {
     "id": 38,
@@ -352,7 +350,9 @@
     "category": "Essentials",
     "price": "29.00",
     "amount": 1,
-    "images": ["https://news.meeycdn.net/uploads/2021/05/ban-lam-viec-ket-hop-voi-chan-tu-sach.jpg"]
+    "images": [
+      "https://noithatthienhoaloi.com/wp-content/uploads/2021/04/banlamviec54-300x300-1.jpg"
+    ]
   },
   {
     "id": 39,
@@ -360,9 +360,7 @@
     "category": "Luxury",
     "price": "719.00",
     "amount": 1,
-    "images": [
-      "https://d3l1uyhhd4oess.cloudfront.net/wp-content/uploads/2022/05/bo-ban-an-hinh-chu-nhat.jpg"
-    ]
+    "images": ["https://news.meeycdn.net/uploads/2021/05/ban-lam-viec-ket-hop-voi-chan-tu-sach.jpg"]
   },
   {
     "id": 40,
@@ -371,7 +369,7 @@
     "price": "149.00",
     "amount": 1,
     "images": [
-      "https://noithatsanvuon.com/images/2022/11/10/phan-loai-cac-kieu-ban-an-mat-da-nhap-khau-theo-so-luong-ghe-ngoi-3.jpg"
+      "https://d3l1uyhhd4oess.cloudfront.net/wp-content/uploads/2022/05/bo-ban-an-hinh-chu-nhat.jpg"
     ]
   },
   {
@@ -380,10 +378,20 @@
     "category": "Handmade",
     "price": "59.00",
     "amount": 1,
-    "images": ["https://noithathpro.com/uploads/bo-ban-an-6-ghe-2.jpg"]
+    "images": [
+      "https://noithatsanvuon.com/images/2022/11/10/phan-loai-cac-kieu-ban-an-mat-da-nhap-khau-theo-so-luong-ghe-ngoi-3.jpg"
+    ]
   },
   {
     "id": 42,
+    "title": "DECORATIVE VASES",
+    "category": "Handmade",
+    "price": "44.00",
+    "amount": 1,
+    "images": ["https://noithathpro.com/uploads/bo-ban-an-6-ghe-2.jpg"]
+  },
+  {
+    "id": 43,
     "title": "DECORATIVE VASES",
     "category": "Handmade",
     "price": "44.00",
@@ -393,7 +401,7 @@
     ]
   },
   {
-    "id": 43,
+    "id": 44,
     "title": "DECORATIVE VASES",
     "category": "Handmade",
     "price": "44.00",
@@ -401,23 +409,13 @@
     "images": ["https://cdn.nhadecor.vn/uploads/2020/06/ban-an-mat-da-886t-1.jpg"]
   },
   {
-    "id": 44,
-    "title": "DECORATIVE VASES",
-    "category": "Handmade",
-    "price": "44.00",
-    "amount": 1,
-    "images": ["https://noithatm8.com/wp-content/uploads/M8-4139-01.jpg"]
-  },
-  {
     "id": 45,
     "title": "DECORATIVE VASES",
     "category": "Handmade",
     "price": "44.00",
-    "discount":"25.00",
+    "discount": "25.00",
     "amount": 1,
-    "images": [
-      "https://dongagroup.vn/upload/tin-tuc-noi-that/ban-an-cao-cap/ban-an-6-ghe/ban-an-6-ghe-018.jpg"
-    ]
+    "images": ["https://noithatm8.com/wp-content/uploads/M8-4139-01.jpg"]
   },
   {
     "id": 46,
@@ -426,7 +424,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://livinghome.vn/wp-content/uploads/product/furniture/dining/dining-table/ban-an-romeo/ban-an-romeo-avt1-450x450.jpg"
+      "https://dongagroup.vn/upload/tin-tuc-noi-that/ban-an-cao-cap/ban-an-6-ghe/ban-an-6-ghe-018.jpg"
     ]
   },
   {
@@ -436,7 +434,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://bizweb.dktcdn.net/thumb/1024x1024/100/429/325/products/ke-giay-11.jpg?v=1632364618527"
+      "https://livinghome.vn/wp-content/uploads/product/furniture/dining/dining-table/ban-an-romeo/ban-an-romeo-avt1-450x450.jpg"
     ]
   },
   {
@@ -446,7 +444,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://bizweb.dktcdn.net/100/429/325/products/ke-giay-1-70b80dad-4c08-4864-8992-e1cd0113a83b.jpg?v=1663127192473"
+      "https://bizweb.dktcdn.net/thumb/1024x1024/100/429/325/products/ke-giay-11.jpg?v=1632364618527"
     ]
   },
   {
@@ -456,7 +454,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://bizweb.dktcdn.net/thumb/1024x1024/100/429/325/products/ke-giay-15.jpg?v=1632388125587"
+      "https://bizweb.dktcdn.net/100/429/325/products/ke-giay-1-70b80dad-4c08-4864-8992-e1cd0113a83b.jpg?v=1663127192473"
     ]
   },
   {
@@ -466,7 +464,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://7715496.fs1.hubspotusercontent-na1.net/hub/7715496/hubfs/T%E1%BB%A7%20gi%C3%A0y%20%C4%91%E1%BA%B9p/t%E1%BB%A7%20gi%C3%A0y%20MDF/tu-giay-mdf%20(2).jpg?quality=low&width=580&name=tu-giay-mdf%20(2).jpg"
+      "https://bizweb.dktcdn.net/thumb/1024x1024/100/429/325/products/ke-giay-15.jpg?v=1632388125587"
     ]
   },
   {
@@ -475,10 +473,20 @@
     "category": "Handmade",
     "price": "44.00",
     "amount": 1,
-    "images": ["https://hungtin.vn/wp-content/uploads/2021/09/713-scaled.jpg"]
+    "images": [
+      "https://7715496.fs1.hubspotusercontent-na1.net/hub/7715496/hubfs/T%E1%BB%A7%20gi%C3%A0y%20%C4%91%E1%BA%B9p/t%E1%BB%A7%20gi%C3%A0y%20MDF/tu-giay-mdf%20(2).jpg?quality=low&width=580&name=tu-giay-mdf%20(2).jpg"
+    ]
   },
   {
     "id": 52,
+    "title": "DECORATIVE VASES",
+    "category": "Handmade",
+    "price": "44.00",
+    "amount": 1,
+    "images": ["https://hungtin.vn/wp-content/uploads/2021/09/713-scaled.jpg"]
+  },
+  {
+    "id": 53,
     "title": "DECORATIVE VASES",
     "category": "Handmade",
     "price": "44.00",
@@ -488,23 +496,13 @@
     ]
   },
   {
-    "id": 53,
-    "title": "DECORATIVE VASES",
-    "category": "Handmade",
-    "price": "44.00",
-    "amount": 1,
-    "images": [
-      "https://7715496.fs1.hubspotusercontent-na1.net/hub/7715496/hubfs/T%E1%BB%A7%20gi%C3%A0y%20%C4%91%E1%BA%B9p/T%E1%BB%A7%20gi%C3%A0y%20%C4%91%E1%BA%B9p/tu-giay-dep%20(3).jpg?quality=low&width=580&name=tu-giay-dep%20(3).jpg"
-    ]
-  },
-  {
     "id": 54,
     "title": "DECORATIVE VASES",
     "category": "Handmade",
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2021/01/Tu%CC%89-Gia%CC%80y-%C4%90e%CC%A3p-Hie%CC%A3%CC%82n-%C4%90a%CC%A3i-Ma%CC%A3-Va%CC%80ng-5.jpg"
+      "https://7715496.fs1.hubspotusercontent-na1.net/hub/7715496/hubfs/T%E1%BB%A7%20gi%C3%A0y%20%C4%91%E1%BA%B9p/T%E1%BB%A7%20gi%C3%A0y%20%C4%91%E1%BA%B9p/tu-giay-dep%20(3).jpg?quality=low&width=580&name=tu-giay-dep%20(3).jpg"
     ]
   },
   {
@@ -524,7 +522,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://noithathoaphatbinhduong.net/wp-content/uploads/2022/08/ban-trang-diem-binh-duong-8.jpg"
+      "https://phongkhachdep.org/wp-content/uploads/2021/01/Tu%CC%89-Gia%CC%80y-%C4%90e%CC%A3p-Hie%CC%A3%CC%82n-%C4%90a%CC%A3i-Ma%CC%A3-Va%CC%80ng-5.jpg"
     ]
   },
   {
@@ -534,7 +532,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://noithattruongsa.com/wp-content/uploads/2023/03/mau-ban-trang-diem-dep-nk7.jpg"
+      "https://noithathoaphatbinhduong.net/wp-content/uploads/2022/08/ban-trang-diem-binh-duong-8.jpg"
     ]
   },
   {
@@ -544,7 +542,7 @@
     "price": "44.00",
     "amount": 1,
     "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-trang-%C4%91ie%CC%82%CC%89m-sang-tro%CC%A3ng-.jpg"
+      "https://noithattruongsa.com/wp-content/uploads/2023/03/mau-ban-trang-diem-dep-nk7.jpg"
     ]
   },
   {
@@ -553,7 +551,9 @@
     "category": "Luxury",
     "price": "359.00",
     "amount": 1,
-    "images": ["https://p-vn.ipricegroup.com/media/Tamy/f961c14478c92f83340ce8a0c659ca51.jpg"]
+    "images": [
+      "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-trang-%C4%91ie%CC%82%CC%89m-sang-tro%CC%A3ng-.jpg"
+    ]
   },
   {
     "id": 60,
@@ -561,10 +561,18 @@
     "category": "Luxury",
     "price": "359.00",
     "amount": 1,
-    "images": ["https://noithatnhadepviet.vn/upload/news/1-ban-trang-diem-2124.jpg"]
+    "images": ["https://p-vn.ipricegroup.com/media/Tamy/f961c14478c92f83340ce8a0c659ca51.jpg"]
   },
   {
     "id": 61,
+    "title": "CLOUD SOFA",
+    "category": "Luxury",
+    "price": "359.00",
+    "amount": 1,
+    "images": ["https://noithatnhadepviet.vn/upload/news/1-ban-trang-diem-2124.jpg"]
+  },
+  {
+    "id": 62,
     "title": "CLOUD SOFA",
     "category": "Luxury",
     "price": "359.00",
@@ -574,24 +582,14 @@
     ]
   },
   {
-    "id": 62,
-    "title": "CLOUD SOFA",
-    "category": "Luxury",
-    "price": "359.00",
-    "amount": 1,
-    "images": [
-      "https://bizweb.dktcdn.net/100/153/764/products/ban-trang-diem-54s.jpg?v=1680507365453"
-    ]
-  },
-  {
     "id": 63,
     "title": "CLOUD SOFA",
     "category": "Luxury",
     "price": "359.00",
-    "discount":"300.00",
+    "discount": "300.00",
     "amount": 1,
     "images": [
-      "https://phongkhachdep.org/wp-content/uploads/2021/02/Ke%CC%A3%CC%82-Sa%CC%81ch-Decor-Sang-Tro%CC%A3ng-.jpg"
+      "https://bizweb.dktcdn.net/100/153/764/products/ban-trang-diem-54s.jpg?v=1680507365453"
     ]
   },
   {

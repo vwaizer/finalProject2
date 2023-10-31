@@ -67,6 +67,7 @@ const LoginPage = () => {
           </Title>
           <Tab>
             <input
+              className="input"
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -75,6 +76,7 @@ const LoginPage = () => {
           </Tab>
           <Tab>
             <input
+              className="input"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -82,10 +84,14 @@ const LoginPage = () => {
             />
           </Tab>
           <ButtonTab>
-            <button className='button-login' onClick={handleLogin}>Login</button>
+            <button className="button-login" onClick={handleLogin}>
+              Login
+            </button>
           </ButtonTab>
           <ButtonTab>
-            <button className='button-login' onClick={handleReset}>Reset</button>
+            <button className="button-login" onClick={handleReset}>
+              Reset
+            </button>
           </ButtonTab>
         </Login>
       </CoverBox>
