@@ -6,6 +6,7 @@ import Detail from './page/Detail';
 import Home from './page/Home';
 import Login from './page/Login';
 import Product from './page/Product';
+import PaymentForm from './page/PaymentForm';
 const Context = () => {
     const [dataBase, setDataBase] = useState([]);
     // const [loading,setLoading]=useState(false);
@@ -36,6 +37,7 @@ const Context = () => {
               <Route path="/:productID" element={<Detail data={dataBase} />}></Route>
               {/* <Route path="/Product/:productID" element={<Detail data={dataBase}/>}></Route>  */}
               <Route path="/Login" element={<Login />}></Route>
+              <Route path="/Payment" element={<PaymentForm />}></Route>
             </Routes>
           </BrowserRouter>
        

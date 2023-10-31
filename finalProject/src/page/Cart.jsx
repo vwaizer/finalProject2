@@ -195,16 +195,21 @@ const Cart = (props) => {
     randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
     suggestedItem = [...new Set(randomItems)];
   }
-  console.log(randomItems);
-  console.log(suggestedItem);
+  useEffect(()=>{
+
+ 
+    console.log(randomItems);
+    console.log(suggestedItem);
+  },[])
+
   const dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(dataBase);
   }, [dataBase]);
-  const cartRef = useRef(cart);
-  const updateCart = [...cartRef.current];
+
+  const updateCart = [...cart];
 
   const ruleBackProduct = [
     'Products can only be exchanged once',
@@ -235,18 +240,18 @@ const Cart = (props) => {
     cartData.method([...updatedCart]);
   };
   // tính tổng tiền
-const toTalProduct = () => {
-  const sum = dataBase.reduce((total, item) => {
-    let productAmount;
-    if (item.hasOwnProperty('discount')) {
-      productAmount = item.discount * item.amount;
-    } else {
-      productAmount = item.price * item.amount;
-    }
-    return total + productAmount;
-  }, 0);
-  return sum;
-};
+  const toTalProduct = () => {
+    const sum = dataBase.reduce((total, item) => {
+      let productAmount;
+      if (item.hasOwnProperty('discount')) {
+        productAmount = item.discount * item.amount;
+      } else {
+        productAmount = item.price * item.amount;
+      }
+      return total + productAmount;
+    }, 0);
+    return sum;
+  };
   const toTalAmount = () => {
     const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
@@ -255,32 +260,33 @@ const toTalProduct = () => {
     if (item.hasOwnProperty(key)) {
       return (
         <>
-         <div>
-            {' '}
-            <Text style={{ fontSize: '16px',color: '#a73340',fontWeight: 'bold' }}>${item.discount}</Text>
+          <div>
+           
+            <Text style={{ fontSize: '16px', color: '#a73340', fontWeight: 'bold' }}>
+              ${item.discount}
+            </Text>
           </div>
           <div>
-            <Text  delete>${item.price}</Text>
+            <Text delete>${item.price}</Text>
           </div>
-         
         </>
       );
     } else {
       return (
         <div>
           {' '}
-          <Text style={{fontSize: '16px'}}>${item.price}</Text>
+          <Text style={{ fontSize: '16px' }}>${item.price}</Text>
         </div>
       );
     }
   };
-  const amountWhenHasDiscount =(item, key)=>{
-    if (item.hasOwnProperty(key)){
-      return (<>{item.amount * item.discount}</>) 
-    }else {
-      return (<>{item.amount * item.price}</>) 
+  const amountWhenHasDiscount = (item, key) => {
+    if (item.hasOwnProperty(key)) {
+      return <>{item.amount * item.discount}</>;
+    } else {
+      return <>{item.amount * item.price}</>;
     }
-  }
+  };
   console.log(dataBase);
   return (
     <Layout>
@@ -292,7 +298,7 @@ const toTalProduct = () => {
             <NamePage>YOUR CART</NamePage>
             <div style={{ marginTop: '25px' }}>
               {cart.map((item) => {
-                const { id, images, title, price, amount, discount } = item;
+                const { id, images, title, amount } = item;
 
                 return (
                   <ContainerProduct>
@@ -323,7 +329,7 @@ const toTalProduct = () => {
                               >
                                 -
                               </AmountButton>
-                              <Amount> {amount}</Amount>
+                              <Amount>{amount}</Amount>
                               <AmountButton
                                 onClick={() => increaseQuantity(item)}
                                 style={{ borderLeft: '1px solid grey' }}
@@ -338,8 +344,8 @@ const toTalProduct = () => {
                           <div>
                             <Text type="secondary">Amount</Text>
                           </div>
-                          <span style={{ color: '#a73340', fontWeight: 'bold', fontSize:'15px' }}>
-                            ${amountWhenHasDiscount(item,'discount')}
+                          <span style={{ color: '#a73340', fontWeight: 'bold', fontSize: '15px' }}>
+                            ${amountWhenHasDiscount(item, 'discount')}
                           </span>
                           <div onClick={() => removeItem(item)}>
                             <CiTrash size={18} style={{ cursor: 'pointer' }}></CiTrash>
@@ -387,7 +393,7 @@ const toTalProduct = () => {
               posi="sticky"
               posiTop="32px"
               sumAmount={toTalAmount}
-              sumProduct={()=>toTalProduct(cart,'discount')}
+              sumProduct={() => toTalProduct(cart, 'discount')}
             />
           </CartTotalContainer>
         </Flex>
@@ -401,7 +407,7 @@ const toTalProduct = () => {
                 Your shopping cart is empty
               </p>
               <div style={{ textAlign: 'center' }}>
-                <ContinueShopping href="/Product">
+                <ContinueShopping href="/">
                   <BsFillReplyFill /> CONTINUE SHOPPING
                 </ContinueShopping>
               </div>
