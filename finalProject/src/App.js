@@ -2,6 +2,7 @@ import { createContext, useState } from 'react';
 import './App.css';
 import Context from './Context';
 
+
 // import { DotLoader } from 'react-spinners';
 // import styled from 'styled-components';
 // const LoadingBlock=styled.div`
@@ -19,7 +20,7 @@ function App() {
     
       <Context></Context>
  
- 
+          
  </DataContext.Provider>)
 }
 
