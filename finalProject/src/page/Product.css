@@ -9,7 +9,7 @@
   margin: 0 auto;
 }
 
-input {
+.input {
   outline: none;
   font-size: .9em;
   padding: 1em 3em 1em 1em;

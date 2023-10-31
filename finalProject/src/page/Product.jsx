@@ -1,12 +1,10 @@
 import React from 'react';
-
 import ItemContainer from '../component/ItemContainer';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
-
 import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
-import Navigation from '../component/Navigation';
+import { Divider } from 'antd';
 import CarouselItemHome from '../component/Carouse/CarouseItemHome';
 const ItemArea = styled.div`
   display: flex;
@@ -34,32 +32,28 @@ const Tittle = styled.div`
 
 const Product = (props) => {
   const dataBase = props.data;
-  const displayData = [{images:['./img/banner1.jpg']},{images:['./img/banner2.jpg']},{images:['./img/banner3.jpg']}];
-
- 
+  const displayData = [
+    { images: ['./img/banner1.jpg'] },
+    { images: ['./img/banner2.jpg'] },
+    { images: ['./img/banner3.jpg'] },
+  ];
   return (
     <div>
       <Layout>
-      <CarouselItemHome data={displayData} />
+        <CarouselItemHome data={displayData} />
         <div className="section_card contain">
-        
           <Block1>
-            <Navigation />
             <Tittle>
               <h2 className="section-title" id="collection">
-                Latest Collection
+                LASTEST COLLECTION
               </h2>
               <span>ESSENTIAL ITEMS</span>
+              <Divider />
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
-                if (index < 4) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                if (index < 3) {
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -67,20 +61,15 @@ const Product = (props) => {
           </Block1>
           <Block1>
             <Tittle>
-              <h2  className="section-title" id="Best Seller">
+              <h2 className="section-title" id="Best Seller">
                 BEST SELLER
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
-            <ItemArea >
+            <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 4 && index < 9) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -88,12 +77,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 9 && index < 14) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -102,19 +86,14 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Bedding">
-                Bedding Products
+                BEDDING PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 14 && index < 19) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -122,12 +101,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 18 && index < 23) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -143,12 +117,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 23 && index < 28) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -156,12 +125,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 28 && index < 33) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -170,19 +134,14 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Desk">
-                Desk Products
+                DESK PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 33 && index < 38) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -190,12 +149,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 38 && index < 43) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -204,19 +158,14 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Dining">
-                Dining Table Products
+                DINING TABLE PRODUCTS
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 43 && index < 48) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -224,12 +173,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 48 && index < 53) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -238,19 +182,14 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Cabinet">
-                Shoe Cabinet
+                SHOE CABINET
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 53 && index < 58) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -258,12 +197,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 58 && index < 63) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -272,19 +206,14 @@ const Product = (props) => {
           <Block1>
             <Tittle>
               <h2 className="section-title" id="Makeup">
-                Makeup Table
+                MAKEUP TABLE
               </h2>
               <span>ESSENTIAL ITEMS</span>
             </Tittle>
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 63 && index < 68) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}
@@ -292,12 +221,7 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 68 && index < 73) {
-                  return (
-                    <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                  return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
               })}

@@ -8,6 +8,7 @@ import CarouselItemHome from '../component/Carouse/CarouseItemHome';
 import CommentArea from '../component/CommentArea';
 
 import { Divider } from 'antd';
+import FurnitureIntro from '../component/FurnitureIntro';
 
 
 const ItemArea = styled.div`
@@ -44,6 +45,9 @@ const Home = (props) => {
       <div>
         
         <CarouselItemHome data={displayData} />
+        <Block>
+          <FurnitureIntro/>
+        </Block>
         <Block>
           <Tittle>
             
