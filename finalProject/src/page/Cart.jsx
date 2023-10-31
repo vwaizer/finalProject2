@@ -195,16 +195,21 @@ const Cart = (props) => {
     randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
     suggestedItem = [...new Set(randomItems)];
   }
-  console.log(randomItems);
-  console.log(suggestedItem);
+  useEffect(()=>{
+
+ 
+    console.log(randomItems);
+    console.log(suggestedItem);
+  },[])
+
   const dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(dataBase);
   }, [dataBase]);
-  const cartRef = useRef(cart);
-  const updateCart = [...cartRef.current];
+
+  const updateCart = [...cart];
 
   const ruleBackProduct = [
     'Products can only be exchanged once',
@@ -292,7 +297,7 @@ const toTalProduct = () => {
             <NamePage>YOUR CART</NamePage>
             <div style={{ marginTop: '25px' }}>
               {cart.map((item) => {
-                const { id, images, title, price, amount, discount } = item;
+                const { id, images, title, amount } = item;
 
                 return (
                   <ContainerProduct>
@@ -323,7 +328,7 @@ const toTalProduct = () => {
                               >
                                 -
                               </AmountButton>
-                              <Amount> {amount}</Amount>
+                              <Amount>{amount}</Amount>
                               <AmountButton
                                 onClick={() => increaseQuantity(item)}
                                 style={{ borderLeft: '1px solid grey' }}
@@ -401,7 +406,7 @@ const toTalProduct = () => {
                 Your shopping cart is empty
               </p>
               <div style={{ textAlign: 'center' }}>
-                <ContinueShopping href="/Product">
+                <ContinueShopping href="/">
                   <BsFillReplyFill /> CONTINUE SHOPPING
                 </ContinueShopping>
               </div>
