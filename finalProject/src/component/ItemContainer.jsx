@@ -29,7 +29,7 @@ const ItemContainer = (props) => {
   }
 
   const addToCart = () => {
-    alert("Add To Cart: "+dataBase.title)
+    alert("Add To Cart  Succes")
     
     if (isExist) {
       

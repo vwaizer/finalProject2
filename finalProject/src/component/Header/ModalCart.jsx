@@ -8,7 +8,6 @@ import './header.style.css';
 const ModalCart = () => {
   let counting=0
   const cartData=useContext(DataContext).data;
-  console.log(cartData)
   cartData.forEach((item,index)=>{
      counting+=item.amount
   })
