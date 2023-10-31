@@ -32,7 +32,9 @@ const Des = styled.p`
   }
 `;
 
-const Amount = styled.div`
+const Amount = styled.input`
+border: none;
+outline: none;
   width: 30px;
   text-align: center;
   height: 23.5px;
@@ -330,7 +332,7 @@ const Cart = (props) => {
                               >
                                 -
                               </AmountButton>
-                              <Amount>{amount}</Amount>
+                              <Amount value={amount}></Amount>
                               <AmountButton
                                 onClick={() => increaseQuantity(item)}
                                 style={{ borderLeft: '1px solid grey' }}

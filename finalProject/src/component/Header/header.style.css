@@ -70,3 +70,13 @@
 .button-header:hover{
     cursor: pointer;
 }
+
+.Cart{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-cart{
+    width: 50px;
+}

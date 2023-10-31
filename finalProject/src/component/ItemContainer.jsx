@@ -29,7 +29,6 @@ const ItemContainer = (props) => {
   }
 
   const addToCart = () => {
-    alert("Add To Cart: "+dataBase.title)
     
     if (isExist) {
       
