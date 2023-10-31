@@ -49,7 +49,7 @@
 .side-login {
     display: flex;
     justify-content: flex-end;
-    font-size: 15px;
+    margin-left: 100px;
 }
 
 .login:hover {
@@ -59,4 +59,14 @@
 
 #user {
     display: none;
+}
+
+.button-header{
+    background-color: none;
+    border: none;
+}
+
+.button-header:hover{
+    cursor: pointer;
+    color: #ef5e47;
 }

@@ -1,19 +1,43 @@
-import { Card, Image } from 'antd';
-import React from 'react';
+import {  Button, Card, Image } from 'antd';
+import React, { useContext } from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
+import { DataContext } from '../App';
 
 const ItemDetail = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 310px;
+  margin-top: 10px;
 `;
 
 const ItemContainer = (props) => {
-  const dataBase=props.data;
+  const dataBase = props.data;
+  const itemID = dataBase.id;
+  let amountData = dataBase.amount;
+  const cartData = useContext(DataContext);
+  let isExist = false;
+
+  console.log(cartData.data);
+  let a = cartData.data.findIndex((item) => {
+    return item.id === Number(itemID);
+  });
+  if (a >= 0) {
+    isExist = true;
+  }
+
+  const addToCart = () => {
+    alert("Add To Cart: "+dataBase.title)
+    if (isExist) {
+      amountData++;
+      cartData.data[a].amount = amountData;
+    } else {
+      cartData.method([...cartData.data, dataBase]);
+    }
+  };
   let nextPage = dataBase.id;
-  if (props.id > 0) {
+  if (dataBase.id > 0) {
     nextPage--;
   }
   const naPage = useNavigate();
@@ -23,13 +47,30 @@ const ItemContainer = (props) => {
     // console.log(nextPage);
   };
   return (
-    <Card style={{ border: '0px', width: '360px' }} hoverable onClick={onDetail}>
+    <Card style={{ border: '0px', width: '360px' }} hoverable>
       {/* <img src={props.picture} alt="" style={{ width: '300px', height: '300px' }}></img> */}
-      <Image width="100%"  height={420} src={dataBase.images[0]} />
+      <Image width="100%" height={420} src={dataBase.images[0]} onClick={onDetail} />
       <ItemDetail>
-        <div> <strong>{dataBase.title}</strong></div>
-         <div>${dataBase.price}</div> 
+        <div>
+          <strong>{dataBase.title}</strong>
+        </div>
+        <div style={{ fontFamily: 'Kaushan Script' }}>
+          {dataBase.discount ? (
+            <>
+              <span style={{ textDecoration: 'line-through', marginRight: '5px' }}>
+                ${dataBase.price}
+              </span>
+              <span>${dataBase.discount}</span>
+            </>
+          ) : (
+            <span>${dataBase.price}</span>
+          )}
+        </div>
       </ItemDetail>
+      <div style={{ marginBottom: '10px' }}>{dataBase.category}</div>
+      <Button onClick={addToCart} className="buttonHome">
+        Add To Cart
+      </Button>
     </Card>
   );
 };

@@ -9,7 +9,7 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { HiArrowLongRight } from 'react-icons/hi2';
 import { DataContext } from '../App';
 import TextArea from 'antd/es/input/TextArea';
-import CartItemContainer from '../component/CartItemContainer';
+
 import CartTotal from '../component/layout/CartTotal';
 import ItemContainer from '../component/ItemContainer';
 const { Text } = Typography;
@@ -200,22 +200,23 @@ const Cart = (props) => {
   const dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
-  useEffect(()=>{
-    setCart(dataBase)
-  },[dataBase])
-  const cartRef = useRef(cart)
+  useEffect(() => {
+    setCart(dataBase);
+  }, [dataBase]);
+  const cartRef = useRef(cart);
   const updateCart = [...cartRef.current];
+
   const ruleBackProduct = [
-    'Sản phẩm được đổi 1 lần duy nhất',
-    'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
-    'Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 07 ngày trên toàn hệ thống',
-    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.',
+    'Products can only be exchanged once',
+    'Full price products can be exchanged within 07 days throughout the system',
+    'Sale products only support size exchange (if the store has stock) for 07 days throughout the system',
+    'The product still has all tags and has not been used.',
   ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    cartData.method([...updateCart])
+    cartData.method([...updateCart]);
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
@@ -225,24 +226,62 @@ const Cart = (props) => {
     } else {
       updateCart[indexItem].amount = 1;
     }
-    cartData.method([...updateCart])
+    cartData.method([...updateCart]);
   };
   //  console.log(cart)
   // xóa sp
   const removeItem = (item) => {
     const updatedCart = dataBase.filter((cartItem) => cartItem !== item);
-    cartData.method([...updatedCart])
+    cartData.method([...updatedCart]);
   };
   // tính tổng tiền
-  const toTalProduct = () => {
-    const sum = dataBase.reduce((total, item) => total + item.price * item.amount, 0);
-    return sum;
-  };
+const toTalProduct = () => {
+  const sum = dataBase.reduce((total, item) => {
+    let productAmount;
+    if (item.hasOwnProperty('discount')) {
+      productAmount = item.discount * item.amount;
+    } else {
+      productAmount = item.price * item.amount;
+    }
+    return total + productAmount;
+  }, 0);
+  return sum;
+};
   const toTalAmount = () => {
     const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
-console.log(dataBase)
+  const hasDiscount = (item, key) => {
+    if (item.hasOwnProperty(key)) {
+      return (
+        <>
+         <div>
+            {' '}
+            <Text style={{ fontSize: '16px',color: '#a73340',fontWeight: 'bold' }}>${item.discount}</Text>
+          </div>
+          <div>
+            <Text  delete>${item.price}</Text>
+          </div>
+         
+        </>
+      );
+    } else {
+      return (
+        <div>
+          {' '}
+          <Text style={{fontSize: '16px'}}>${item.price}</Text>
+        </div>
+      );
+    }
+  };
+  const amountWhenHasDiscount =(item, key)=>{
+    if (item.hasOwnProperty(key)){
+      return (<>{item.amount * item.discount}</>) 
+    }else {
+      return (<>{item.amount * item.price}</>) 
+    }
+  }
+  console.log(dataBase);
   return (
     <Layout>
       {/* nav */}
@@ -250,10 +289,10 @@ console.log(dataBase)
       {cart.length > 0 ? (
         <Flex wrap="wrap" justify="space-evenly">
           <div>
-            <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
+            <NamePage>YOUR CART</NamePage>
             <div style={{ marginTop: '25px' }}>
               {cart.map((item) => {
-                const { id, images, title, price, amount } = item;
+                const { id, images, title, price, amount, discount } = item;
 
                 return (
                   <ContainerProduct>
@@ -268,9 +307,7 @@ console.log(dataBase)
                       <Block>
                         <TitleAndAmount>
                           <Des onClick={() => onDetail(id)}>{title}</Des>
-                          <InitPrice>
-                            <Text>${price}</Text>
-                          </InitPrice>
+                          <InitPrice>{hasDiscount(item, 'discount')}</InitPrice>
                           <Flex align="center">
                             <div
                               style={{
@@ -299,13 +336,13 @@ console.log(dataBase)
 
                         <TotalPrice>
                           <div>
-                            <Text type="secondary">Thành tiền</Text>
+                            <Text type="secondary">Amount</Text>
                           </div>
-                          <span style={{ color: '#a73340', fontWeight: 'bold' }}>
-                            ${amount * price}
+                          <span style={{ color: '#a73340', fontWeight: 'bold', fontSize:'15px' }}>
+                            ${amountWhenHasDiscount(item,'discount')}
                           </span>
                           <div onClick={() => removeItem(item)}>
-                            <CiTrash style={{ cursor: 'pointer' }}></CiTrash>
+                            <CiTrash size={18} style={{ cursor: 'pointer' }}></CiTrash>
                           </div>
                         </TotalPrice>
                       </Block>
@@ -316,11 +353,11 @@ console.log(dataBase)
             </div>
             <Notice>
               <NoteContain>
-                <p style={{ fontWeight: 'bold' }}>Ghi chú đơn hàng</p>
-                <TextArea rows={5} placeholder="Ghi chú của bạn" />
+                <p style={{ fontWeight: 'bold' }}>Order notes</p>
+                <TextArea rows={5} placeholder="Your notes" />
               </NoteContain>
               <NoteContain style={{ width: '400px' }}>
-                <p style={{ fontWeight: 'bold' }}> Chính sách Đổi/Trả</p>
+                <p style={{ fontWeight: 'bold' }}> Exchange/Return Policy</p>
                 {ruleBackProduct.map((item) => {
                   return (
                     <ListRender key={item}>
@@ -343,14 +380,14 @@ console.log(dataBase)
               }}
               to="/product"
             >
-              Tiếp tục mua hàng
+              Continue Shopping
               <HiArrowLongRight style={{ marginTop: '5px', marginLeft: '5px' }} />
             </Link>
             <CartTotal
               posi="sticky"
               posiTop="32px"
               sumAmount={toTalAmount}
-              sumProduct={toTalProduct}
+              sumProduct={()=>toTalProduct(cart,'discount')}
             />
           </CartTotalContainer>
         </Flex>
@@ -359,13 +396,13 @@ console.log(dataBase)
         <div>
           <Flex wrap="wrap" justify="space-evenly">
             <div style={{ flex: 0.95 }}>
-              <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
+              <NamePage>YOUR CART</NamePage>
               <p style={{ textAlign: 'center', fontWeight: 'lighter', fontSize: '17px' }}>
-                Giỏ hàng của bạn đang trống
+                Your shopping cart is empty
               </p>
               <div style={{ textAlign: 'center' }}>
                 <ContinueShopping href="/Product">
-                  <BsFillReplyFill /> TIẾP TỤC MUA HÀNG
+                  <BsFillReplyFill /> CONTINUE SHOPPING
                 </ContinueShopping>
               </div>
             </div>
@@ -376,7 +413,7 @@ console.log(dataBase)
           <div>
             <Flex style={{ margin: '0px 20px' }} justify="space-between">
               <div>
-                <span style={{ fontSize: '22px', fontWeight: 'lighter' }}>CÓ THỂ BẠN SẼ THÍCH</span>
+                <span style={{ fontSize: '22px', fontWeight: 'lighter' }}>RECOMMENDED FOR YOU</span>
               </div>
               <div style={{ marginTop: '3px' }}>
                 <Link style={{ fontSize: '22px' }} to="/product#Best Seller">
@@ -386,25 +423,13 @@ console.log(dataBase)
             </Flex>
             <ItemArea>
               {suggestedItem.map((item, index) => {
-                if (index <= 3)
-                  return (
-                     <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                if (index <= 3) return <ItemContainer data={item} key={index} />;
                 return <></>;
               })}
             </ItemArea>
             <ItemArea>
               {suggestedItem.map((item, index) => {
-                if (index >= 4)
-                  return (
-                     <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                  );
+                if (index >= 4) return <ItemContainer data={item} key={index} />;
                 return <></>;
               })}
             </ItemArea>
