@@ -205,11 +205,10 @@ const Cart = (props) => {
   const cartRef = useRef(cart)
   const updateCart = [...cartRef.current];
   const ruleBackProduct = [
-    'Sản phẩm được đổi 1 lần duy nhất',
-    'Sản phẩm nguyên giá được đổi trong 07 ngày trên toàn hệ thống',
-    'Sản phẩm sale chỉ hỗ trợ đổi size (nếu cửa hàng còn) trong 07 ngày trên toàn hệ thống',
-    'Sản phẩm còn đủ tem mác, chưa qua sử dụng.',
-  ];
+    'Products can only be exchanged once',
+    'Full price products can be exchanged within 07 days throughout the system',
+    'Sale products only support size exchange (if the store has stock) for 07 days throughout the system',
+    'The product still has all tags and has not been used.',  ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
     const indexItem = cart.indexOf(item);
@@ -249,7 +248,7 @@ console.log(dataBase)
       {cart.length > 0 ? (
         <Flex wrap="wrap" justify="space-evenly">
           <div>
-            <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
+            <NamePage>YOUR CART</NamePage>
             <div style={{ marginTop: '25px' }}>
               {cart.map((item) => {
                 const { id, images, title, price, amount } = item;
@@ -298,7 +297,7 @@ console.log(dataBase)
 
                         <TotalPrice>
                           <div>
-                            <Text type="secondary">Thành tiền</Text>
+                            <Text type="secondary">Amount</Text>
                           </div>
                           <span style={{ color: '#a73340', fontWeight: 'bold' }}>
                             ${amount * price}
@@ -315,11 +314,12 @@ console.log(dataBase)
             </div>
             <Notice>
               <NoteContain>
-                <p style={{ fontWeight: 'bold' }}>Ghi chú đơn hàng</p>
-                <TextArea rows={5} placeholder="Ghi chú của bạn" />
+                <p style={{ fontWeight: 'bold' }}>
+order notes</p>
+                <TextArea rows={5} placeholder="Your notes" />
               </NoteContain>
               <NoteContain style={{ width: '400px' }}>
-                <p style={{ fontWeight: 'bold' }}> Chính sách Đổi/Trả</p>
+                <p style={{ fontWeight: 'bold' }}> Exchange/Return Policy</p>
                 {ruleBackProduct.map((item) => {
                   return (
                     <ListRender key={item}>
@@ -342,7 +342,7 @@ console.log(dataBase)
               }}
               to="/product"
             >
-              Tiếp tục mua hàng
+             Continue Shopping
               <HiArrowLongRight style={{ marginTop: '5px', marginLeft: '5px' }} />
             </Link>
             <CartTotal
@@ -358,13 +358,14 @@ console.log(dataBase)
         <div>
           <Flex wrap="wrap" justify="space-evenly">
             <div style={{ flex: 0.95 }}>
-              <NamePage>GIỎ HÀNG CỦA BẠN</NamePage>
+              <NamePage>YOUR CART</NamePage>
               <p style={{ textAlign: 'center', fontWeight: 'lighter', fontSize: '17px' }}>
-                Giỏ hàng của bạn đang trống
+                
+Your shopping cart is empty
               </p>
               <div style={{ textAlign: 'center' }}>
                 <ContinueShopping href="/Product">
-                  <BsFillReplyFill /> TIẾP TỤC MUA HÀNG
+                  <BsFillReplyFill />{' '}CONTINUE SHOPPING
                 </ContinueShopping>
               </div>
             </div>
@@ -375,7 +376,7 @@ console.log(dataBase)
           <div>
             <Flex style={{ margin: '0px 20px' }} justify="space-between">
               <div>
-                <span style={{ fontSize: '22px', fontWeight: 'lighter' }}>CÓ THỂ BẠN SẼ THÍCH</span>
+                <span style={{ fontSize: '22px', fontWeight: 'lighter' }}>RECOMMENDED FOR YOU</span>
               </div>
               <div style={{ marginTop: '3px' }}>
                 <Link style={{ fontSize: '22px' }} to="/product#Best Seller">
