@@ -11,7 +11,7 @@ const Context = () => {
     const [dataBase, setDataBase] = useState([]);
     // const [loading,setLoading]=useState(false);
     async function getData() {
-      const response = await axios.get('https://mocki.io/v1/56ac0ea3-e2a8-4524-8735-5f15e13e2add');
+      const response = await axios.get('https://mocki.io/v1/4bf033ca-deca-4218-b51b-63ac11cd8176');
       // setTimeout(()=>{setLoading(true)},2000)
       setDataBase(response.data);
     }
@@ -23,7 +23,7 @@ const Context = () => {
         alert(err.message);
       }
     }, []);
-    console.log(dataBase);
+    // console.log(dataBase);
     
     return (
       <div style={{ backgroundColor: 'white' }}>

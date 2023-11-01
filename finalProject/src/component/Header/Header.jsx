@@ -22,6 +22,7 @@ const infomation = [
 
 
 function Header() {
+  
   return (
     <div className="cover-header">
       <div>

@@ -1,26 +1,62 @@
-import React, { useContext} from 'react';
-import { Avatar, Badge } from 'antd';
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import './header.style.css';
+import { Badge, Button, Modal } from 'antd';
+import React, { useContext, useEffect, useState } from 'react';
 import { DataContext } from '../../App';
+import './header.style.css';
+
+
 const ModalCart = () => {
+  const [appear, setAppear] = useState(false)
+  const handleAppear = () => {
+    setAppear(true)
+  }
   let counting=0
-  const cartData=JSON.parse(window.localStorage.getItem("cartData")).data;
-  
+  const cartData=useContext(DataContext).data;
   cartData.forEach((item,index)=>{
      counting+=item.amount
   })
-  console.log(cartData);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
-      {/* <Button className='button-header' type="primary" onClick={showModal}>
+       <Badge count={counting}>
+     <Button className='button-header' type="primary" onClick={showModal}>
       <ShoppingCartOutlined/>
       </Button>
       <Modal title="Your Cart" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p>Add content</p>
-      </Modal> */}
-       <Badge count={counting}>
-      <Avatar shape="square" size="middle" ><ShoppingCartOutlined/></Avatar>
+        {appear ?  ("") : (cartData.map((item) => {
+          return(
+            <div className='Cart' key={item.id}>
+                    <div>
+                        <img className='img-cart' src={item.images} alt='#'></img>
+                    </div>
+                    <div>
+                        <li>{item.title}</li>
+                        <li>{item.price}</li>
+                    </div>
+                    <div>
+                        {item.amount}
+                    </div>
+                    <div>
+                      <button onClick={handleAppear}>X</button>
+                    </div>
+                </div>
+          )
+        }))}
+        
+      </Modal> 
     </Badge>
     </>
   );

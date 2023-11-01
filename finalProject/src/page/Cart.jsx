@@ -182,8 +182,15 @@ const Block = styled.div`
 `;
 
 const Cart = (props) => {
+
   const naPage = useNavigate();
   let cartData = JSON.parse(window.localStorage.getItem("cartData"));
+  const tmp=useContext(DataContext);
+
+  
+  useEffect(()=>{
+    tmp.method(cartData.data)
+  },[])
   const onDetail = (item) => {
     console.log('vao  click' + item);
     if (item > 0) {
@@ -234,6 +241,7 @@ const Cart = (props) => {
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
     cartData={"data":[...updateCart]};
+    tmp.method([...cartData.data]);
     window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
     setChangeVar(!changeVar);
   };
@@ -248,6 +256,7 @@ const Cart = (props) => {
       updateCart[indexItem].amount = 1;
     }
     cartData={"data":[...updateCart]};
+    tmp.method([...cartData.data]);
     window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
   };
   //  console.log(cart)
@@ -258,6 +267,7 @@ const Cart = (props) => {
     
     cartData={"data":[...updatedCart]};
     console.log(cartData);
+    tmp.method([...cartData.data]);
     window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
     setChangeVar(!changeVar); 
   };

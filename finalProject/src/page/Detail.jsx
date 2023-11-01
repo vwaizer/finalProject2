@@ -67,7 +67,6 @@ const Detail = (props) =>{
   }
   console.log(a);
   const addToCart=()=>{
-    alert("Add to cart: Success")
     if(isExist){
       amountData++;
       cartData.data[a].amount= amountData;
