@@ -6,6 +6,7 @@ import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import { Divider } from 'antd';
 import CarouselItemHome from '../component/Carouse/CarouseItemHome';
+import Navigation from '../component/Navigation';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -42,6 +43,7 @@ const Product = (props) => {
       <Layout>
         <CarouselItemHome data={displayData} />
         <div className="section_card contain">
+          <Navigation />
           <Block1>
             <Tittle>
               <h2 className="section-title" id="collection">
