@@ -1,6 +1,6 @@
 import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Badge, Button, Modal } from 'antd';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { DataContext } from '../../App';
 import './header.style.css';
 
