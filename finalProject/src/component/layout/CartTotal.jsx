@@ -33,10 +33,16 @@ const BuyButton = styled.div`
   }
 `;
 const CartTotal = ({ posi, posiTop, sumAmount, sumProduct }) => {
-  
+  let numberProduct = sumAmount()
 const naPage = useNavigate();
   const goToPayment=()=>{
-    naPage(`/Payment`);
+    if(numberProduct>0){
+      naPage(`/Payment`);
+    }
+else{
+  alert("Your cart is empty") 
+  naPage(`/`);
+} 
   }
   return (
     <ContainerTotal style={{ position: posi, top: posiTop }}>

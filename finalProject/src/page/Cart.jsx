@@ -14,25 +14,26 @@ import ItemContainer from '../component/ItemContainer';
 import CartTotal from '../component/layout/CartTotal';
 const { Text } = Typography;
 
-const ProductImage = styled.img`
+export const ProductImage = styled.img`
   width: 90px;
   height: 80px;
   cursor: pointer;
 `;
-const Des = styled.p`
+export const Des = styled.p`
   font-family: Arial, Helvetica, sans-serif;
   width: 180px;
   height: 40px;
   border-radius: 1.5px;
   padding-top: 13px;
   margin: auto 20px;
+  color:#333333;
   cursor: pointer;
   @media (max-width: 576px) {
     margin: 0px;
   }
 `;
 
-const Amount = styled.input`
+export const Amount = styled.div`
 border: none;
 outline: none;
   width: 30px;
@@ -203,10 +204,13 @@ const Cart = (props) => {
   
   const randomItems = [];
   let suggestedItem = [];
-  for (let i = 0; suggestedItem.length < 8; i++) {
-    randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
-    suggestedItem = [...new Set(randomItems)];
-  }
+
+    for (let i = 0; suggestedItem.length < 8; i++) {
+      randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
+      suggestedItem = [...new Set(randomItems)];
+    }
+
+
   
   const [changeVar,setChangeVar]=useState(false);
   useEffect(()=>{
@@ -224,8 +228,8 @@ const Cart = (props) => {
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(cartData.data);
-  }, [changeVar]);
-
+  }, [changeVar, ]);
+console.log(changeVar)
   const updateCart = [...cart];
 
   const ruleBackProduct = [
@@ -284,10 +288,12 @@ const Cart = (props) => {
     }, 0);
     return sum;
   };
+  // tính tổng số lượng sp 
   const toTalAmount = () => {
     const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
+  // hiện số tiền chính khi có discount 
   const hasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
       return (
@@ -311,6 +317,7 @@ const Cart = (props) => {
       );
     }
   };
+  // tính tiền khi có discount
   const amountWhenHasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
       return <>{item.amount * item.discount}</>;
@@ -360,7 +367,7 @@ const Cart = (props) => {
                               >
                                 -
                               </AmountButton>
-                              <Amount value={amount} type="text"/>
+                              <Amount>{amount}</Amount>
                               <AmountButton
                                 onClick={() => increaseQuantity(item)}
                                 style={{ borderLeft: '1px solid grey' }}

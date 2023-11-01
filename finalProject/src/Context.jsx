@@ -37,7 +37,7 @@ const Context = () => {
               <Route path="/:productID" element={<Detail data={dataBase} />}></Route>
               {/* <Route path="/Product/:productID" element={<Detail data={dataBase}/>}></Route>  */}
               <Route path="/Login" element={<Login />}></Route>
-              <Route path="/Payment" element={<PaymentForm />}></Route>
+              <Route path="/Payment" element={<PaymentForm data={dataBase}/>}></Route>
             </Routes>
           </BrowserRouter>
        
