@@ -9,6 +9,7 @@
 
     @media (max-width: 600px) {
         display: flex;
+        flex-wrap: wrap;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -77,6 +78,17 @@
     align-items: center;
 }
 
+.img{
+    display: flex;
+    justify-content: flex-start;
+    width: 100px;
+    
+}
+
 .img-cart{
     width: 50px;
+}
+
+.title-price{
+    width: 100px;
 }
