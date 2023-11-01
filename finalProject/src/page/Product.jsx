@@ -234,6 +234,56 @@ const Product = (props) => {
               })}
             </ItemArea>
           </Block1>
+          <Block1>
+            <Tittle>
+              <h2 className="section-title" id="chair">
+                CHAIRS
+              </h2>
+              <span>ESSENTIAL ITEMS</span>
+              <Divider />
+            </Tittle>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 73 && index < 78) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 78 && index < 83) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+          </Block1>
+          <Block1>
+            <Tittle>
+              <h2 className="section-title" id="vanity">
+                BATHROOM VANITY
+              </h2>
+              <span>ESSENTIAL ITEMS</span>
+              <Divider />
+            </Tittle>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 83 && index < 88) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 88 && index < 93) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+          </Block1>
           <ScrollToTopButton />
         </div>
       </Layout>
