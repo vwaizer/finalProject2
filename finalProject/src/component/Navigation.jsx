@@ -66,6 +66,22 @@ const items = [
       </a>
     ),
   },
+  {
+    key: '9',
+    label: (
+      <a className="a-navigate" href="#chair">
+        Chairs
+      </a>
+    ),
+  },
+  {
+    key: '10',
+    label: (
+      <a className="a-navigate" href="#vanity">
+        Bathroom vanity
+      </a>
+    ),
+  },
 ];
 const Navigation = () => {
   return (

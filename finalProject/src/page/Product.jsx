@@ -6,6 +6,7 @@ import ScrollToTopButton from '../component/ScrollToTop';
 import './Product.css';
 import { Divider } from 'antd';
 import CarouselItemHome from '../component/Carouse/CarouseItemHome';
+import Navigation from '../component/Navigation';
 const ItemArea = styled.div`
   display: flex;
   flex-direction: row;
@@ -42,6 +43,7 @@ const Product = (props) => {
       <Layout>
         <CarouselItemHome data={displayData} />
         <div className="section_card contain">
+          <Navigation />
           <Block1>
             <Tittle>
               <h2 className="section-title" id="collection">
@@ -228,6 +230,56 @@ const Product = (props) => {
             <ItemArea>
               {dataBase.map((item, index) => {
                 if (index > 68 && index < 73) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+          </Block1>
+          <Block1>
+            <Tittle>
+              <h2 className="section-title" id="chair">
+                CHAIRS
+              </h2>
+              <span>ESSENTIAL ITEMS</span>
+              <Divider />
+            </Tittle>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 73 && index < 78) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 78 && index < 83) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+          </Block1>
+          <Block1>
+            <Tittle>
+              <h2 className="section-title" id="vanity">
+                BATHROOM VANITY
+              </h2>
+              <span>ESSENTIAL ITEMS</span>
+              <Divider />
+            </Tittle>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 83 && index < 88) {
+                  return <ItemContainer data={item} key={index} />;
+                }
+                return <></>;
+              })}
+            </ItemArea>
+            <ItemArea>
+              {dataBase.map((item, index) => {
+                if (index > 88 && index < 93) {
                   return <ItemContainer data={item} key={index} />;
                 }
                 return <></>;
