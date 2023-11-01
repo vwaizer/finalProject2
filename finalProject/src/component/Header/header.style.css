@@ -61,22 +61,22 @@
     display: none;
 }
 
-.button-header{
-    background-color:none;
+.button-header {
+    background-color: none;
     border: none;
     margin-left: 20px;
 }
 
-.button-header:hover{
+.button-header:hover {
     cursor: pointer;
 }
 
-.Cart{
+.Cart {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.img-cart{
+.img-cart {
     width: 50px;
 }

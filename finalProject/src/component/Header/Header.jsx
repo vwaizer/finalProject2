@@ -19,16 +19,14 @@ const infomation = [
   },
 ];
 
-
-
 function Header() {
-  
   return (
     <div className="cover-header">
       <div>
         <img
           className="img-header"
-          src="https://github.com/Mateo-codeMaxi/Ecomerce-Furniture.github.io/blob/main/TEMPLATE%20-%20FURNITURE%20STORE/img/logo.png?raw=true" alt='#'
+          src="https://github.com/Mateo-codeMaxi/Ecomerce-Furniture.github.io/blob/main/TEMPLATE%20-%20FURNITURE%20STORE/img/logo.png?raw=true"
+          alt="#"
         />
       </div>
       <div className="header" as="ul">
@@ -41,11 +39,12 @@ function Header() {
             </div>
           );
         })}
+
         <div className="side-login">
           <Link className="login" to="/login">
             <UserOutlined />
           </Link>
-          <ModalCart/>
+          <ModalCart />
         </div>
       </div>
     </div>
