@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import './App.css';
 import Context from './Context';
 
@@ -12,9 +12,25 @@ import Context from './Context';
 //     justify-content:center;
 //     align-items:center;
 // `;
-export const DataContext=createContext([]);
+
+let preInit=JSON.parse(window.localStorage.getItem("cartData"));
+console.log(preInit);
+if(preInit === null){
+     
+     window.localStorage.setItem("cartData",JSON.stringify({"data":[]}));
+}
+else{
+     console.log(preInit.data.length);
+}
+export const DataContext=createContext(preInit);
 function App() {
-    const [cartData,setCartData]=useState([]);
+     let init=JSON.parse(window.localStorage.getItem("cartData"))
+     // useEffect(()=>{
+     //      init=JSON.parse(window.localStorage.getItem("cartData"))
+     // console.log(init);
+    
+     // },[])
+     const [cartData,setCartData]=useState(init.data);
     
  return(<DataContext.Provider value={{data:cartData, method:setCartData}}>
     

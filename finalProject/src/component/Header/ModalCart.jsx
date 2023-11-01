@@ -5,12 +5,12 @@ import './header.style.css';
 import { DataContext } from '../../App';
 const ModalCart = () => {
   let counting=0
-  const cartData=useContext(DataContext).data;
+  const cartData=JSON.parse(window.localStorage.getItem("cartData")).data;
   
   cartData.forEach((item,index)=>{
      counting+=item.amount
   })
-
+  console.log(cartData);
   return (
     <>
       {/* <Button className='button-header' type="primary" onClick={showModal}>

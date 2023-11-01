@@ -38,6 +38,7 @@ outline: none;
   width: 30px;
   text-align: center;
   height: 23.5px;
+
 `;
 
 const NamePage = styled.p`
@@ -179,9 +180,10 @@ const Block = styled.div`
     flex-direction: column;
   }
 `;
+
 const Cart = (props) => {
   const naPage = useNavigate();
-
+  let cartData = JSON.parse(window.localStorage.getItem("cartData"));
   const onDetail = (item) => {
     console.log('vao  click' + item);
     if (item > 0) {
@@ -190,26 +192,32 @@ const Cart = (props) => {
     naPage(`/${item}`);
     // console.log(nextPage);
   };
-  const cartData = useContext(DataContext);
+  
+  
   const randomItems = [];
   let suggestedItem = [];
   for (let i = 0; suggestedItem.length < 8; i++) {
     randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
     suggestedItem = [...new Set(randomItems)];
   }
+  
+  const [changeVar,setChangeVar]=useState(false);
   useEffect(()=>{
-
- 
-    console.log(randomItems);
-    console.log(suggestedItem);
-  },[])
-
-  const dataBase = cartData.data;
+    
+    // window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
+    // cartData = JSON.parse(window.localStorage.getItem("cartData"));
+    console.log("vao effect");
+    // console.log(randomItems);
+    // console.log(suggestedItem);
+    
+  },[changeVar])
+  
+  let dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
-    setCart(dataBase);
-  }, [dataBase]);
+    setCart(cartData.data);
+  }, [changeVar]);
 
   const updateCart = [...cart];
 
@@ -221,26 +229,37 @@ const Cart = (props) => {
   ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
+    console.log("increase");
+    
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    cartData.method([...updateCart]);
+    cartData={"data":[...updateCart]};
+    window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
+    setChangeVar(!changeVar);
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
+    console.log("decrease");
+    setChangeVar(!changeVar);
     const indexItem = cart.indexOf(item);
     if (updateCart[indexItem].amount !== 1) {
       updateCart[indexItem].amount--;
     } else {
       updateCart[indexItem].amount = 1;
     }
-    cartData.method([...updateCart]);
+    cartData={"data":[...updateCart]};
+    window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
   };
   //  console.log(cart)
   // xóa sp
   const removeItem = (item) => {
-
-    const updatedCart = dataBase.filter((cartItem) => cartItem !== item);
-    cartData.method([...updatedCart]);
+    console.log(item);
+    const updatedCart = dataBase.filter((cartItem) => cartItem.id !== item.id);
+    
+    cartData={"data":[...updatedCart]};
+    console.log(cartData);
+    window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
+    setChangeVar(!changeVar); 
   };
   // tính tổng tiền
   const toTalProduct = () => {
@@ -289,7 +308,7 @@ const Cart = (props) => {
       return <>{item.amount * item.price}</>;
     }
   };
-  console.log(dataBase);
+  
   return (
     <Layout>
       {/* nav */}
@@ -331,7 +350,7 @@ const Cart = (props) => {
                               >
                                 -
                               </AmountButton>
-                              <Amount value={amount}></Amount>
+                              <Amount value={amount} type="text"/>
                               <AmountButton
                                 onClick={() => increaseQuantity(item)}
                                 style={{ borderLeft: '1px solid grey' }}
@@ -445,6 +464,9 @@ const Cart = (props) => {
         </div>
       )}
     </Layout>
+    
   );
+  
 };
 export default Cart;
+

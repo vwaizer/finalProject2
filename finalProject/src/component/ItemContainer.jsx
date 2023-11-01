@@ -1,5 +1,5 @@
 import {  Button, Card, Image } from 'antd';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import { DataContext } from '../App';
@@ -16,18 +16,19 @@ const ItemContainer = (props) => {
   const dataBase = props.data;
   const itemID = dataBase.id;
   let amountData = dataBase.amount;
-  const cartData = useContext(DataContext);
+ 
   let isExist = false;
 
-  console.log(cartData.data);
-  
+ 
+  let cartData = JSON.parse(window.localStorage.getItem("cartData"));
+
   let a = cartData.data.findIndex((item) => {
     return item.id === Number(itemID);
   });
   if (a >= 0) {
     isExist = true;
   }
-
+  
   const addToCart = () => {
     alert("Add To Cart: "+dataBase.title)
     
@@ -35,9 +36,12 @@ const ItemContainer = (props) => {
       
       cartData.data[a].amount = amountData+1;
     } else {
-      cartData.method([...cartData.data, {...dataBase}]);
+      cartData={"data":[...cartData.data, {...dataBase}]};
     }
+    window.localStorage.setItem("cartData",JSON.stringify(cartData));
+   
   };
+ 
   let nextPage = dataBase.id;
   if (dataBase.id > 0) {
     nextPage--;
