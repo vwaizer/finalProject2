@@ -26,7 +26,7 @@ export const Des = styled.p`
   border-radius: 1.5px;
   padding-top: 13px;
   margin: auto 20px;
-  color:#333333;
+  color: #333333;
   cursor: pointer;
   @media (max-width: 576px) {
     margin: 0px;
@@ -34,12 +34,11 @@ export const Des = styled.p`
 `;
 
 export const Amount = styled.div`
-border: none;
-outline: none;
+  border: none;
+  outline: none;
   width: 30px;
   text-align: center;
   height: 23.5px;
-
 `;
 
 const NamePage = styled.p`
@@ -183,15 +182,13 @@ const Block = styled.div`
 `;
 
 const Cart = (props) => {
-
   const naPage = useNavigate();
-  let cartData = JSON.parse(window.localStorage.getItem("cartData"));
-  const tmp=useContext(DataContext);
+  let cartData = JSON.parse(window.localStorage.getItem('cartData'));
+  const tmp = useContext(DataContext);
 
-  
-  useEffect(()=>{
-    tmp.method(cartData.data)
-  },[])
+  useEffect(() => {
+    tmp.method(cartData.data);
+  }, []);
   const onDetail = (item) => {
     console.log('vao  click' + item);
     if (item > 0) {
@@ -200,29 +197,24 @@ const Cart = (props) => {
     naPage(`/${item}`);
     // console.log(nextPage);
   };
-  
-  
+
   const randomItems = [];
   let suggestedItem = [];
 
-    for (let i = 0; suggestedItem.length < 8; i++) {
-      randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
-      suggestedItem = [...new Set(randomItems)];
-    }
+  for (let i = 0; suggestedItem.length < 8; i++) {
+    randomItems.push(props.data[Math.floor(Math.random() * props.data.length)]);
+    suggestedItem = [...new Set(randomItems)];
+  }
 
-
-  
-  const [changeVar,setChangeVar]=useState(false);
-  useEffect(()=>{
-    
+  const [changeVar, setChangeVar] = useState(false);
+  useEffect(() => {
     // window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
     // cartData = JSON.parse(window.localStorage.getItem("cartData"));
-    console.log("vao effect");
+    console.log('vao effect');
     // console.log(randomItems);
     // console.log(suggestedItem);
-    
-  },[changeVar])
-  
+  }, [changeVar]);
+
   let dataBase = cartData.data;
 
   const [cart, setCart] = useState(dataBase);
@@ -241,18 +233,18 @@ const Cart = (props) => {
   ];
   // tăng số lượng sản phẩm
   const increaseQuantity = (item) => {
-    console.log("increase");
-    
+    console.log('increase');
+
     const indexItem = cart.indexOf(item);
     updateCart[indexItem].amount++;
-    cartData={"data":[...updateCart]};
+    cartData = { data: [...updateCart] };
     tmp.method([...cartData.data]);
-    window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
+    window.localStorage.setItem('cartData', JSON.stringify({ data: cartData.data }));
     setChangeVar(!changeVar);
   };
   // giảm số lượng sản phẩm
   const decreaseQuantity = (item) => {
-    console.log("decrease");
+    console.log('decrease');
     setChangeVar(!changeVar);
     const indexItem = cart.indexOf(item);
     if (updateCart[indexItem].amount !== 1) {
@@ -260,21 +252,21 @@ const Cart = (props) => {
     } else {
       updateCart[indexItem].amount = 1;
     }
-    cartData={"data":[...updateCart]};
+    cartData = { data: [...updateCart] };
     tmp.method([...cartData.data]);
-    window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
+    window.localStorage.setItem('cartData', JSON.stringify({ data: cartData.data }));
   };
   //  console.log(cart)
   // xóa sp
   const removeItem = (item) => {
     console.log(item);
     const updatedCart = dataBase.filter((cartItem) => cartItem.id !== item.id);
-    
-    cartData={"data":[...updatedCart]};
+
+    cartData = { data: [...updatedCart] };
     console.log(cartData);
     tmp.method([...cartData.data]);
-    window.localStorage.setItem("cartData",JSON.stringify({"data":cartData.data}));
-    setChangeVar(!changeVar); 
+    window.localStorage.setItem('cartData', JSON.stringify({ data: cartData.data }));
+    setChangeVar(!changeVar);
   };
   // tính tổng tiền
   const toTalProduct = () => {
@@ -287,20 +279,19 @@ const Cart = (props) => {
       }
       return total + productAmount;
     }, 0);
-    return Number((sum).toFixed(3));
+    return Number(sum.toFixed(3));
   };
-  // tính tổng số lượng sp 
+  // tính tổng số lượng sp
   const toTalAmount = () => {
     const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
-  // hiện số tiền chính khi có discount 
+  // hiện số tiền chính khi có discount
   const hasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
       return (
         <>
           <div>
-           
             <Text style={{ fontSize: '16px', color: '#a73340', fontWeight: 'bold' }}>
               ${item.discount}
             </Text>
@@ -326,7 +317,7 @@ const Cart = (props) => {
       return <>{item.amount * item.price}</>;
     }
   };
-  
+
   return (
     <Layout>
       {/* nav */}
@@ -482,8 +473,6 @@ const Cart = (props) => {
         </div>
       )}
     </Layout>
-    
   );
-  
 };
 export default Cart;

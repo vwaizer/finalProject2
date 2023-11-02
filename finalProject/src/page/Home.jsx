@@ -2,13 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import ItemContainer from '../component/ItemContainer';
 
-
 import Layout from '../component/layout/Layout';
 import CarouselItemHome from '../component/Carouse/CarouseItemHome';
 import CommentArea from '../component/CommentArea';
 
 import { Divider } from 'antd';
-
 
 const ItemArea = styled.div`
   display: flex;
@@ -32,43 +30,36 @@ const Block = styled.div`
 `;
 const Tittle = styled.div`
   margin: 5px;
-  
 `;
 const Home = (props) => {
-
   const dataBase = props.data;
-  const displayData = [{images:['./img/banner1.jpg']},{images:['./img/banner2.jpg']},{images:['./img/banner3.jpg']}];
-  
+  const displayData = [
+    { images: ['./img/banner1.jpg'] },
+    { images: ['./img/banner2.jpg'] },
+    { images: ['./img/banner3.jpg'] },
+  ];
+
   return (
     <Layout>
       <div>
-        
         <CarouselItemHome data={displayData} />
         <Block>
           <Tittle>
-            
             <h2>Typical Product</h2>
-            <Divider/>
+            <Divider />
           </Tittle>
           <ItemArea>
-           
             {dataBase.map((item, index) => {
               if (index < 4) {
-                return (
-                  <ItemContainer
-                    data={item}
-                    key={index}
-                  />
-                );
+                return <ItemContainer data={item} key={index} />;
               }
               return <></>;
             })}
           </ItemArea>
-          
         </Block>
         <Block>
           <Tittle>
-            <h2>Comment</h2>
+            <h2>Customer Reviews</h2>
           </Tittle>
           {/* <ItemArea>
             
@@ -104,9 +95,8 @@ const Home = (props) => {
               return <></>;
             })}
           </ItemArea> */}
-          <CommentArea/>
+          <CommentArea />
         </Block>
-        
       </div>
     </Layout>
   );
