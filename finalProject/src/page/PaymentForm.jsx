@@ -1,74 +1,218 @@
-import React from 'react';
-import { Form, Input, Button, Row, Col, Card } from 'antd';
-
+import React, { useContext } from 'react';
+import { Form, Input, Button, Radio, Typography } from 'antd';
+import { DataContext } from '../App';
+import { Des, ProductImage } from './Cart';
+import Scrollbars from 'react-custom-scrollbars';
+import styled from 'styled-components';
+import Layout from '../component/layout/Layout';
+import Footer from '../component/Footer/Footer';
+const { Text } = Typography;
+const Title = styled.h2`
+  margin-top: 7px;
+  margin-bottom: 0px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  color: #333333;
+  display: inline-block;
+`;
+const ScrollableContainer = styled.div`
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: gray lightgray;
+`;
 const PaymentForm = () => {
+  let cartData = JSON.parse(window.localStorage.getItem('cartData'));
+  const tmp = useContext(DataContext);
+  let dataBase = cartData.data;
+  // console.log(dataBase)
   const onFinish = (values) => {
     console.log('Received values:', values);
     // You can handle the form submission and payment processing here.
   };
 
+  const toTalProduct = () => {
+    const sum = dataBase.reduce((total, item) => {
+      let productAmount;
+      if (item.hasOwnProperty('discount')) {
+        productAmount = item.discount * item.amount;
+      } else {
+        productAmount = item.price * item.amount;
+      }
+      return total + productAmount;
+    }, 0);
+    return sum;
+  };
   return (
-    <Row justify="center"  >
-      <Col span={8}>
-        <Card title="Payment Information" style={{ margin: '20px' }}>
-          <Form name="payment-form" onFinish={onFinish} layout='vertical'>
+    <>
+      <h2 style={{ color: '#333333', marginLeft:'240px' }}>KONSEPT HOMEPLUS</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
+        <div>
+          <Title style={{fontSize:'20px'}}>Delivery information </Title>
+          <Form style={{marginTop:'20px'}} name="payment-form" onFinish={onFinish} layout="vertical">
             <Form.Item
               name="cardholderName"
-              label="Cardholder Name"
               rules={[
                 {
                   required: true,
-                  message: 'Please enter the cardholder name',
+                  message: 'Please Enter Name',
+                },
+                {
+                  pattern: /^[A-Za-z\s]+$/,
+                  message: 'Please enter letters only',
                 },
               ]}
             >
-              <Input />
+              <Input
+                style={{ width: '500px', height: '45px' }}
+                spellCheck="false"
+                placeholder="Your name"
+              />
             </Form.Item>
             <Form.Item
-              name="cardNumber"
-              label="Card Number"
+              name="phone"
               rules={[
                 {
                   required: true,
-                  message: 'Please enter the card number',
+                  message: 'Please Enter the phone number',
+                },
+                {
+                  pattern: /^[0-9]+$/,
+                  message: 'Please Enter a valid phone number',
                 },
               ]}
             >
-              <Input />
+              <Input
+                style={{ width: '500px', height: '45px' }}
+                spellCheck="false"
+                placeholder="Phone number"
+              />
             </Form.Item>
             <Form.Item
-              name="expirationDate"
-              label="Expiration Date"
+              name="address"
               rules={[
                 {
                   required: true,
-                  message: 'Please enter the expiration date',
+                  message: 'Please Enter your address',
                 },
               ]}
             >
-              <Input />
+              <Input
+                style={{ width: '500px', height: '45px' }}
+                spellCheck="false"
+                placeholder="Your address"
+              />
             </Form.Item>
             <Form.Item
-              name="cvv"
-              label="CVV"
+              name="email"
               rules={[
                 {
                   required: true,
-                  message: 'Please enter the CVV',
+                  message: 'Please Enter your email',
                 },
               ]}
             >
-              <Input />
+              <Input
+                type="email"
+                style={{ width: '500px', height: '45px' }}
+                spellCheck="false"
+                placeholder="Your address"
+              />
             </Form.Item>
-            <Form.Item>
-              <Button type="primary" htmlType="submit">
-                Pay Now
-              </Button>
-            </Form.Item>
+
           </Form>
-        </Card>
-      </Col>
-    </Row>
+        </div>
+
+        <div>
+          <Title style={{fontSize:'20px'}}>Products</Title>
+
+          <ScrollableContainer style={{ width: '300px',marginTop:'10px' }}>
+            {dataBase.map((item) => {
+              const { id, images, title, amount, price } = item;
+              return (
+                <div
+                  key={id}
+                  style={{ display: 'flex', alignItems: 'center', margin: '10px auto' }}
+                >
+                  <ProductImage
+                    style={{ width: '60px', height: '60px', cursor: 'auto' }}
+                    src={images}
+                    alt=""
+                  />
+                  <div style={{ width: '200px' }}>
+                    <Des
+                      style={{ fontSize: '14px', cursor: 'auto', padding: ' 5px', margin: '0px' }}
+                    >
+                      {title}
+                    </Des>
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        paddingTop: '0px',
+                      }}
+                    >
+                      <Text style={{ paddingLeft: '5px' }}>${price}</Text>
+                      <Text>x{amount}</Text>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </ScrollableContainer>
+          <hr style={{ color: '#333333', width: '100%', marginTop: '15px' }}></hr>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Title>Provisional invoice</Title>
+            <div style={{ padding: 'auto' }}>
+              <Text style={{ fontSize: '16px', fontWeight: 'bold', color: '#a73340' }}>
+                ${toTalProduct()}
+              </Text>
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Title>Transport fee</Title>
+            <div>
+              <Text style={{ fontSize: '16px', fontWeight: 'bold', color: '#a73340' }}>$25.00</Text>
+            </div>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Title>ToTal</Title>
+            <div>
+              <Text style={{ fontSize: '16px', fontWeight: 'bold', color: '#a73340' }}>
+                ${toTalProduct() + 25.0}
+              </Text>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style={{display:'flex', justifyContent:'space-around'}}>
+        <div style={{marginTop:'-10px'}}>
+        <Title style={{ fontSize: '20px'}}>Payment methods:</Title><br></br>
+        <Radio>
+          <div style={{ display: 'flex' }}>
+            <div style={{ margin: 'auto' }}>
+              <img src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6" />
+            </div>
+            <p
+              style={{
+                color: 'grey',
+                fontSize: '16px',
+                display: 'inline-block',
+                margin: 'auto 7px',
+              }}
+            >
+              Cash On Delivery (COD)
+            </p>
+          </div>
+        </Radio>
+        </div>
+    <div>
+      <Button  type="primary" style={{minWidth:'300px', marginTop:'10px', height:'45px', fontSize:'17px'}}>PAY NOW</Button>
+    </div>
+      </div>
+    </>
   );
 };
 
