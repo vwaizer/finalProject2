@@ -5,10 +5,11 @@ import { Des, ProductImage } from './Cart';
 import styled from 'styled-components';
 import Footer from '../component/Footer/Footer';
 import { useNavigate } from 'react-router';
-import styled from 'styled-components';
+
 
 import Layout from '../component/layout/Layout';
 import PayPrice from '../component/layout/PayPrice';
+import Swal from 'sweetalert2';
 const { Text } = Typography;
 export const Title = styled.h2`
   margin-top: 7px;

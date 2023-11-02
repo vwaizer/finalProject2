@@ -228,8 +228,9 @@ const Cart = (props) => {
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(cartData.data);
-  }, [changeVar ]);
-console.log(changeVar)
+    console.log(cart.length);
+  }, [tmp.data]);
+
   const updateCart = [...cart];
 
   const ruleBackProduct = [
@@ -320,9 +321,9 @@ console.log(changeVar)
   // tính tiền khi có discount
   const amountWhenHasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
-      return <>{(Number(item.amount) * Number(item.discount)).toFixed(2)}</>;
+      return <>{item.amount * item.discount}</>;
     } else {
-      return <>{(Number(item.amount) * Number(item.price)).toFixed(2)}</>;
+      return <>{item.amount * item.price}</>;
     }
   };
   
