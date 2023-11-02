@@ -71,6 +71,7 @@ const LoginPage = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Tên đăng nhập"
+              style={{width:"100%"}}
             />
           </Tab>
           <Tab>
@@ -80,6 +81,7 @@ const LoginPage = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Mật khẩu"
+              style={{width:"100%"}}
             />
           </Tab>
           <ButtonTab>
