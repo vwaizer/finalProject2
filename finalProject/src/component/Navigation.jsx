@@ -85,7 +85,7 @@ const items = [
 ];
 const Navigation = () => {
   return (
-    <>
+    <div className='navlist'>
       <Dropdown
         menu={{
           items,
@@ -97,7 +97,7 @@ const Navigation = () => {
       >
         <Button className="list-product">List Production</Button>
       </Dropdown>
-    </>
+    </div>
   );
 };
 export default Navigation;

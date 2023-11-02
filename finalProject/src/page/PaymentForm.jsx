@@ -1,11 +1,11 @@
+import { Form, Input, Radio, Typography } from 'antd';
 import React, { useContext, useRef, useState } from 'react';
-import { Form, Input, Button, Radio, Typography } from 'antd';
-import { DataContext } from '../App';
-import { Des, ProductImage } from './Cart';
-import styled from 'styled-components';
-import Footer from '../component/Footer/Footer';
 import { useNavigate } from 'react-router';
+import styled from 'styled-components';
+import { DataContext } from '../App';
+import Layout from '../component/layout/Layout';
 import PayPrice from '../component/layout/PayPrice';
+import { Des, ProductImage } from './Cart';
 const { Text } = Typography;
 export const Title = styled.h2`
   margin-top: 7px;
@@ -115,7 +115,7 @@ const PaymentForm = () => {
     return sum;
   };
   return (
-    <>
+    <Layout>
       <NameBrand>KONSEPT HOMEPLUS</NameBrand>
       <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
         <div>
@@ -248,7 +248,7 @@ const PaymentForm = () => {
           <Radio onClick={checkRadioChecked} ref={radioRef}>
             <div style={{ display: 'flex' }}>
               <div style={{ margin: 'auto' }}>
-                <img src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6" />
+                <img src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6" alt='#'/>
               </div>
               <PayMethod>Cash On Delivery (COD)</PayMethod>
             </div>
@@ -264,8 +264,7 @@ const PaymentForm = () => {
           </PayButton>
         </div>
       </MethodAndPay>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 
