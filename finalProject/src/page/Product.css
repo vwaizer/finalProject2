@@ -8,7 +8,10 @@
   width: 90%;
   margin: 0 auto;
 }
-
+.swal2-popup {
+  font-size: 1.6rem !important;
+  font-family: Georgia, serif;
+}
 .input {
   outline: none;
   font-size: .9em;
