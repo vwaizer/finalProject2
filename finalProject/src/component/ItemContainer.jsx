@@ -33,7 +33,7 @@ const ItemContainer = (props) => {
   }
   
   const addToCart = () => {
-    alert("add to cart")
+    alert(`Add to cart: ${dataBase.title}`)
     if (isExist) {
       cartData.data[a].amount = amountData+1;
       

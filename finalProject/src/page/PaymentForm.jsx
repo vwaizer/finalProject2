@@ -6,6 +6,7 @@ import Scrollbars from 'react-custom-scrollbars';
 import styled from 'styled-components';
 import Layout from '../component/layout/Layout';
 import Footer from '../component/Footer/Footer';
+import { useNavigate } from 'react-router';
 const { Text } = Typography;
 const Title = styled.h2`
   margin-top: 7px;
@@ -31,7 +32,16 @@ const PaymentForm = () => {
     console.log('Received values:', values);
     // You can handle the form submission and payment processing here.
   };
-
+  const naPage = useNavigate();
+  const onClickButton = () => {
+    alert("Success,Please wait in 3 seconds")
+    window.localStorage.setItem("cartData",JSON.stringify({"data":[]}));
+    setTimeout(() => {
+      
+      naPage(`/`);
+      // console.log(nextPage);
+    }, 3000);
+  };
   const toTalProduct = () => {
     const sum = dataBase.reduce((total, item) => {
       let productAmount;
@@ -46,11 +56,16 @@ const PaymentForm = () => {
   };
   return (
     <>
-      <h2 style={{ color: '#333333', marginLeft:'240px' }}>KONSEPT HOMEPLUS</h2>
-      <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap'}}>
+      <h2 style={{ color: '#333333', marginLeft: '240px' }}>KONSEPT HOMEPLUS</h2>
+      <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
         <div>
-          <Title style={{fontSize:'20px'}}>Delivery information </Title>
-          <Form style={{marginTop:'20px'}} name="payment-form" onFinish={onFinish} layout="vertical">
+          <Title style={{ fontSize: '20px' }}>Delivery information </Title>
+          <Form
+            style={{ marginTop: '20px' }}
+            name="payment-form"
+            onFinish={onFinish}
+            layout="vertical"
+          >
             <Form.Item
               name="cardholderName"
               rules={[
@@ -120,14 +135,13 @@ const PaymentForm = () => {
                 placeholder="Your address"
               />
             </Form.Item>
-
           </Form>
         </div>
 
         <div>
-          <Title style={{fontSize:'20px'}}>Products</Title>
+          <Title style={{ fontSize: '20px' }}>Products</Title>
 
-          <ScrollableContainer style={{ width: '300px',marginTop:'10px' }}>
+          <ScrollableContainer style={{ width: '300px', marginTop: '10px' }}>
             {dataBase.map((item) => {
               const { id, images, title, amount, price } = item;
               return (
@@ -187,30 +201,37 @@ const PaymentForm = () => {
         </div>
       </div>
 
-      <div style={{display:'flex', justifyContent:'space-around'}}>
-        <div style={{marginTop:'-10px'}}>
-        <Title style={{ fontSize: '20px'}}>Payment methods:</Title><br></br>
-        <Radio>
-          <div style={{ display: 'flex' }}>
-            <div style={{ margin: 'auto' }}>
-              <img src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6" />
+      <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+        <div style={{ marginTop: '-10px' }}>
+          <Title style={{ fontSize: '20px' }}>Payment methods:</Title>
+          <br></br>
+          <Radio>
+            <div style={{ display: 'flex' }}>
+              <div style={{ margin: 'auto' }}>
+                <img src="https://hstatic.net/0/0/global/design/seller/image/payment/cod.svg?v=6" />
+              </div>
+              <p
+                style={{
+                  color: 'grey',
+                  fontSize: '16px',
+                  display: 'inline-block',
+                  margin: 'auto 7px',
+                }}
+              >
+                Cash On Delivery (COD)
+              </p>
             </div>
-            <p
-              style={{
-                color: 'grey',
-                fontSize: '16px',
-                display: 'inline-block',
-                margin: 'auto 7px',
-              }}
-            >
-              Cash On Delivery (COD)
-            </p>
-          </div>
-        </Radio>
+          </Radio>
         </div>
-    <div>
-      <Button  type="primary" style={{minWidth:'300px', marginTop:'10px', height:'45px', fontSize:'17px'}}>PAY NOW</Button>
-    </div>
+        <div>
+          <Button
+            type="primary"
+            style={{ minWidth: '300px', marginTop: '10px', height: '45px', fontSize: '17px' }}
+            onClick={onClickButton}
+          >
+            PAY NOW
+          </Button>
+        </div>
       </div>
     </>
   );
