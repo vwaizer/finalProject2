@@ -1,8 +1,8 @@
 import { Form, Input, Radio, Typography } from 'antd';
-import React, { useContext, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import { DataContext } from '../App';
+
 import Layout from '../component/layout/Layout';
 import PayPrice from '../component/layout/PayPrice';
 import { Des, ProductImage } from './Cart';
@@ -69,7 +69,7 @@ const PaymentForm = () => {
   const [radioChecked, setRadioChecked] = useState(false);
   const { name, phone, address, email } = infoForm;
   let cartData = JSON.parse(window.localStorage.getItem('cartData'));
-  const tmp = useContext(DataContext);
+ 
   let dataBase = cartData.data;
 
   // console.log(dataBase)
