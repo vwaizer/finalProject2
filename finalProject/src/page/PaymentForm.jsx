@@ -11,6 +11,12 @@ import Layout from '../component/layout/Layout';
 import PayPrice from '../component/layout/PayPrice';
 import Swal from 'sweetalert2';
 const { Text } = Typography;
+const Block=styled.div`
+    display:flex;
+    flex-direction:column;
+    
+`;
+
 export const Title = styled.h2`
   margin-top: 7px;
   margin-bottom: 0px;
@@ -27,6 +33,9 @@ const ScrollableContainer = styled.div`
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: gray lightgray;
+  @media (max-width: 600px) {
+    width:100%;
+  }
 `;
 const NameBrand = styled.h2`
   color: #333333;
@@ -47,7 +56,13 @@ const PayMethod = styled.p`
 const MethodAndPay = styled.div`
   display: flex;
   justify-content: space-around;
+  flex-direction:row;
   margin-bottom: 30px;
+  @media (max-width:600px) {
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+  }
 `;
 const PayButton = styled.button`
   min-width: 300px;
@@ -159,6 +174,7 @@ const PaymentForm = () => {
   return (
     <Layout>
       <NameBrand>KONSEPT HOMEPLUS</NameBrand>
+      <Block>
       <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap' }}>
         <div>
           <Title style={{ fontSize: '20px' }}>Delivery information </Title>
@@ -242,6 +258,7 @@ const PaymentForm = () => {
               />
             </Form.Item>
           </Form>
+         
         </div>
 
         <div>
@@ -275,7 +292,7 @@ const PaymentForm = () => {
                     <AmountBlock>
                       {/* <Text style={{ paddingLeft: '5px' }}>${price}</Text>
                       <Text>x{amount}</Text> */}
-                      <div>{hasDiscount(item, 'discount')}</div>
+                      <div style={{ paddingLeft: '5px' }}>{hasDiscount(item, 'discount')}</div>
                       <Text>x{amount}</Text>
                     </AmountBlock>
                   </div>
@@ -289,10 +306,11 @@ const PaymentForm = () => {
           <PayPrice title="Transport fee" price="5.00" />
           <PayPrice title="Total" price={Number((toTalProduct() + Number(5.0)).toFixed(3))} />
         </div>
+        
       </div>
 
       <MethodAndPay>
-        <div>
+      <div>
           <Title style={{ fontSize: '20px' }}>Payment methods:</Title>
           <br></br>
           <Radio onClick={checkRadioChecked} ref={radioRef}>
@@ -314,6 +332,7 @@ const PaymentForm = () => {
           </PayButton>
         </div>
       </MethodAndPay>
+      </Block>
     </Layout>
   );
 };
