@@ -228,8 +228,9 @@ const Cart = (props) => {
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(cartData.data);
-  }, [changeVar ]);
-console.log(changeVar)
+    console.log(cart.length);
+  }, [tmp.data]);
+
   const updateCart = [...cart];
 
   const ruleBackProduct = [
@@ -280,17 +281,17 @@ console.log(changeVar)
     const sum = dataBase.reduce((total, item) => {
       let productAmount;
       if (item.hasOwnProperty('discount')) {
-        productAmount = Number(item.discount) * Number(item.amount);
+        productAmount = item.discount * item.amount;
       } else {
-        productAmount = Number(item.price) * Number(item.amount);
+        productAmount = item.price * item.amount;
       }
-      return Number(total + productAmount);
+      return total + productAmount;
     }, 0);
-    return sum.toFixed(2);
+    return sum;
   };
   // tính tổng số lượng sp 
   const toTalAmount = () => {
-    const sum = dataBase.reduce((total, item) => Number(total) + Number(item.amount), 0);
+    const sum = dataBase.reduce((total, item) => total + item.amount, 0);
     return sum;
   };
   // hiện số tiền chính khi có discount 
@@ -320,9 +321,9 @@ console.log(changeVar)
   // tính tiền khi có discount
   const amountWhenHasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
-      return <>{(Number(item.amount) * Number(item.discount)).toFixed(2)}</>;
+      return <>{item.amount * item.discount}</>;
     } else {
-      return <>{(Number(item.amount) * Number(item.price)).toFixed(2)}</>;
+      return <>{item.amount * item.price}</>;
     }
   };
   
@@ -486,4 +487,3 @@ console.log(changeVar)
   
 };
 export default Cart;
-

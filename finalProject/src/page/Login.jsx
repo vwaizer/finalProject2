@@ -46,7 +46,7 @@ const LoginPage = () => {
     if (username === 'admin' && password === '123456') {
       window.location = '/';
     } else {
-      setError('Sai tên đăng nhập hoặc mật khẩu');
+      setError('Username or Password is wrong');
     }
   };
 
@@ -70,7 +70,7 @@ const LoginPage = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Tên đăng nhập"
+              placeholder="Username"
               style={{width:"100%"}}
             />
           </Tab>
@@ -80,7 +80,7 @@ const LoginPage = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Mật khẩu"
+              placeholder="Password"
               style={{width:"100%"}}
             />
           </Tab>
