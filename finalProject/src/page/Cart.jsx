@@ -280,17 +280,17 @@ console.log(changeVar)
     const sum = dataBase.reduce((total, item) => {
       let productAmount;
       if (item.hasOwnProperty('discount')) {
-        productAmount = item.discount * item.amount;
+        productAmount = Number(item.discount) * Number(item.amount);
       } else {
-        productAmount = item.price * item.amount;
+        productAmount = Number(item.price) * Number(item.amount);
       }
-      return total + productAmount;
+      return Number(total + productAmount);
     }, 0);
-    return sum;
+    return sum.toFixed(2);
   };
   // tính tổng số lượng sp 
   const toTalAmount = () => {
-    const sum = dataBase.reduce((total, item) => total + item.amount, 0);
+    const sum = dataBase.reduce((total, item) => Number(total) + Number(item.amount), 0);
     return sum;
   };
   // hiện số tiền chính khi có discount 
@@ -320,9 +320,9 @@ console.log(changeVar)
   // tính tiền khi có discount
   const amountWhenHasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
-      return <>{item.amount * item.discount}</>;
+      return <>{(Number(item.amount) * Number(item.discount)).toFixed(2)}</>;
     } else {
-      return <>{item.amount * item.price}</>;
+      return <>{(Number(item.amount) * Number(item.price)).toFixed(2)}</>;
     }
   };
   

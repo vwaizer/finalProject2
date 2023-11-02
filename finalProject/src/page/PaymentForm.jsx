@@ -41,10 +41,22 @@ const PayMethod = styled.p`
   margin: auto 7px;
 `;
 const MethodAndPay = styled.div`
-  display: flex; 
+  display: flex;
   justify-content: space-around;
-  margin-bottom:30px; 
-`
+  margin-bottom: 30px;
+`;
+const PayButton = styled.button`
+  min-width: 300px;
+  margin-top: 10px; 
+  height: 45px; 
+  font-size: 17px; 
+  background-color:#01152e; 
+  font-weight:bold; 
+  border-radius:3px; 
+  border:none;
+  cursor: pointer;
+  color :white ;
+`;
 const PaymentForm = () => {
   const initialForm = {
     name: '',
@@ -94,9 +106,9 @@ const PaymentForm = () => {
     const sum = dataBase.reduce((total, item) => {
       let productAmount;
       if (item.hasOwnProperty('discount')) {
-        productAmount = item.discount * item.amount;
+        productAmount = Number(item.discount) * Number(item.amount);
       } else {
-        productAmount = item.price * item.amount;
+        productAmount = Number(item.price) * Number(item.amount);
       }
       return total + productAmount;
     }, 0);
@@ -225,12 +237,12 @@ const PaymentForm = () => {
 
           <PayPrice title="Provisional invoice" price={toTalProduct()} />
           <PayPrice title="Transport fee" price="5.00" />
-          <PayPrice title="ToTal" price={(toTalProduct() + 5.0).toFixed(4)} />
+          <PayPrice title="ToTal" price={toTalProduct() + Number(5.0)} />
         </div>
       </div>
 
-      <MethodAndPay >
-        <div >
+      <MethodAndPay>
+        <div>
           <Title style={{ fontSize: '20px' }}>Payment methods:</Title>
           <br></br>
           <Radio onClick={checkRadioChecked} ref={radioRef}>
@@ -243,18 +255,16 @@ const PaymentForm = () => {
           </Radio>
         </div>
         <div>
-          <Button
-            type="primary"
-            style={{ minWidth: '300px', marginTop: '10px', height: '45px', fontSize: '17px' }}
+          <PayButton
             onClick={() => {
               onClickButton();
             }}
           >
             PAY NOW
-          </Button>
+          </PayButton>
         </div>
       </MethodAndPay>
-      <Footer/>
+      <Footer />
     </>
   );
 };
