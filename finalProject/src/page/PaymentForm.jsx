@@ -2,10 +2,7 @@ import React, { useContext } from 'react';
 import { Form, Input, Button, Radio, Typography } from 'antd';
 import { DataContext } from '../App';
 import { Des, ProductImage } from './Cart';
-import Scrollbars from 'react-custom-scrollbars';
 import styled from 'styled-components';
-import Layout from '../component/layout/Layout';
-import Footer from '../component/Footer/Footer';
 const { Text } = Typography;
 const Title = styled.h2`
   margin-top: 7px;
@@ -173,14 +170,14 @@ const PaymentForm = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Title>Transport fee</Title>
             <div>
-              <Text style={{ fontSize: '16px', fontWeight: 'bold', color: '#a73340' }}>$25.00</Text>
+              <Text style={{ fontSize: '16px', fontWeight: 'bold', color: '#a73340' }}>$5.00</Text>
             </div>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Title>ToTal</Title>
             <div>
               <Text style={{ fontSize: '16px', fontWeight: 'bold', color: '#a73340' }}>
-                ${toTalProduct() + 25.0}
+                ${(toTalProduct() + 5.0).toFixed(4)}
               </Text>
             </div>
           </div>
