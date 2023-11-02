@@ -3,7 +3,7 @@
     "id": 1,
     "title": "HALO LOUNGE CHAIR",
     "category": "Handmade",
-    "price": "1.149.20",
+    "price": "1.149",
     "amount": 1,
     "images": [
       "https://www.target.com.au/medias/static_content/product/images/large/85/83/A1788583.jpg?impolicy=product_portrait"
@@ -146,7 +146,7 @@
     "id": 16,
     "title": "LUISA CARVED BED",
     "category": "Luxury",
-    "price": "1.519.20",
+    "price": "1.519",
     "amount": 1,
     "images": [
       "https://gotrangtri.vn/wp-content/uploads/2016/03/giuong-ngu-go-tu-nhien-phong-cach-hien-dai-ghs-967-thum.jpg"
@@ -156,7 +156,7 @@
     "id": 17,
     "title": "QUINN BED",
     "category": "Handmade",
-    "price": "1.514.99",
+    "price": "1.514",
     "amount": 1,
     "images": ["https://ifurni.vn/upload/product/3_6.jpg"]
   },
@@ -246,7 +246,7 @@
     "id": 27,
     "title": "WOOL PUMPKIN SOFA",
     "category": "Luxury",
-    "price": "1.444.15",
+    "price": "1.444",
     "amount": 1,
     "images": ["https://zsofa.vn/wp-content/uploads/2023/04/sofa-cao-cao-l61a-4-Copy.jpg"]
   },
@@ -288,7 +288,7 @@
     "id": 32,
     "title": "DENNES LEATHER SOFA",
     "category": "Handmade",
-    "price": "1.784.15",
+    "price": "1.784",
     "amount": 1,
     "images": ["https://noithatkdt.vn/wp-content/uploads/2021/11/mau-ghe-sofa-phong-khach-dep.jpg"]
   },
@@ -296,7 +296,7 @@
     "id": 33,
     "title": "SHELTER SOFA",
     "category": "Essentials",
-    "price": "1.274.15",
+    "price": "1.274",
     "amount": 1,
     "images": [
       "https://bizweb.dktcdn.net/thumb/1024x1024/100/358/409/products/sofa-vang-da-2m-cao-cap-3-0fd28fb6-a4d7-427a-8dbd-600f6d79c5a9.jpg?v=1639886536390"
@@ -317,7 +317,7 @@
     "title": "PEYSTER DESK",
     "category": "Wooden",
     "price": "2.249",
-    "discount": "150.00",
+    "discount": "150",
     "amount": 1,
     "images": [
       "https://phongkhachdep.org/wp-content/uploads/2020/12/Ba%CC%80n-La%CC%80m-Vie%CC%A3%CC%82c-Va%CC%86n-Pho%CC%80ng-%C4%90e%CC%A3p-1.jpg"
@@ -328,7 +328,7 @@
     "title": "BELLE SWIVEL DESK",
     "category": "Luxury",
     "price": "1.759",
-    "discount": "600.00",
+    "discount": "600",
     "amount": 1,
     "images": [
       "https://phongkhachdep.org/wp-content/uploads/2020/08/Ba%CC%80n-la%CC%80m-vie%CC%A3%CC%82c-gia%CC%81m-%C4%91o%CC%82%CC%81c-cao-ca%CC%82%CC%81p-7.jpg"
@@ -338,7 +338,7 @@
     "id": 37,
     "title": "IKEA DESK",
     "category": "Essentials",
-    "price": "899,15",
+    "price": "899.15",
     "amount": 1,
     "images": [
       "https://trangtrinha.net/wp-content/uploads/2023/03/ban-lam-viec-ket-hop-ban-tra-bep-tu-BLS11-trangtrinha-net-5.jpg"
@@ -646,7 +646,7 @@
     "id": 70,
     "title": "MURET MAKEUP TABLE",
     "category": "Luxury",
-    "price": "1.299,20",
+    "price": "1.299",
     "amount": 1,
     "images": [
       "https://noithathoaphatbinhduong.net/wp-content/uploads/2022/08/ban-trang-diem-binh-duong-8.jpg"
