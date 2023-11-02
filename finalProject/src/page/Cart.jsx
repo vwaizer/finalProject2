@@ -287,7 +287,7 @@ const Cart = (props) => {
       }
       return total + productAmount;
     }, 0);
-    return sum;
+    return Number((sum).toFixed(3));;
   };
   // tính tổng số lượng sp 
   const toTalAmount = () => {
