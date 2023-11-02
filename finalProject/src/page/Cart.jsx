@@ -228,7 +228,7 @@ const Cart = (props) => {
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(cartData.data);
-  }, [changeVar ]);
+  }, [changeVar,dataBase.length ]);
 console.log(changeVar)
   const updateCart = [...cart];
 
@@ -286,7 +286,7 @@ console.log(changeVar)
       }
       return Number(total + productAmount);
     }, 0);
-    return sum.toFixed(2);
+    return sum;
   };
   // tính tổng số lượng sp 
   const toTalAmount = () => {
@@ -320,9 +320,9 @@ console.log(changeVar)
   // tính tiền khi có discount
   const amountWhenHasDiscount = (item, key) => {
     if (item.hasOwnProperty(key)) {
-      return <>{(Number(item.amount) * Number(item.discount)).toFixed(2)}</>;
+      return <>{Number(item.amount) * Number(item.discount)}</>;
     } else {
-      return <>{(Number(item.amount) * Number(item.price)).toFixed(2)}</>;
+      return <>{Number(item.amount) * Number(item.price)}</>;
     }
   };
   

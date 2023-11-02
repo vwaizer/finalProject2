@@ -1,11 +1,12 @@
 import React, { useContext, useRef, useState } from 'react';
-import { Form, Input, Button, Radio, Typography } from 'antd';
+import { Form, Input, Radio, Typography } from 'antd';
 import { DataContext } from '../App';
 import { Des, ProductImage } from './Cart';
 import styled from 'styled-components';
 import Footer from '../component/Footer/Footer';
 import { useNavigate } from 'react-router';
 import PayPrice from '../component/layout/PayPrice';
+import Swal from 'sweetalert2';
 const { Text } = Typography;
 export const Title = styled.h2`
   margin-top: 7px;
@@ -47,15 +48,15 @@ const MethodAndPay = styled.div`
 `;
 const PayButton = styled.button`
   min-width: 300px;
-  margin-top: 10px; 
-  height: 45px; 
-  font-size: 17px; 
-  background-color:#01152e; 
-  font-weight:bold; 
-  border-radius:3px; 
-  border:none;
+  margin-top: 10px;
+  height: 45px;
+  font-size: 17px;
+  background-color: #01152e;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
   cursor: pointer;
-  color :white ;
+  color: white;
 `;
 const PaymentForm = () => {
   const initialForm = {
@@ -64,7 +65,6 @@ const PaymentForm = () => {
     address: '',
     email: '',
   };
-
   const [infoForm, setForm] = useState(initialForm);
   const [radioChecked, setRadioChecked] = useState(false);
   const { name, phone, address, email } = infoForm;
@@ -88,20 +88,59 @@ const PaymentForm = () => {
   };
   const naPage = useNavigate();
   const onClickButton = () => {
+    let swalShown = false;
     if (!name || !email || !address || Number(phone) < 0) {
       alert('Invalid content');
     } else if (radioChecked === false) {
       alert('Please select a payment method.');
       return;
     } else {
-      alert('Success,Please wait in 3 seconds');
+      Swal.fire({
+        title: 'Order Success',
+        text: 'Order will be delivered within 2 hours.',
+        icon: 'success',
+        confirmButtonText: 'Back to Home',
+        didOpen: () => {
+          swalShown = true;
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          naPage(`/`);
+        }
+      });
       window.localStorage.setItem('cartData', JSON.stringify({ data: [] }));
       setTimeout(() => {
-        naPage(`/`);
-        // console.log(nextPage);
+        if (swalShown) {
+          Swal.close();
+          naPage(`/`);
+        }
       }, 3000);
     }
   };
+  // hiện số tiền chính khi có discount
+  const hasDiscount = (item, key) => {
+    if (item.hasOwnProperty(key)) {
+      return (
+        <>
+          <div style={{ paddingLeft: '5px' }}>
+            <div>
+              <Text delete>${item.price}</Text>
+            </div>
+            <div>
+              <Text style={{ color: '#a73340', fontWeight: 'bold' }}>${item.discount}</Text>
+            </div>
+          </div>
+        </>
+      );
+    } else {
+      return (
+        <div>
+          <Text style={{ fontSize: '16px' }}>${item.price}</Text>
+        </div>
+      );
+    }
+  };
+  // tổng tiền khi có discount
   const toTalProduct = () => {
     const sum = dataBase.reduce((total, item) => {
       let productAmount;
@@ -220,12 +259,20 @@ const PaymentForm = () => {
                   />
                   <div style={{ width: '200px' }}>
                     <Des
-                      style={{ fontSize: '14px', cursor: 'auto', padding: ' 5px', margin: '0px' }}
+                      style={{
+                        fontSize: '14px',
+                        cursor: 'auto',
+                        padding: ' 5px',
+                        margin: '0px',
+                        height: 'fit-content',
+                      }}
                     >
                       {title}
                     </Des>
                     <AmountBlock>
-                      <Text style={{ paddingLeft: '5px' }}>${price}</Text>
+                      {/* <Text style={{ paddingLeft: '5px' }}>${price}</Text>
+                      <Text>x{amount}</Text> */}
+                      <div>{hasDiscount(item, 'discount')}</div>
                       <Text>x{amount}</Text>
                     </AmountBlock>
                   </div>
