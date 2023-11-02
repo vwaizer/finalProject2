@@ -75,7 +75,7 @@ const Detail = (props) =>{
   }
   
   const addToCart = () => {
-    alert("add to cart")
+    alert(`Add to cart: ${titleData}` )
     if (isExist) {
       cartData.data[a].amount = amountData+1;
       
