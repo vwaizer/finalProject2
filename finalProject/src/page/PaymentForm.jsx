@@ -59,10 +59,17 @@ width: 100%;
   justify-content: space-around;
   flex-direction:row;
   margin-bottom: 30px;
-  @media (max-width:600px) {
+  @media (max-width:768px) {
     flex-direction:column;
     justify-content:center;
     align-items:center;
+  }
+  @media (min-width:769px ) and (max-width: 992px) {
+    justify-content: space-between;
+  }
+  @media (min-width:992px ) and (max-width: 1200px) {
+  justify-content: space-between;
+  padding: 0px 65px;
   }
 `;
 const PayButton = styled.button`
