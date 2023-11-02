@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Button, Descriptions, Image } from 'antd';
 import Layout from '../component/layout/Layout';
 import styled from 'styled-components';
@@ -55,27 +55,41 @@ const Detail = (props) =>{
   
   const titleData=dataBase[itemID].title;
   let amountData=dataBase[itemID].amount;
-  const cartData=useContext(DataContext);
+  let cartData = JSON.parse(window.localStorage.getItem("cartData"));
+
   let isExist=false;
-  console.log(itemID);
-  console.log(cartData.data);
-  let a=cartData.data.findIndex((item)=>{
-      return item.id === Number(itemID)+1;
+ 
+  
+
+ const tmp=useContext(DataContext);
+
+  
+  useEffect(()=>{
+    tmp.method(cartData.data)
+  },[])
+  let a = cartData.data.findIndex((item) => {
+    return item.id === Number(itemID)+1;
   });
-  if(a >=0){
-    isExist=true;
+  if (a >= 0) {
+    isExist = true;
   }
-  console.log(a);
-  const addToCart=()=>{
-    if(isExist){
-      amountData++;
-      cartData.data[a].amount= amountData;
+  
+  const addToCart = () => {
+    alert("add to cart")
+    if (isExist) {
+      cartData.data[a].amount = amountData+1;
+      
+    } else {
+      cartData={"data":[...cartData.data, dataBase[itemID]]};
+      
     }
-    else{
-      cartData.method([...cartData.data,dataBase[itemID]])
-    }
+    tmp.method([...cartData.data]);
     
-}
+    window.localStorage.setItem("cartData",JSON.stringify(cartData));
+   
+  };
+
+
   const items = [
     {
       key: '1',

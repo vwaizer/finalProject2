@@ -228,8 +228,9 @@ const Cart = (props) => {
   const [cart, setCart] = useState(dataBase);
   useEffect(() => {
     setCart(cartData.data);
-  }, [changeVar, ]);
-console.log(changeVar)
+    console.log(cart.length);
+  }, [tmp.data]);
+
   const updateCart = [...cart];
 
   const ruleBackProduct = [
