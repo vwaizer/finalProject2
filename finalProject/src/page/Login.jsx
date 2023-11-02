@@ -5,6 +5,8 @@ import './Product.css';
 export const Background = styled.div`
   background-image: url('https://png.pngtree.com/background/20230520/original/pngtree-modern-living-room-with-black-walls-and-furniture-picture-image_2678794.jpg');
   height: 100vh;
+  width:100%;
+  
   background-position: 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +57,8 @@ const LoginPage = () => {
   };
 
   return (
-    <Background>
+    <div style={{width:"100%",height:"100%",margin:"0px"}}>
+      <Background>
       <CoverBox>
         <Login>
           <h1>Online Login From</h1>
@@ -70,7 +73,8 @@ const LoginPage = () => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="Tên đăng nhập"
+              placeholder="Username"
+              style={{width:"100%"}}
             />
           </Tab>
           <Tab>
@@ -79,7 +83,8 @@ const LoginPage = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Mật khẩu"
+              placeholder="Password"
+              style={{width:"100%"}}
             />
           </Tab>
           <ButtonTab>
@@ -95,6 +100,7 @@ const LoginPage = () => {
         </Login>
       </CoverBox>
     </Background>
+    </div>
   );
 };
 

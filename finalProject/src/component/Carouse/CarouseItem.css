@@ -115,8 +115,16 @@
 }
 
 .list-product {
+  display: flex;
+  justify-content: flex-end;
   border: 2px solid gray;
-  position: relative;
-  left: 1100px;
-  width: 200px;
+}
+
+.navlist{
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 120px;
+}
 }

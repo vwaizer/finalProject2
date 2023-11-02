@@ -6,7 +6,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     @media (max-width: 600px) {
         display: flex;
         flex-wrap: wrap;
@@ -21,6 +20,15 @@
     display: flex;
     gap: 100px;
     justify-content: space-around;
+    @media (max-width: 600px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin-top: 40px;
+    }
 
 }
 
@@ -50,16 +58,12 @@
 .side-login {
     display: flex;
     justify-content: flex-end;
-    margin-left: 100px;
+    margin-left: 35px;
 }
 
 .login:hover {
     color: #ef5e47;
     cursor: pointer;
-}
-
-#user {
-    display: none;
 }
 
 .button-header {
