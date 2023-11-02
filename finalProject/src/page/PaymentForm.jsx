@@ -154,7 +154,7 @@ const PaymentForm = () => {
       }
       return total + productAmount;
     }, 0);
-    return sum;
+    return Number((sum).toFixed(3));
   };
   return (
     <Layout>
@@ -287,7 +287,7 @@ const PaymentForm = () => {
 
           <PayPrice title="Provisional invoice" price={toTalProduct()} />
           <PayPrice title="Transport fee" price="5.00" />
-          <PayPrice title="ToTal" price={toTalProduct() + Number(5.0)} />
+          <PayPrice title="Total" price={Number((toTalProduct() + Number(5.0)).toFixed(3))} />
         </div>
       </div>
 
