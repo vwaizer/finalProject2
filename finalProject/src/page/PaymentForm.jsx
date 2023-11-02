@@ -1,11 +1,10 @@
-import React, { useContext, useRef, useState } from 'react';
-import { Form, Input, Button, Radio, Typography } from 'antd';
-import { DataContext } from '../App';
+import React, { useRef, useState } from 'react';
+import { Form, Input,  Radio, Typography } from 'antd';
+
 import { Des, ProductImage } from './Cart';
 import styled from 'styled-components';
-import Footer from '../component/Footer/Footer';
-import { useNavigate } from 'react-router';
 
+import { useNavigate } from 'react-router';
 
 import Layout from '../component/layout/Layout';
 import PayPrice from '../component/layout/PayPrice';
@@ -54,7 +53,9 @@ const PayMethod = styled.p`
   margin: auto 7px;
 `;
 const MethodAndPay = styled.div`
+width: 100%;
   display: flex;
+  
   justify-content: space-around;
   flex-direction:row;
   margin-bottom: 30px;
@@ -152,7 +153,7 @@ const PaymentForm = () => {
       );
     } else {
       return (
-        <div>
+        <div style={{ paddingLeft: '5px' }}>
           <Text style={{ fontSize: '16px' }}>${item.price}</Text>
         </div>
       );
@@ -308,7 +309,9 @@ const PaymentForm = () => {
         </div>
         
       </div>
-
+<div>
+  
+</div>
       <MethodAndPay>
       <div>
           <Title style={{ fontSize: '20px' }}>Payment methods:</Title>
